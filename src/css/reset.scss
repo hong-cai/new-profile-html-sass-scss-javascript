@@ -1,0 +1,44 @@
+/** ============================
+** Basic Settings
+** ============================ */
+@import "variables";
+
+:root {
+  font-family: "Dosis", sans-serif;
+  --mainspacing: 0.1rem;
+  --maintransition: all 0.3s linear;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  background: $main-white;
+}
+
+body {
+  margin: 0;
+  padding-top: 5px;
+  overflow-y: hidden;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+
+h1 {
+  color: $main-dark;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}

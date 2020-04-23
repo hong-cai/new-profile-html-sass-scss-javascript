@@ -1,0 +1,528 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+/**** variable ***/
+/** ============================
+** Basic Settings
+** ============================ */
+/**** variable ***/
+:root {
+  font-family: "Dosis", sans-serif;
+  --mainspacing: 0.1rem;
+  --maintransition: all 0.3s linear; }
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  background: #f2f3eb; }
+
+body {
+  margin: 0;
+  padding-top: 5px;
+  overflow-y: hidden; }
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; }
+
+h1 {
+  color: #737373;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase; }
+
+/** ============================
+** function circular-progress
+** ============================ */
+/** ============================
+** cards
+** ============================ */
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+  width: 90vw;
+  overflow: hidden; }
+
+.card {
+  z-index: 1;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  height: 100%; }
+  .card a {
+    text-decoration: none;
+    color: var(--color-headings); }
+  .card h3 {
+    margin: 0; }
+  .card p {
+    margin-top: 0;
+    color: var(--color-text); }
+  .card:nth-child(1) {
+    width: 100%;
+    position: absolute; }
+  .card:nth-child(2) {
+    width: 100%;
+    position: absolute;
+    left: 12%; }
+  .card:nth-child(3) {
+    width: 100%;
+    position: absolute;
+    left: 24%; }
+  .card:nth-child(4) {
+    width: 100%;
+    position: absolute;
+    left: 36%; }
+  .card:nth-child(5) {
+    width: 52%;
+    position: absolute;
+    right: 0; }
+  .card:not(:last-of-type):hover {
+    box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19), -3px 15px 6px rgba(0, 0, 0, 0.23); }
+  .card:hover ~ .card:not(:last-of-type) {
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(50px); }
+  .card:focus-within ~ .card {
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(50px); }
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: relative; }
+
+.nav-wrapper {
+  background-blend-mode: multiply;
+  max-width: 12%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  cursor: pointer; }
+
+.content-wrapper {
+  font-family: "Abel", sans-serif;
+  font-size: 1.2rem;
+  background-blend-mode: multiply;
+  width: 100%;
+  height: 100vh;
+  padding: 5%; }
+  .content-wrapper .content-range {
+    padding: 2%;
+    width: 100%;
+    border: 1px solid orange;
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+    overflow-x: hidden; }
+
+/** ============================
+** About  Card
+** ============================ */
+.about .content-range .about-text {
+  padding: 2% 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.about .content-range .about-img {
+  width: 20vw;
+  height: 20vw;
+  border: 1px solid orange;
+  overflow: hidden;
+  border-radius: 50%; }
+  .about .content-range .about-img img {
+    width: 100%; }
+
+/** ============================
+** Experience Card
+** ============================ */
+.experience .content-wrapper p {
+  background: red;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 100px;
+  margin: 10px 0; }
+
+.experience .content-range {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+  .experience .content-range .website-frame {
+    margin: 10% 0;
+    width: 300px;
+    height: 250px;
+    transition: 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    .experience .content-range .website-frame .website-screenshot {
+      position: absolute;
+      cursor: pointer; }
+      .experience .content-range .website-frame .website-screenshot:after {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        border-radius: 50%;
+        left: 0;
+        bottom: -10px; }
+      .experience .content-range .website-frame .website-screenshot img {
+        width: 300px;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(80%);
+        transition: 0.3s;
+        margin-bottom: 10px; }
+        .experience .content-range .website-frame .website-screenshot img:hover {
+          filter: grayscale(0%);
+          box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.25), -5px -5px 20px 5px rgba(0, 0, 0, 0.22); }
+
+/** ============================
+**Skill Card
+** ============================ */
+.skills .content-range .progress-circles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem; }
+  .skills .content-range .progress-circles .progress-circle {
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .skills .content-range .progress-circles .progress-circle .circle {
+      min-width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #e0e0e0;
+      transition: all 0.3s linear;
+      position: relative;
+      background: linear-gradient(90deg, #e0e0e0 50%, transparent 50%, transparent), linear-gradient(126deg, #ff70a6 50%, #e0e0e0 50%, #e0e0e0); }
+      .skills .content-range .progress-circles .progress-circle .circle:before {
+        background-color: #fafafa;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        color: rgba(0, 0, 0, 0.54);
+        content: "10%";
+        font-size: 72px;
+        font-weight: bold;
+        height: 100%;
+        line-height: 200px;
+        position: absolute;
+        text-align: center;
+        transform: scale(0.85);
+        width: 100%; }
+      .skills .content-range .progress-circles .progress-circle .circle:hover {
+        box-shadow: 0 0 100px 1px rgba(255, 214, 112, 0.35); }
+
+.to-front:not(:last-of-type) {
+  z-index: 10;
+  box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19), -3px 15px 6px rgba(0, 0, 0, 0.23); }
+
+/** ============================
+** Contact Card
+** ============================ */
+.contact-card {
+  position: absolute;
+  right: 0; }
+  .contact-card .nav-wrapper {
+    position: absolute;
+    right: 0;
+    min-width: 150px;
+    cursor: pointer; }
+  .contact-card .content-wrapper {
+    position: absolute;
+    top: 50px;
+    border-top-left-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 90%;
+    flex-direction: row; }
+    .contact-card .content-wrapper:hover {
+      box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19), -3px 15px 6px rgba(0, 0, 0, 0.23); }
+    .contact-card .content-wrapper .social-media {
+      margin: 20px;
+      width: 50px;
+      height: 200px;
+      background: pink;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-content: center; }
+      .contact-card .content-wrapper .social-media span {
+        margin: 0px auto;
+        padding: 0px auto;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        background: url(data:image/png;base64,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) no-repeat;
+        background-size: cover;
+        font-size: 1.2rem; }
+
+.social-media {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.contact-grids {
+  border: 1px solid brown; }
+
+.contact-grid {
+  border: 1px solid grey; }
+
+/** ============================
+** Contact Card- Contact-Form
+** ============================ */
+input,
+select,
+textarea {
+  color: #5a5a5a;
+  font: inherit;
+  margin: 0; }
+
+textarea {
+  overflow: auto; }
+
+#contact-form {
+  border: 2px solid #474544;
+  padding: 1rem;
+  max-width: 80%;
+  margin: 60px auto;
+  position: relative; }
+
+form {
+  padding: 1rem; }
+
+.icon_wrapper {
+  margin: 50px auto 0;
+  width: 100%; }
+
+.icon {
+  display: block;
+  fill: #474544;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px; }
+
+.email {
+  float: right;
+  width: 45%; }
+
+input[type="text"],
+[type="email"],
+[type="number"],
+select,
+textarea {
+  background: none;
+  border: none;
+  border-bottom: solid 2px #474544;
+  color: #474544;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0em 0 1.875em 0;
+  padding: 0 0 0.875em 0;
+  text-transform: uppercase;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+input[type="text"]:focus,
+[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  padding: 0 0 0.875em 0; }
+
+.message {
+  float: none; }
+
+.name {
+  float: left;
+  width: 45%; }
+
+select {
+  background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png") no-repeat right;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+select::-ms-expand {
+  display: none; }
+
+.subject {
+  width: 100%; }
+
+.telephone {
+  width: 100%; }
+
+textarea {
+  line-height: 150%;
+  height: 150px;
+  resize: none;
+  width: 100%; }
+
+::-webkit-input-placeholder {
+  color: #737373; }
+
+:-moz-placeholder {
+  color: #737373;
+  opacity: 1; }
+
+::-moz-placeholder {
+  color: #737373;
+  opacity: 1; }
+
+:-ms-input-placeholder {
+  color: #737373; }
+
+#form_button {
+  background: none;
+  border: solid 1px #737373;
+  color: #737373;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 10px 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+#form_button:hover {
+  background: #474544;
+  color: #f2f3eb; }
+
+/** ============================
+** Media Queries
+** ============================ */
+@media screen and (max-width: 768px) {
+  #contact-form {
+    margin: 20px auto;
+    width: 95%; } }
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 26px; }
+  .underline {
+    width: 68px; }
+  #form_button {
+    padding: 15px 25px; } }
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 18px; }
+  .icon {
+    height: 35px;
+    width: 35px; }
+  .underline {
+    width: 53px; }
+  input[type="text"],
+  [type="email"],
+  select,
+  textarea {
+    font-size: 0.875em; } }
+
+@media screen and (max-width: 756px) {
+  .contact-card .nav-wrapper {
+    min-width: 100%; }
+  .nav-wrapper {
+    min-width: 100%; }
+  .card a {
+    font-size: 1rem; }
+  .card:nth-child(1) {
+    max-height: 100%;
+    top: 0; }
+  .card:nth-child(2) {
+    max-height: calc(100%-50px);
+    top: 50px;
+    left: 0; }
+  .card:nth-child(3) {
+    top: 100px;
+    left: 0; }
+  .card:nth-child(4) {
+    top: 150px;
+    left: 0; }
+  .card:nth-child(5) {
+    height: 1px;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 10; }
+  .card .nav-wrapper:hover {
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.19), 0px -3px 6px rgba(0, 0, 0, 0.23); }
+  .card:hover ~ .card:not(:last-of-type) {
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+    -webkit-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    transform: translateY(50px); }
+  .card:focus-within ~ .card {
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+    -webkit-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    transform: translateY(50px); }
+  .card .content-range {
+    width: 100% !important; }
+  .cards {
+    position: sticky;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; } }
+
