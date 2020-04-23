@@ -18,7 +18,9 @@
 ├── Notes  
 │
 │
-├── Contact  │ ├── Info/Form    
+├── Contact
+│ ├── Contact Form 
+│ ├── Contact Info  
 │  
 ├── Social Media Links  
 │ ├── Twitter  
