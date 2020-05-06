@@ -273,7 +273,6 @@ h1 {
       margin: 20px;
       width: 50px;
       height: 200px;
-      background: pink;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;

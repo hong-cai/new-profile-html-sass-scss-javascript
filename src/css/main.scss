@@ -73,7 +73,7 @@
       -3px 15px 6px rgba(0, 0, 0, 0.23);
   }
 
-  &:hover~.card {
+  &:hover ~ .card {
     &:not(:last-of-type) {
       -webkit-transform: translateX(50px);
       -ms-transform: translateX(50px);
@@ -81,7 +81,7 @@
     }
   }
 
-  &:focus-within~.card {
+  &:focus-within ~ .card {
     -webkit-transform: translateX(50px);
     -ms-transform: translateX(50px);
     transform: translateX(50px);
@@ -196,7 +196,6 @@
         position: absolute;
         cursor: pointer;
 
-
         &:after {
           content: " ";
           position: absolute;
@@ -207,7 +206,6 @@
           bottom: -10px;
           // box-shadow: 0 30px 10px rgba(0, 0, 0, 0.3);
         }
-
 
         & img {
           width: 300px;
@@ -254,10 +252,12 @@
         background: #e0e0e0;
         transition: all 0.3s linear;
         position: relative;
-        background: linear-gradient(90deg,
+        background: linear-gradient(
+            90deg,
             #e0e0e0 50%,
             transparent 50%,
-            transparent),
+            transparent
+          ),
           linear-gradient(126deg, #ff70a6 50%, #e0e0e0 50%, #e0e0e0);
 
         &:before {
@@ -324,7 +324,6 @@
       margin: 20px;
       width: 50px;
       height: 200px;
-      background: pink;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -363,7 +362,6 @@
 .contact-grids {
   // height: 80%;
   border: 1px solid brown;
-
 }
 
 .contact-grid {
@@ -380,7 +378,6 @@ textarea {
   font: inherit;
   margin: 0;
 }
-
 
 textarea {
   overflow: auto;
@@ -462,7 +459,8 @@ textarea:focus {
 }
 
 select {
-  background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png") no-repeat right;
+  background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png")
+    no-repeat right;
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -624,7 +622,7 @@ textarea {
         0px -3px 6px rgba(0, 0, 0, 0.23);
     }
 
-    &:hover~.card {
+    &:hover ~ .card {
       &:not(:last-of-type) {
         -webkit-transform: translateX(0px);
         -ms-transform: translateX(0px);
@@ -635,7 +633,7 @@ textarea {
       }
     }
 
-    &:focus-within~.card {
+    &:focus-within ~ .card {
       -webkit-transform: translateX(0px);
       -ms-transform: translateX(0px);
       transform: translateX(0px);
