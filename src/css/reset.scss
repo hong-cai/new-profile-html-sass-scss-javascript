@@ -17,7 +17,7 @@
 }
 
 html {
-  background: $main-white;
+  background: url("../img/bg-main.png") repeat;
 }
 
 body {
@@ -32,7 +32,6 @@ body {
   overflow: hidden;
   position: relative;
 }
-
 
 h1 {
   color: $main-dark;
