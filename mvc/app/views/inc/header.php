@@ -17,6 +17,7 @@
         <link href="<?php echo URL . '/css/adminlte.min.css'; ?>" rel="stylesheet" type="text/css" />
         <!-- Text Editor style -->
         <link href="<?php echo URL . '/css/summernote-bs4.min.css'; ?>" rel="stylesheet" type="text/css" />
+
         <!-- font awesome -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href=<?php echo URL . '/css/styles.css'; ?> />

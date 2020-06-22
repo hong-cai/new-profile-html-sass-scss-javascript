@@ -29,6 +29,7 @@ class Core
         $this->currentController = new $this->currentController;
 
         //Check for second part of url
+        //PROBLEM: Param is null/empty/'' how to redirect
         if (isset($url[1])) {
             //Check if method exists in currentController
             if (method_exists($this->currentController, $url[1])) {

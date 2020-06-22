@@ -3,151 +3,180 @@
 @import "variables";
 @import "reset";
 @import "mixins";
-// @import "functions";
+@import "modules/button";
+@import "modules/scrollbar";
+@import "modules/preloader";
+@import "modules/arrows";
+@import "modules/footer";
 
 /** ============================
-** cards
+**   ----    main div    ----
 ** ============================ */
 
-.cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 90vh;
+.main {
   width: 90vw;
+  height: 90vh;
+  position: relative;
+  // border: 1px solid orange;
   overflow: hidden;
 }
 
+
+/** ============================
+**     ----    cards     ----
+** ============================ */
+
+.cards {
+  display: flex;
+  height: calc(100% - 50px);
+  width: 100%;
+  overflow: visible;
+}
+
+.cards-track {
+  top: 0;
+  left: 0;
+  // overflow: hidden;
+  overflow: visible;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 .card {
-  z-index: 1;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
-  // height: 100%;
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  // &:not(:last-of-type):hover {
+  //   box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19), -3px 15px 6px rgba(0, 0, 0, 0.23);
+  // }
 
-  a {
-    text-decoration: none;
-    color: var(--color-headings);
-  }
+  // &:hover~.card {
+  //   &:not(:last-of-type) {
+  //     transform: translateX(50px);
+  //   }
+  // }
 
-  h3 {
-    margin: 0;
-  }
-
-  p {
-    margin-top: 0;
-    color: var(--color-text);
-  }
-
-  &:nth-child(1) {
-    width: 100%;
-    position: absolute;
-  }
-
-  &:nth-child(2) {
-    width: 100%;
-    position: absolute;
-    left: 12%;
-  }
-
-  &:nth-child(3) {
-    width: 100%;
-    position: absolute;
-    left: 24%;
-  }
-
-  &:nth-child(4) {
-    width: 100%;
-    position: absolute;
-    left: 36%;
-  }
-
-  &:nth-child(5) {
-    width: 52%;
-    position: absolute;
-    right: 0;
-  }
-
-  &:not(:last-of-type):hover {
-    box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19), -3px 15px 6px rgba(0, 0, 0, 0.23);
-  }
-
-  &:hover ~ .card {
-    &:not(:last-of-type) {
-      -webkit-transform: translateX(50px);
-      -ms-transform: translateX(50px);
-      transform: translateX(50px);
-    }
-  }
-
-  &:focus-within ~ .card {
-    -webkit-transform: translateX(50px);
-    -ms-transform: translateX(50px);
-    transform: translateX(50px);
-  }
+  // &:focus-within~.card {
+  //   transform: translateX(50px);
+  // }
 }
 
 .wrapper {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  position: relative;
+  width: 98%;
+  height: 96%;
+  margin: 0 1%;
+  padding: 3%;
+  background-blend-mode: multiply;
+  border-radius: 2rem;
 }
 
-.nav-wrapper {
-  background-blend-mode: multiply;
-  max-width: 12%;
-  height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  cursor: pointer;
+.current-card>.wrapper {
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.14),
+    -2px 5px 5px 1px rgba(0, 0, 0, 0.14);
+}
+
+.nav-shadow {
+  box-shadow: 5px -2px 2px 0px rgba(0, 0, 0, 0.1),
+    -2px -3px 2px 0px rgba(0, 0, 0, 0.07);
+  z-index: 5;
 }
 
 .content-wrapper {
   font-family: $text-font;
   font-size: $text-size;
-  background-blend-mode: multiply;
   width: 100%;
-  height: 100vh;
-  padding: 5%;
+  height: 100%;
 
-  .content-range {
-    padding: 2%;
+  & .card-details {
+    border: 1px solid white;
     width: 100%;
-    border: 1px solid orange;
-    height: calc(100% - 50px);
+    height: 100px;
+  }
+
+  & .content-range {
+    padding: 2%;
+    max-width: 100%;
+    border: 1px solid black;
+    height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
+    max-height: calc(94% - 100px);
+    margin-top: 20px;
   }
 }
 
 /** ============================
-** About  Card
+** ----    Cards Navs    ----
+** ============================ */
+.cards-nav {
+  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  .nav-wrapper {
+    background-blend-mode: multiply;
+    margin-top: 10px;
+    width: 150px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    cursor: pointer;
+    // & > * {
+    //   pointer-events: none;
+    // }
+    position: relative;
+    // box-shadow: //   0 .5rem .25rem 0 rgba(darken(#f5f5f5, 35%), 0.50),
+    //   0 0 .5rem rgba(darken(#f5f5f5, 20%), 1) inset,
+    //   0 0 0.5rem rgba(255, 255, 255, 0.4) inset,
+    //   0 0 0.5rem 0 darken(#f5f5f5, 30%) inset;
+    // &:before {
+    //   content: "";
+    //   display: block;
+    //   height: 0.25rem;
+    //   position: absolute;
+    //   top: 0.5rem;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   width: calc(100% - 3.5rem);
+    //   background: #fff;
+    //   border-radius: 100%;
+    //   opacity: 0.7;
+
+    //   &:after {
+    //     content: "";
+    //     display: block;
+    //     height: 0.55rem;
+    //     position: absolute;
+    //     bottom: 0.75rem;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     width: calc(100% - 3.5rem);
+    //     background: #fff;
+    //     border-radius: 100%;
+    //     -webkit-filter: blur(2px);
+    //     filter: blur(2px);
+    //     opacity: 0.1;
+    //   }
+    // }
+  }
+}
+
+/** ============================
+** ----    About  Card    ----
 ** ============================ */
 .about .content-range {
   & .about-text {
     padding: 2% 4%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -165,131 +194,220 @@
 }
 
 /** ============================
-** Experience Card
+** ----  Experience Card  ----
 ** ============================ */
 .experience {
-  .content-wrapper p {
-    background: red;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 100px;
-    margin: 10px 0;
-  }
-
-  .content-range {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
-    & .website-frame {
-      margin: 10% 0;
-      width: 300px;
-      height: 250px;
-      transition: 0.4s;
+  & .content-range {
+    & .frame-wrapper {
+      width: 100%;
+      // border: 1px solid orange;
       display: flex;
-      justify-content: center;
       align-items: center;
-      position: relative;
+      flex-direction: column;
+      height: auto;
 
-      & .website-screenshot {
-        position: absolute;
-        cursor: pointer;
+      & .website-frame {
+        background: $main-white;
+        @include card-shadow(right);
+        width: 100%;
+        max-width: 1000px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 4rem 0;
 
-        &:after {
-          content: " ";
-          position: absolute;
-          width: 100%;
-          height: 10px;
-          border-radius: 50%;
-          left: 0;
-          bottom: -10px;
-          // box-shadow: 0 30px 10px rgba(0, 0, 0, 0.3);
+        &:nth-of-type(even) {
+          @include card-shadow(left);
+
+          & .website-screenshot {
+            flex-direction: row-reverse;
+
+            & img {
+              right: 0;
+              @include card-shadow(left);
+            }
+          }
         }
 
-        & img {
-          width: 300px;
-          height: 100%;
-          object-fit: cover;
-          @include imgsFrame(80%);
-          transition: 0.3s;
-          margin-bottom: 10px;
+        & .website-screenshot {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
 
-          &:hover {
-            @include imgsFrame(0%);
-            box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.25), -5px -5px 20px 5px rgba(0, 0, 0, 0.22);
+
+          & .website-img {
+            width: 40%;
+            height: 200px;
+            margin: 0;
+            position: relative;
+
+            @include break(576px) {
+              width: 100%;
+              // height: 200px;
+            }
+
+            & img {
+              @include card-shadow(right);
+              position: absolute;
+              width: 120%;
+              max-width: 450px;
+              height: 140%;
+              top: -20%;
+
+              @include break(900px) {
+                width: 120%;
+                height: 120%;
+                top: -10%;
+              }
+
+              @include break(768px) {
+                width: 120%;
+                height: 100%;
+                top: 0;
+              }
+
+              @include break(576px) {
+                width: 100%;
+                height: 100%;
+              }
+
+            }
+          }
+
+          & .website-text {
+            border: 1px solid tomato;
+            height: 100%;
+            width: 48%;
+            margin: 2%;
+
+            @include break(576px) {
+              width: 90%;
+              margin: 5%;
+            }
+          }
+
+          @include break(576px) {
+            flex-direction: column !important;
+          }
+        }
+
+        @include break(768px) {
+          margin: 3rem 0;
+        }
+
+        @include break(576px) {
+          width: 80%;
+          height: 100%;
+          @include card-shadow(all);
+          margin: 2rem 0;
+        }
+      }
+
+    }
+  }
+}
+
+/** ============================
+**----    Skill Card    ----
+** ============================ */
+.skills {
+  & .content-range {
+    & .progress-bars {
+      border: 1px solid orange;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0.8rem;
+      // justify-content: space-around;
+
+      & .progress-bar {
+        margin: 2%;
+        width: 100%;
+        height: 100px;
+        border: 1px solid $main-white;
+        padding: 2%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        & .bar {
+          height: 25px;
+          width: 60%;
+          border: 1px solid $main-dark;
+          background-color: lighten($main-dark, 60%);
+          background-image: linear-gradient(to bottom,
+              rgba(255, 255, 255, 0.33) 0,
+              rgba(255, 255, 255, 0.08) 35%,
+              rgba(0, 0, 0, 0.25) 65%,
+              rgba(0, 0, 0, 0.07) 100%);
+          border-radius: 3px;
+          position: relative;
+          // box-shadow: inset 0 1px 1px 0px rgba(255, 215, 215, 0.5),
+          //   inset 0 -1px 1px 0px rgba(255, 255, 255, 0.25),
+          //   1px 1px 3px 0 rgba(0, 0, 0, 0.33);
+          -webkit-filter: drop-shadow(0 0 0.45rem rgba(240, 240, 240, 0.33));
+          filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.616));
+
+          &:before {}
+
+          &:after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 7px;
+            background: $main-dark;
+            right: -4px;
+            top: 9px;
+            border-radius: 3px;
+          }
+
+          & .progress {
+            // background-color: $green;
+            height: 100%;
+            width: 50%;
+            background-size: 100% 100%, 20px 20px;
+            background-color: $main-dark;
+            background-image: linear-gradient(to bottom,
+                rgba(255, 255, 255, 0.33) 0,
+                rgba(255, 255, 255, 0.08) 35%,
+                rgba(0, 0, 0, 0.25) 65%,
+                rgba(0, 0, 0, 0.1) 100%),
+              linear-gradient(to right,
+                $yellow 10%,
+                $green 10%,
+                $green 50%,
+                $yellow 50%,
+                $yellow 60%,
+                $green 60%,
+                $green);
+
+            &:before {
+              content: "50%";
+              position: absolute;
+              left: 5px;
+              // top: 9px;
+            }
           }
         }
       }
     }
   }
-}
 
-/** ============================
-**Skill Card
-** ============================ */
-.skills .content-range {
-  & .progress-circles {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 1rem;
-
-    & .progress-circle {
-      width: 200px;
-      height: 250px;
-      // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      & .circle {
-        // margin: 10px;
-        min-width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        background: #e0e0e0;
-        transition: all 0.3s linear;
-        position: relative;
-        background: linear-gradient(90deg, #e0e0e0 50%, transparent 50%, transparent),
-          linear-gradient(126deg, #ff70a6 50%, #e0e0e0 50%, #e0e0e0);
-
-        &:before {
-          background-color: #fafafa;
-          border-radius: 50%;
-          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-          color: rgba(0, 0, 0, 0.54);
-          content: "10%";
-          font-size: 72px;
-          font-weight: bold;
-          height: 100%;
-          // left: 0;
-          line-height: 200px;
-          position: absolute;
-          text-align: center;
-          // top: 0;
-          transform: scale(0.85);
-          width: 100%;
-        }
-
-        &:hover {
-          box-shadow: 0 0 100px 1px rgba(255, 214, 112, 0.35);
-        }
-      }
-    }
+  .to-front:not(:last-of-type) {
+    z-index: 10;
+    box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19),
+      -3px 15px 6px rgba(0, 0, 0, 0.23);
   }
 }
 
-.to-front:not(:last-of-type) {
-  z-index: 10;
-  box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19), -3px 15px 6px rgba(0, 0, 0, 0.23);
-}
-
 /** ============================
-** Contact Card
+**  ----   Contact Card   ----
 ** ============================ */
 .contact-card {
-  position: absolute;
-  right: 0;
+  // position: absolute;
+  // right: 0;
 
   & .nav-wrapper {
     position: absolute;
@@ -300,15 +418,14 @@
 
   & .content-wrapper {
     position: absolute;
-    top: 50px;
     border-top-left-radius: 1rem;
     display: grid;
     grid-template-columns: 1fr 90%;
     flex-direction: row;
 
-    &:hover {
-      box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19), -3px 15px 6px rgba(0, 0, 0, 0.23);
-    }
+    // &:hover {
+    //   box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19), -3px 15px 6px rgba(0, 0, 0, 0.23);
+    // }
 
     & .social-media {
       margin: 20px;
@@ -337,15 +454,8 @@
 
 .social-media {
   width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -359,18 +469,13 @@
 }
 
 /** ============================
-** Contact Card- Contact-Form
+** - Contact Card- Contact-Form -
 ** ============================ */
 
+
 /** ============================
-** Media Queries
+** ----  Media Queries  ----
 ** ============================ */
-@media screen and (max-width: 768px) {
-  #contact-form {
-    margin: 20px auto;
-    width: 95%;
-  }
-}
 
 @media screen and (max-width: 480px) {
   h1 {
@@ -386,110 +491,28 @@
   }
 }
 
-@media screen and (max-width: 420px) {
-  h1 {
-    font-size: 18px;
-  }
+@media screen and (max-width: 768px) {
+  // .main {
+  //   width: 85vw;
+  // }
 
-  .icon {
-    height: 35px;
-    width: 35px;
-  }
-
-  .underline {
-    width: 53px;
-  }
-
-  input[type="text"],
-  [type="email"],
-  select,
-  textarea {
-    font-size: 0.875em;
+  .nav-wrapper {
+    max-width: 120px;
   }
 }
 
-@media screen and (max-width: 756px) {
-  .contact-card {
-    & .nav-wrapper {
-      min-width: 100%;
-    }
+@media screen and (max-width: 896px) {
+  .main {
+    width: 88vw;
   }
 
   .nav-wrapper {
-    min-width: 100%;
+    max-width: 120px;
   }
+}
 
-  .card {
-    a {
-      font-size: 1rem;
-    }
-
-    &:nth-child(1) {
-      max-height: 100%;
-      top: 0;
-    }
-
-    &:nth-child(2) {
-      max-height: calc(100%-50px);
-      top: 50px;
-      left: 0;
-    }
-
-    &:nth-child(3) {
-      top: 100px;
-      left: 0;
-    }
-
-    &:nth-child(4) {
-      top: 150px;
-      left: 0;
-    }
-
-    &:nth-child(5) {
-      height: 1px;
-      bottom: 50px;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-    }
-
-    & .nav-wrapper:hover {
-      box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.19), 0px -3px 6px rgba(0, 0, 0, 0.23);
-    }
-
-    &:hover ~ .card {
-      &:not(:last-of-type) {
-        -webkit-transform: translateX(0px);
-        -ms-transform: translateX(0px);
-        transform: translateX(0px);
-        -webkit-transform: translateY(50px);
-        -ms-transform: translateY(50px);
-        transform: translateY(50px);
-      }
-    }
-
-    &:focus-within ~ .card {
-      -webkit-transform: translateX(0px);
-      -ms-transform: translateX(0px);
-      transform: translateX(0px);
-      -webkit-transform: translateY(50px);
-      -ms-transform: translateY(50px);
-      transform: translateY(50px);
-    }
-
-    & .content-range {
-      width: 100% !important;
-    }
-  }
-
-  .cards {
-    position: sticky;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+@media screen and (max-width: 576px) {
+  .arrow-wrapper {
+    display: none;
   }
 }

@@ -12,27 +12,25 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 html {
-  background: url("../img/bg-main.png") repeat;
+  background: url("../img/bg-main-sm.png") repeat;
 }
 
 body {
   margin: 0;
   padding-top: 5px;
   overflow-y: hidden;
-}
-
-.main {
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  overflow: hidden;
-  position: relative;
+  width: 100vw;
+  // position: relative;
 }
-
 h1 {
   color: $main-dark;
   font-size: 1.5rem;
@@ -40,4 +38,18 @@ h1 {
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-headings);
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+  color: var(--color-text);
 }

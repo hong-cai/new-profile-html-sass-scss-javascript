@@ -33,6 +33,10 @@ module.exports = {
         inline: true //Inject Javascript Inline
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
         new HtmlWebpackPlugin(
             {
                 title: "Profile project",

@@ -1,367 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile Project With Webpack</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Profile Project With Webpack</title>
 
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Abel|Dosis&display=swap" rel="stylesheet">
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Abel|Dosis&display=swap" rel="stylesheet">
 
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 
-<body>
-    <div class="main">
-        <div class="cards-nav">
-            <div class="nav-wrapper">
-                <span>
-                    <h3><a href="#0">NOTES</a></h3>
-                </span>
+    <body>
+        <div class="preloader">
+            <div class="preloading-container">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-            
-
         </div>
-        <div class="cards">
-            <div class="card notes">
-                <div class="wrapper">
-                    <div class="nav-wrapper">
-                        <span>
-                            <h3><a href="#0">NOTES</a></h3>
-                        </span>
+        <div class="arrow-wrapper" type='left-arrow'>
+            <div class="left-arrow  disable-arrow"></div>
+        </div>
+        <div class="main">
+            <div class="cards-nav">
+                <div class="nav-wrapper">
+                    <a href="#notes">
+                        <h3>NOTES</h3>
+                    </a>
+                </div>
+                <div class="nav-wrapper">
+                    <a href="#skills">
+                        <h3>SKILLS</h3>
+                    </a>
+                </div>
+                <div class="nav-wrapper">
+                    <a href="#experience">
+                        <h3> EXPERIENCE </h3>
+                    </a>
+                </div>
+                <div class="nav-wrapper">
+                    <a href="#about">
+                        <h3> ABOUT </h3>
+                    </a>
+                </div>
+                <div class="nav-wrapper">
+                    <a href="#contact">
+                        <h3> CONTACT </h3>
+                    </a>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="cards-track">
+                    <div class="card notes current-card">
+                        <div class="wrapper">
+                            <div class="content-wrapper">
+                                <div class="card-details">
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit
+                                        eos
+                                        a
+                                        laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat cumque
+                                        totam
+                                        vel
+                                        ipsum quo tempore repellat eaque suscipit.</p>
+                                </div>
+                                <div class="content-range">
+                                    <div class="row">
+                                        <!-- PROBLEM:NEED COMPILE TOGETHER -->
+                                        <div class="col-md-4">
+                                            <!-- Danger box -->
+                                            <div class="box box-danger">
+                                                <div class="box-header">
+                                                    <h3 class="box-title">Danger Box (Loading state)</h3>
+                                                    <div class="box-tools pull-right">
+                                                        <button class="btn btn-danger btn-sm" data-widget="collapse"><i
+                                                                class="fa fa-minus"></i></button>
+                                                        <button class="btn btn-danger btn-sm" data-widget="remove"><i
+                                                                class="fa fa-times"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-body">
+                                                    Box class: <code>.box.box-danger</code>
+                                                    <p>
+                                                        amber, microbrewery abbey hydrometer, brewpub ale lauter tun
+                                                        saccharification oxidized barrel.
+                                                        berliner weisse wort chiller adjunct hydrometer alcohol aau!
+                                                        sour/acidic sour/acidic chocolate malt ipa ipa hydrometer.
+                                                    </p>
+                                                </div><!-- /.box-body -->
+                                                <!-- Loading (remove the following to stop the loading)-->
+                                                <div class="overlay"></div>
+                                                <div class="loading-img"></div>
+                                                <!-- end loading -->
+                                            </div><!-- /.box -->
+                                        </div><!-- /.col -->
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="content-wrapper">
-                        <div class="content-range">
-                            <div class="row">
-                                <!-- REMIND:NEED COMPILE TOGETHER -->
-                                <div class="col-md-4">
-                                    <!-- Danger box -->
-                                    <div class="box box-danger">
-                                        <div class="box-header">
-                                            <h3 class="box-title">Danger Box (Loading state)</h3>
-                                            <div class="box-tools pull-right">
-                                                <button class="btn btn-danger btn-sm" data-widget="collapse"><i
-                                                        class="fa fa-minus"></i></button>
-                                                <button class="btn btn-danger btn-sm" data-widget="remove"><i
-                                                        class="fa fa-times"></i></button>
+                    <div class="card skills">
+                        <div class="wrapper">
+                            <div class="content-wrapper">
+                                <div class="card-details">
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit
+                                        eos
+                                        a
+                                        laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat cumque
+                                        totam
+                                        vel
+                                        ipsum quo tempore repellat eaque suscipit.</p>
+                                </div>
+                                <div class="content-range">
+
+                                    <div class="progress-bars">
+
+                                        <div class="progress-bar">
+                                            <div class="bar html">
+
+                                            </div>
+                                            <div class="">
+                                                <p>HTML</p>
                                             </div>
                                         </div>
-                                        <div class="box-body">
-                                            Box class: <code>.box.box-danger</code>
-                                            <p>
-                                                amber, microbrewery abbey hydrometer, brewpub ale lauter tun
-                                                saccharification oxidized barrel.
-                                                berliner weisse wort chiller adjunct hydrometer alcohol aau!
-                                                sour/acidic sour/acidic chocolate malt ipa ipa hydrometer.
-                                            </p>
-                                        </div><!-- /.box-body -->
-                                        <!-- Loading (remove the following to stop the loading)-->
-                                        <div class="overlay"></div>
-                                        <div class="loading-img"></div>
-                                        <!-- end loading -->
-                                    </div><!-- /.box -->
-                                </div><!-- /.col -->
+
+                                        <div class="progress-bar">
+                                            <div class="bar css">
+
+                                            </div>
+                                            <div class="">
+                                                <p>CSS</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="bar javascript">
+
+                                            </div>
+                                            <div class="">
+                                                <p>JAVASCRIPT</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="bar javascript">
+
+                                            </div>
+                                            <div class="">
+                                                <p>MATERIAL-UI</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="bar javascript">
+
+                                            </div>
+                                            <div class="">
+                                                <p>JAVASCRIPT</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="bar jquery">
+
+                                            </div>
+                                            <div class="">
+                                                <p>JQUERY</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="bar react">
+
+                                            </div>
+                                            <div class="">
+                                                <p>REACT</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="bar php">
+
+                                            </div>
+                                            <div class="">
+                                                <p>PHP</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="bar github">
+
+                                            </div>
+                                            <div class="">
+                                                <p>GITHUB</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="bar webpack">
+
+                                            </div>
+                                            <div class="">
+                                                <p>WEBPACK</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="bar sass">
+
+                                            </div>
+                                            <div class="">
+                                                <p>sass/scss</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="bar">
+
+                                            </div>
+                                            <div class="">
+                                                <p>PHOTOSHOP</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="progress-bar">
+                                            <div class="bar html">
+                                                <div class="progress"></div>
+                                            </div>
+                                            <div class="">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
                             </div>
                         </div>
-
-
                     </div>
-                </div>
-            </div>
-            <div class="card skills">
-                <div class="wrapper">
-                    <div class="nav-wrapper">
-                        <span>
-                            <h3><a href="#0">SKILLS</a></h3>
-                        </span>
-                    </div>
-                    <div class="content-wrapper">
-                        <div class="content-range">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit eos
-                                a
-                                laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat cumque
-                                totam
-                                vel
-                                ipsum quo tempore repellat eaque suscipit.</p>
-                            <div class="progress-circles">
-
-                                <div class="progress-circle">
-                                    <div class="circle html">
-
-                                    </div>
-                                    <div class="">
-                                        <p>HTML</p>
-                                    </div>
-                                </div>
-
-                                <div class="progress-circle">
-                                    <div class="circle css">
-
-                                    </div>
-                                    <div class="">
-                                        <p>CSS</p>
-                                    </div>
-                                </div>
-                                <div class="progress-circle">
-                                    <div class="circle javascript">
-
-                                    </div>
-                                    <div class="">
-                                        <p>JAVASCRIPT</p>
-                                    </div>
-                                </div>
-                                <div class="progress-circle">
-                                    <div class="circle javascript">
-
-                                    </div>
-                                    <div class="">
-                                        <p>MATERIAL-UI</p>
-                                    </div>
-                                </div>
-                                <div class="progress-circle">
-                                    <div class="circle javascript">
-
-                                    </div>
-                                    <div class="">
-                                        <p>JAVASCRIPT</p>
-                                    </div>
-                                </div>
-                                <div class="progress-circle">
-                                    <div class="circle jquery">
-
-                                    </div>
-                                    <div class="">
-                                        <p>JQUERY</p>
-                                    </div>
-                                </div>
-                                <div class="progress-circle">
-                                    <div class="circle react">
-
-                                    </div>
-                                    <div class="">
-                                        <p>REACT</p>
-                                    </div>
-                                </div>
-                                <div class="progress-circle">
-                                    <div class="circle php">
-
-                                    </div>
-                                    <div class="">
-                                        <p>PHP</p>
-                                    </div>
-                                </div>
-                                <div class="progress-circle">
-                                    <div class="circle github">
-
-                                    </div>
-                                    <div class="">
-                                        <p>GITHUB</p>
-                                    </div>
-                                </div>
-                                <div class="progress-circle">
-                                    <div class="circle webpack">
-
-                                    </div>
-                                    <div class="">
-                                        <p>WEBPACK</p>
-                                    </div>
-                                </div>
-                                <div class="progress-circle">
-                                    <div class="circle sass">
-
-                                    </div>
-                                    <div class="">
-                                        <p>sass/scss</p>
-                                    </div>
-                                </div>
-                                <div class="progress-circle">
-                                    <div class="circle ">
-
-                                    </div>
-                                    <div class="">
-                                        <p>HTML</p>
-                                    </div>
-                                </div>
-
-                                <div class="progress-circle">
-                                    <div class="circle-html">
-
-                                    </div>
-                                    <div class="">
-                                        <p>HTML</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="card experience">
-                <div class="wrapper">
-                    <div class="nav-wrapper">
-                        <span>
-                            <h3><a href="#0">EXPERIENCE</a></h3>
-                        </span>
-                    </div>
-                    <div class="content-wrapper">
-                        <div class="content-range">
-                            <div>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit eos
-                                    a
-                                    laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat cumque
-                                    totam
-                                    vel
-                                    ipsum quo tempore repellat eaque suscipit.</p>
-                            </div>
-                            <div class="website-frame">
-                                <div class="website-screenshot">
-                                    <img src="./img/byohomes500x348.jpg" alt="" />
-                                    <div>
-                                        <div>
-                                            <h5>Title</h5>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
-                                            Impedit
-                                            eos a
-                                            l vel
-                                            ipsum quo tempore repellat eaque suscipit.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="website-frame">
-                                <div class="website-screenshot">
-                                    <img src="./img/wellnessmovement-500x348.jpg" alt="" />
-                                    <div>
-                                        <div>
-                                            <h5>Title</h5>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
-                                            Impedit
-                                            eos a
-                                            laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
-                                            cumque
-                                            totam
-                                            vel
-                                            ipsum quo tempore repellat eaque suscipit.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="website-frame">
-                                <div class="website-screenshot">
-                                    <img src="./img/solutions4life500x348.jpg" alt="" />
-                                    <div>
-                                        <div>
-                                            <h5>Title</h5>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
-                                            Impedit
-                                            eos a
-                                            laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
-                                            cumque
-                                            totam
-                                            vel
-                                            ipsum quo tempore repellat eaque suscipit.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="website-frame">
-                                <div class="website-screenshot">
-                                    <img src="./img/woodendgolfclub 500x348.jpg" alt="" />
-                                    <div>
-                                        <div>
-                                            <h5>Title</h5>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
-                                            Impedit
-                                            eos a
-                                            laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
-                                            cumque
-                                            totam
-                                            vel
-                                            ipsum quo tempore repellat eaque suscipit.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="website-frame">
-
-                                <div class="website-screenshot">
-                                    <img src="./img/dancingdumplings500x348.jpg" alt="" />
-                                    <div>
-                                        <div>
-                                            <h5>Title</h5>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
-                                            Impedit
-                                            eos a
-                                            laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
-                                            cumque
-                                            totam
-                                            vel
-                                            ipsum quo tempore repellat eaque suscipit.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="website-frame">
-                                <div class="website-screenshot">
-                                    <img src="./img/honeysucklehouseweebly-500x348.jpg" alt="" />
-                                    <div>
-                                        <div>
-                                            <h5>Title</h5>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
-                                            Impedit
-                                            eos a
-                                            laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
-                                            cumque
-                                            totam
-                                            vel
-                                            ipsum quo tempore repellat eaque suscipit.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card to-front about">
-                <div class="wrapper">
-                    <div class="nav-wrapper">
-                        <span>
-                            <h3><a href="#0">ABOUT</a></h3>
-                        </span>
-                    </div>
-                    <div class="content-wrapper">
-                        <div class="content-range">
-                            <div class="about-text">
-                                <div class="about-img">
-                                    <img src="./img/girl-square.jpg" alt="">
-                                </div>
-                                <div class="about-self">
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit
-                                        eos
-                                        laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat cumque
-                                        totam
-                                        vel
-                                        ipsum quo tempore repellat eaque suscipit.</p>
-                                </div>
-
-                                <div class="about-page">
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit
-                                        eos laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
-                                        cumque
-                                        totam
-                                        vel
-                                        ipsum quo tempore repellat eaque suscipit.</p>
-                                </div>
-                                <div class="about-page">
+                    <div class="card experience">
+                        <div class="wrapper">
+                            <div class="content-wrapper">
+                                <div class="card-details">
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit
                                         eos
                                         a
@@ -370,112 +248,217 @@
                                         vel
                                         ipsum quo tempore repellat eaque suscipit.</p>
                                 </div>
-                                <div class="about-page">
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit
-                                        eos
-                                        a
-                                        laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat cumque
-                                        totam
-                                        vel
-                                        ipsum quo tempore repellat eaque suscipit.</p>
+                                <div class="content-range">
+                                    <div class="frame-wrapper">
+                                        <div class="website-frame">
+                                            <div class="website-screenshot">
+                                                <div class="website-img">
+                                                    <img src="../img/byohomes500x348.jpg" alt="byohomes" />
+                                                </div>
+                                                <div class="website-text">
+                                                    <div>
+                                                        <a href="">
+                                                            <h5>BYO Homes</h5>
+                                                        </a>
+                                                        <p>Difficulty:</p>
+                                                        <p>Time:02/2020</p>
+                                                    </div>
+                                                    <p>A maximum 20-hour work created on Wordpress early 2020,including
+                                                        design,photo-editing and completion.
+                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="website-frame">
+                                            <div class="website-screenshot">
+                                                <div class="website-img">
+                                                    <img src="../img/byohomes500x348.jpg" alt="byohomes" />
+                                                </div>
+                                                <div class="website-text">
+                                                    <div>
+                                                        <a href="">
+                                                            <h5>BYO Homes</h5>
+                                                        </a>
+                                                        <p>Difficulty:</p>
+                                                        <p>Time:02/2020</p>
+                                                    </div>
+                                                    <p>A maximum 20-hour work created on Wordpress early 2020,including
+                                                        design,photo-editing and completion.
+                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="about-page">
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit
-                                        eos
-                                        a
-                                        laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat cumque
-                                        totam
-                                        vel
-                                        ipsum quo tempore repellat eaque suscipit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="card to-front about">
+                        <div class="wrapper">
+                            <div class="content-wrapper">
+                                <div class="content-range">
+                                    <div class="about-text">
+                                        <div class="about-img">
+                                            <img src="./img/girl-square.jpg" alt="">
+                                        </div>
+                                        <div class="about-self">
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
+                                                Impedit
+                                                eos
+                                                laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
+                                                cumque
+                                                totam
+                                                vel
+                                                ipsum quo tempore repellat eaque suscipit.</p>
+                                        </div>
+
+                                        <div class="about-page">
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
+                                                Impedit
+                                                eos laborum enim, reprehenderit aspernatur inventore culpa possimus!
+                                                Quaerat
+                                                cumque
+                                                totam
+                                                vel
+                                                ipsum quo tempore repellat eaque suscipit.</p>
+                                        </div>
+                                        <div class="about-page">
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
+                                                Impedit
+                                                eos
+                                                a
+                                                laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
+                                                cumque
+                                                totam
+                                                vel
+                                                ipsum quo tempore repellat eaque suscipit.</p>
+                                        </div>
+                                        <div class="about-page">
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
+                                                Impedit
+                                                eos
+                                                a
+                                                laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
+                                                cumque
+                                                totam
+                                                vel
+                                                ipsum quo tempore repellat eaque suscipit.</p>
+                                        </div>
+                                        <div class="about-page">
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
+                                                Impedit
+                                                eos
+                                                a
+                                                laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
+                                                cumque
+                                                totam
+                                                vel
+                                                ipsum quo tempore repellat eaque suscipit.</p>
+                                        </div>
+
+                                    </div>
                                 </div>
+
+
 
                             </div>
                         </div>
-
-
-
                     </div>
-                </div>
-            </div>
-            <div class="card contact">
-                <div class="wrapper contact-card">
-                    <div class="nav-wrapper">
-                        <span>
-                            <h3><a href="#0">CONTACT</a></h3>
-                        </span>
-                    </div>
-                    <div class="content-wrapper">
-                        <div class="content-range">
+                    <div class="card contact">
+                        <div class="wrapper contact-card">
+                            <div class="content-wrapper">
+                                <div class="content-range">
 
-                            <div class="contact-grids">
+                                    <div class="contact-grids">
 
-                                <div class="contact-grid">
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit
-                                        eos a
-                                        laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat cumque
-                                        totam
-                                        vel
-                                        ipsum quo tempore repellat eaque suscipit.</p>
-                                </div>
-                                <div class="contact-grid">
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est? Impedit
-                                        eos a
-                                        laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat cumque
-                                        totam
-                                        vel
-                                        ipsum quo tempore repellat eaque suscipit.</p>
-                                </div>
-                                <div class="contact-grid">
-                                    <!-- quick email widget -->
-                                    <div class="box box-info">
-                                        <div class="box-header">
-                                            <i class="fa fa-envelope"></i>
-                                            <h3 class="box-title">Quick Email</h3>
-                                            <!-- tools box -->
-                                            <div class="pull-right box-tools">
-                                                <button class="btn btn-info btn-sm" data-widget="remove"
-                                                    data-toggle="tooltip" title="Remove"><i
-                                                        class="fa fa-times"></i></button>
-                                            </div><!-- /. tools -->
+                                        <div class="contact-grid">
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
+                                                Impedit
+                                                eos a
+                                                laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
+                                                cumque
+                                                totam
+                                                vel
+                                                ipsum quo tempore repellat eaque suscipit.</p>
                                         </div>
-                                        <div class="box-body">
-                                            <form action="#" method="post">
-                                                <div class="form-group">
-                                                    <input type="email" class="form-control" name="emailto"
-                                                        placeholder="Email to:" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" name="subject"
-                                                        placeholder="Subject" />
-                                                </div>
-                                                <div>
-                                                    <textarea class="textarea" placeholder="Message"
-                                                        style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                                </div>
-                                            </form>
+                                        <div class="contact-grid">
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati, est?
+                                                Impedit
+                                                eos a
+                                                laborum enim, reprehenderit aspernatur inventore culpa possimus! Quaerat
+                                                cumque
+                                                totam
+                                                vel
+                                                ipsum quo tempore repellat eaque suscipit.</p>
                                         </div>
-                                        <div class="box-footer clearfix">
-                                            <button class="pull-right btn btn-default" id="sendEmail">Send <i
-                                                    class="fa fa-arrow-circle-right"></i></button>
+                                        <div class="contact-grid">
+                                            <!-- quick email widget -->
+                                            <div class="box box-info">
+                                                <div class="box-header">
+                                                    <i class="fa fa-envelope"></i>
+                                                    <h3 class="box-title">Quick Email</h3>
+                                                    <!-- tools box -->
+                                                    <div class="pull-right box-tools">
+                                                        <button class="btn btn-info btn-sm" data-widget="remove"
+                                                            data-toggle="tooltip" title="Remove"><i
+                                                                class="fa fa-times"></i></button>
+                                                    </div><!-- /. tools -->
+                                                </div>
+                                                <div class="box-body">
+                                                    <form action="#" method="post">
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control" name="emailto"
+                                                                placeholder="Email to:" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="subject"
+                                                                placeholder="Subject" />
+                                                        </div>
+                                                        <div>
+                                                            <textarea class="textarea" placeholder="Message"
+                                                                style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="box-footer clearfix">
+                                                    <button class="pull-right btn btn-default" id="sendEmail">Send <i
+                                                            class="fa fa-arrow-circle-right"></i></button>
+                                                </div>
+                                            </div>
                                         </div>
+
+                                    </div>
+                                    <div class="social-media">
+                                        <span> <i class="fa fa-facebook fa-inverse"></i> </span>
+                                        <span> <i class="fa fa-mail-forward fa-inverse"></i> </span>
+                                        <span> <i class="fa fa-phone fa-inverse"></i> </span>
+                                        <span> <i class="fa fa-twitter fa-inverse"></i> </span>
                                     </div>
                                 </div>
 
                             </div>
-                            <div class="social-media">
-                                <span> <i class="fa fa-facebook fa-inverse"></i> </span>
-                                <span> <i class="fa fa-mail-forward fa-inverse"></i> </span>
-                                <span> <i class="fa fa-phone fa-inverse"></i> </span>
-                                <span> <i class="fa fa-twitter fa-inverse"></i> </span>
-                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
-</body>
+        <div class="arrow-wrapper" type='right-arrow'>
+            <div class="right-arrow"></div>
+        </div>
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2020 <a href="http://34.87.254.5">Sophie's Profile .</strong>
+            Made with <span>
+                <h3>&#10084;</h3>
+            </span>
+        </footer>
+
+    </body>
 
 </html>

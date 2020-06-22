@@ -42,7 +42,7 @@ class Notes extends Controller
             ];
             // die(print_r($data));
             $this->view('notes/note', $data);
-        } else {
+        } elseif ($id === null) {
             redirect('notes');
         }
 
@@ -58,7 +58,7 @@ class Notes extends Controller
             $cats = $this->notesModel->getCategories();
             $data = [
                 'title' => htmlspecialchars(trim($_POST['title'])),
-                'body' => htmlentities(trim($_POST['body'])),
+                'body' => htmlspecialchars(trim($_POST['body'])),
                 'category' => isset($_POST['category']) ? htmlspecialchars(trim($_POST['category'])) : 'Not Specified',
                 'title_err' => '',
                 'body_err' => '',

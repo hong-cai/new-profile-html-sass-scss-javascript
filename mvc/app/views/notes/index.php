@@ -45,7 +45,7 @@ foreach ($data['notes'] as $note) {;?>
             </div>
             <div class="box-body">
                 <p>
-                    <?php echo html_entity_decode($note->content); ?>
+                    <?php echo htmlspecialchars_decode($note->content, ENT_QUOTES); ?>
                 </p>
             </div><!-- /.box-body -->
             <div class="box-footer">
@@ -57,8 +57,35 @@ foreach ($data['notes'] as $note) {;?>
 
                 <a class="btn btn-primary btn-sm text-light" data-widget="read-more" role="button"
                     href="<?php echo URL . '/notes/note/' . $note->id; ?>">Read More</a>
-                <!-- Button trigger modal -->
 
+                <button type="submit" class="btn btn-danger btn-sm" data-widget="delete" data-toggle="modal"
+                    data-target="#myModal" data-toggle="modal" data-target="#modal-warning">delete</button>
+                <!-- Button trigger modal -->
+                <!-- Modal -->
+                <div class="delete-modal-wrapper">
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" data-backdrop="false"
+                        aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    This note will be deleted?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary btn-sm"
+                                        data-dismiss="modal">No</button>
+                                    <form class="d-inline" action="<?php echo URL . '/notes/delete/' . $note->id; ?>"
+                                        method="post">
+                                        <input value="Delete" type="submit" class="btn btn-danger btn-sm" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
             </div>
