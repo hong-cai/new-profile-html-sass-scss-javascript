@@ -19,7 +19,9 @@
   box-sizing: border-box; }
 
 html {
-  background: url(../../img/bg-main-sm.png) repeat; }
+  background-repeat: repeat, repeat;
+  background-image: url(img/bg-light.png), url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAASAh4DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD61G37uSPSkCnGTwOhyevFAKt1B9eaBjgY4ya5zQM88D3pFO0ZH160pBJ4xn+VL0XPXPSgAyxAz6dKTGWySTzjJpTggDIzQTkAbup5xzQAgGTggntnNL6kDgetIu7aCOv1oxxgdume9AAehwMccUEgEEcUHODnt1HelAJwc8d+aAEP3Tj1ozzkkH3FK3Q8Gg8KOOfbpmgBMDjIJBOeaPZsg0hOeevPT1pxz6/SgBOOmOR1xSjO3PODx0pCPlHr1NL2yQcf0NACKGIGMUZxzx1/IULgZ4/rSkjGR+AoATqc5Iz7dDSg/MOpyMmm8EnP4UvG49D64oAUDPJx3z6UmeB6ng49KM4YYOMjp3pB16Zx1JFAC84JOBQCCMD60Z+fd/WlORgA9TigADe2T2+lI4yQM4Hr60ck4GTnmhhgdMc8+1ADjgHGOfSmnjpkH6Up+U/TjFMJbIHcDqaAJAc844xTTj1wD2pRk98j0NGeoINAAcg+3WgYOc4yf1oJAPH5elIcBuOD1xQAo4PPB/nQvPp+VN6kYHJ6cU4DIPPU9qAD+M5xjr+FNyA2OenSnAAA9D/OgsMcZ4460AIQvXJHGBSqTySR6daQ9M547UqliDk4x60AIMbhzznmlB4zgc+1IO3twfrQARjuT0oAOMdKXJ/4D0yKACff+lJxjocUAKVzkegpMDPHOKVR8vf1+tHGMcjnr2xQAHd3OfQY7UEHGA3A4pBwMAgHtjmkzjOc+1AD145J/E+tNUHGCM++aUZB+bpjJ4oO0t60ANXJJxgZ65FKCMjBPTmhfw/LpS8AAHn04oADyDnBpcfKPyzikbGcN0xzmkOCv86AFyQMls0cEfezj0pO4xg59+lBHA6H+lAC5wce3r1pD1BPbOM0pAOehJ496CCeAMD0oAQnjjqaDx249jR+HbNKeAfvYoAGGNvXI68UdgQpU5496QYJyeR2NKvUAHH40AJg8EcUp56j2+lBw2M9x+NJ+GD3/pQAN8x5IHY4oI5yDk0cjoCP1pWwDnnmgBOR2H50o45/ChSdmTg44oJ+tACEDBAB6+nalOOmBn0pMdcr160KVLc4H1oAIyd6jtiomJGcE0UUATt90e5H9aXpjHpRRQAxCdo5/wA4FLIB5QOOT1/OiigBrcIccYYY/Knt3/GiigAAHk5wM8/yprdG/wA96KKABf4f90UHjZj2oooAa5IVcHHX+VOPU/hRRQAdge+R/OkAG5uP4qKKAH+n0zSL1P8An1oooBAvVvrRJ91f90/yoooAAAUJI5zTCTsHPpRRQAuTkc/5zQeWcHkZNFFADjxsx603ufxoooAV/wCH6UL978RRRQA4df8APpSD734UUUAIxPmYzxxxQ33G/wA+lFFAEgA8voOopj9TRRQCHADJ470mAVORnmiigBid/wDcpZOAcccf4UUUAIe3sT/KhCdvXt/SiigBZD0P+z/WhCTnPoKKKAEJ4f2zSy8EY44oooAewGW4/ipqgE8iiigB4/1a/So0/p/hRRQBIO3+e4qMfeT/AHaKKAFQDjgdKQgbDx/nNFFADU5QZ9Keen4UUUDFf/V0J/rGHsaKKBDj9xf96mL9/wDH+tFFAAhJODyNp4oTl+eeP6UUUAN7/wDATSr2+tFFACTEgcHHApR0Q98UUUASkDI4H3TUQ5LZ/vUUUAhqffI7Yp/8TfhRRQB//9k=);
+  background-blend-mode: multiply; }
 
 body {
   margin: 0;
@@ -203,7 +205,7 @@ p {
   opacity: 1;
   transition: all 1s ease-in-out;
   background-blend-mode: multiply;
-  background: #f2f3eb url(../../img/bg-main-sm.png) repeat;
+  background: #f2f3eb url(img/bg-main-sm.png) repeat;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -384,21 +386,22 @@ footer span {
 /** ============================
 ** ----    About  Card    ----
 ** ============================ */
-.about .content-range .about-text {
-  padding: 2% 4%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.about .content-range .about-img {
-  width: 20vw;
-  height: 20vw;
-  border: 1px solid orange;
-  overflow: hidden;
-  border-radius: 50%; }
-  .about .content-range .about-img img {
-    width: 100%; }
+.about .content-range {
+  height: 100%; }
+  .about .content-range .about-text {
+    padding: 2% 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .about .content-range .about-img {
+    width: 20vw;
+    height: 20vw;
+    border: 1px solid orange;
+    overflow: hidden;
+    border-radius: 50%; }
+    .about .content-range .about-img img {
+      width: 100%; }
 
 /** ============================
 ** ----  Experience Card  ----

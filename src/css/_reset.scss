@@ -16,7 +16,10 @@
 }
 
 html {
-  background: url("../img/bg-main-sm.png") repeat;
+  background-repeat: repeat, repeat;
+  background-image: url("../img/bg-light.png"),
+url("../img/bg-main.jpg");
+  background-blend-mode: multiply;
 }
 
 body {
@@ -31,6 +34,7 @@ body {
   width: 100vw;
   // position: relative;
 }
+
 h1 {
   color: $main-dark;
   font-size: 1.5rem;

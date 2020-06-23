@@ -84,7 +84,8 @@ module.exports = {
                     options: {
                         limit: 8000, // Convert images < 8kb to base64 strings
                         name: '[name].[ext]',
-                        outputPath: '../../img',
+                        outputPath: 'css/img',
+                        publicPath: 'img/',
                     }
                 }]
             }
