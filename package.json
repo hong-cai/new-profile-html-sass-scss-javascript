@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && webpack -w",
-    "start:dev": "webpack-dev-server --entry: ./src/js/index.js --output-filename ./dist/js/bundle.js"
+    "start:dev": "webpack-dev-server --entry: ./src/js/index.js --output-filename ./dist/js/bundle.js",
+    "test": "make test"
   },
   "repository": {
     "type": "git"

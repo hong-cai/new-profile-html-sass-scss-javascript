@@ -163,10 +163,11 @@
     opacity: 1;
     transition: all 1s ease-in-out;
     background-blend-mode: multiply;
-    background: $main-white url('../img/bg-main-sm.png') repeat;
+    background: $main-white url('../../img/bg-main.jpg') repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 1;
 }
 
 .preloader.complete {

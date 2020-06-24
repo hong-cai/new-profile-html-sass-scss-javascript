@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded", function () {
     getColorScheme();
 }, false);
 let colors = ['CAF1DE', 'E1F8DC', 'FEF8DD', 'FFE7C7', 'F7D8BA'];
+// let colors = ['CAF1DE', 'E1F8DC', 'FEF8DD', 'FFE7C7', 'F7D8BA'];
 document.addEventListener('DOMContentLoaded', getColorScheme());
 
 function getColorScheme() {
@@ -31,7 +32,7 @@ function getColorScheme() {
     const navs = document.querySelectorAll('.nav-wrapper');
     for (let i = 0; i < divs.length; i++) {
         let randomIndex = Math.floor(Math.random() * (colors.length));
-        const newStyle = "#" + colors[randomIndex];
+        const newStyle = "url('../img/bg-main.jpg') repeat #" + colors[randomIndex];
         // console.log(newStyle);
         divs[i].style.background = newStyle;
         navs[i].style.background = newStyle;
