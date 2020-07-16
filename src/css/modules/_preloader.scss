@@ -116,8 +116,7 @@
     height: 40px;
     bottom: 80px;
     border-radius: 50%;
-    transform: translate(80px,
-            80px) scale(1);
+    transform: translate(80px, 80px) scale(1);
     -webkit-animation: loading 4s infinite cubic-bezier(0, 0.5, 0.5, 1);
     animation: loading 4s infinite cubic-bezier(0, 0.5, 0.5, 1);
 }
@@ -125,10 +124,8 @@
 .preloading-container div:nth-child(1) {
     background-color: darken($color: $orange, $amount: 15%);
     transform: translate(148px, 80px) scale(1);
-    -webkit-animation: loading-r 1s infinite cubic-bezier(0, 0.5, 0.5, 1),
-        loading-c 4s infinite step-start;
-    animation: loading-r 1s infinite cubic-bezier(0, 0.5, 0.5, 1),
-        loading-c 4s infinite step-start;
+    -webkit-animation: loading-r 1s infinite cubic-bezier(0, 0.5, 0.5, 1), loading-c 4s infinite step-start;
+    animation: loading-r 1s infinite cubic-bezier(0, 0.5, 0.5, 1), loading-c 4s infinite step-start;
 }
 
 .preloading-container div:nth-child(2) {
@@ -152,18 +149,18 @@
 .preloading-container div:nth-child(5) {
     -webkit-animation-delay: -4s;
     animation-delay: -4s;
-    background-color: darken($color:$lightgreen, $amount: 15%);
+    background-color: darken($color: $lightgreen, $amount: 15%);
 }
 
 .preloader {
     width: 100%;
     height: 100%;
     position: fixed;
-    z-index: 5;
+    z-index: 999;
     opacity: 1;
     transition: all 1s ease-in-out;
     background-blend-mode: multiply;
-    background: $main-white url('../../img/bg-main.jpg') repeat;
+    background: $main-white url("../../img/bg-main.jpg") repeat;
     display: flex;
     justify-content: center;
     align-items: center;

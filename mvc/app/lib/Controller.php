@@ -22,8 +22,9 @@ class Controller
         if (file_exists('../app/views/' . $view . '.php')) {
             require_once '../app/views/' . $view . '.php';
             // redirect($view);
+            die($view);
         } else {
-            redirect('pages/index');
+            redirect('profile/index');
         }
     }
 }

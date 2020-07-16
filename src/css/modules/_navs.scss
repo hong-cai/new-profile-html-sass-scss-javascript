@@ -1,0 +1,136 @@
+/** ============================
+** ----    Cards' Navs    ----
+** ============================ */
+
+.cards-nav {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: $main-dark;
+    top: 10px;
+    //make sure the media query won't flash
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        opacity: 1;
+
+        & .nav-wrapper {
+            outline: none;
+            margin: 10px;
+            width: 130px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2rem;
+            cursor: pointer;
+            position: relative;
+            transform: translateY(0px);
+
+            & a:after {
+                content: "";
+                display: block;
+                height: 0.9rem;
+                width: 80%;
+                position: absolute;
+                bottom: -0.15rem;
+                right: 10%;
+                // transform: rotate(45deg);
+                background: rgba($main-white, 0.5);
+                border-radius: 100%;
+                -webkit-filter: blur(1px);
+                filter: blur(1px);
+                opacity: 0.6;
+            }
+
+            &:before {
+                content: "";
+                display: block;
+                height: 0.8rem;
+                width: 0.4rem;
+                position: absolute;
+                top: 0.25rem;
+                left: 0.7rem;
+                transform: rotate(45deg);
+                background: $main-white;
+                border-radius: 50%;
+                opacity: 0.7;
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                height: 0.6rem;
+                width: 0.4rem;
+                position: absolute;
+                bottom: 0.15rem;
+                right: 1rem;
+                transform: rotate(75deg);
+                background: $main-white;
+                border-radius: 50%;
+                -webkit-filter: blur(2px);
+                filter: blur(2px);
+                opacity: 0.5;
+            }
+        }
+    }
+
+    & #menu-bars {
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        font-size: 28px;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        cursor: pointer;
+
+        & i,
+        i::before,
+        i::after {
+            width: 28px;
+            height: 4px;
+            background: darken($color: $orange, $amount: 20%);
+            border-radius: 2rem;
+            transition: $main-transition;
+        }
+
+        & i {
+            margin: 0 auto;
+            display: inline-block;
+            position: relative;
+            transform: rotate(0deg);
+
+            &:after {
+                top: 8px;
+                content: "";
+                display: block;
+                position: absolute;
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+
+            &:before {
+                top: -8px;
+                content: "";
+                display: block;
+                position: absolute;
+                opacity: 1;
+            }
+
+            &.active {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    #menu-bars.active i:after {
+        transform: translate(0px, -8px) rotate(-90deg);
+    }
+
+    #menu-bars.active i:before {
+        opacity: 0;
+    }
+}

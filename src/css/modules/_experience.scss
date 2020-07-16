@@ -1,0 +1,112 @@
+/** ============================
+** ----  Experience Card  ----
+** ============================ */
+.experience {
+    & .content-range {
+        & .frame-wrapper {
+            width: 100%;
+            // border: 1px solid orange;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: auto;
+
+            & .website-frame {
+                background: $main-white;
+                @include card-shadow(right);
+                width: 100%;
+                max-width: 1000px;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 4rem 0;
+
+                &:nth-of-type(even) {
+                    @include card-shadow(left);
+
+                    & .website-screenshot {
+                        flex-direction: row-reverse;
+
+                        & img {
+                            right: 0;
+                            @include card-shadow(left);
+                        }
+                    }
+                }
+
+                & .website-screenshot {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    & .website-img {
+                        width: 40%;
+                        height: 200px;
+                        margin: 0;
+                        position: relative;
+
+                        @include break(576px) {
+                            width: 100%;
+                            // height: 200px;
+                        }
+
+                        & img {
+                            @include card-shadow(right);
+                            position: absolute;
+                            width: 120%;
+                            max-width: 450px;
+                            height: 140%;
+                            top: -20%;
+
+                            @include break(900px) {
+                                width: 120%;
+                                height: 120%;
+                                top: -10%;
+                            }
+
+                            @include break(768px) {
+                                width: 120%;
+                                height: 100%;
+                                top: 0;
+                            }
+
+                            @include break(576px) {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+
+                    & .website-text {
+                        border: 1px solid tomato;
+                        height: 100%;
+                        width: 48%;
+                        margin: 2%;
+
+                        @include break(576px) {
+                            width: 90%;
+                            margin: 5%;
+                        }
+                    }
+
+                    @include break(576px) {
+                        flex-direction: column !important;
+                    }
+                }
+
+                @include break(768px) {
+                    margin: 3rem 0;
+                }
+
+                @include break(576px) {
+                    width: 80%;
+                    height: 100%;
+                    @include card-shadow(all);
+                    margin: 2rem 0;
+                }
+            }
+        }
+    }
+}

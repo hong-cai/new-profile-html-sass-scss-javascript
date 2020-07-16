@@ -14,6 +14,7 @@
             rel="stylesheet">
         <!-- font awesome -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href=<?php echo URL . '/css/main.css'; ?> rel="stylesheet">
     </head>
 
     <body>
@@ -636,7 +637,9 @@
         <script src="https://www.google.com/recaptcha/api.js?render=6LfgI64ZAAAAAGQAHbRF8-FkXXAT6baiHzAiSOQj"></script> -->
         <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvcsp37Rm7zZRHZ0reQIx2BbKtStxJS84&callback=initMap">
-            </script>
+        </script>
+        <script src="<?php echo URL ?>/js/front-bundle.js"></script>
+        <script src="<?php echo URL ?>/js/hot-update.js"></script>
     </body>
 
 </html>

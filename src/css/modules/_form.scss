@@ -1,0 +1,112 @@
+/** ===========
+**   -- Forms --
+** ============= */
+.form-body {
+    padding: 15px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .form-footer {
+            display: block;
+            width: 100%;
+        }
+
+        .form-control {
+            margin: 5px 0;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+
+        .wrap-inputs {
+            width: 100%;
+            position: relative;
+
+            .label-inputs {
+                color: $main-dark;
+                padding-left: 10px;
+            }
+
+            & .form-control {
+                font-size: 1rem;
+                border: 1px solid $lightorange;
+                font-family: $text-font;
+                margin: 5px 0;
+            }
+
+            .input100 {
+                display: block;
+                width: 100%;
+                background: $main-white;
+                border-radius: 1rem;
+                padding: 0 15px;
+                height: 40px;
+
+                &:focus {
+                    outline: none !important;
+                }
+            }
+
+        }
+
+
+
+
+        .validate-input {
+            position: relative;
+        }
+
+        .alert-validate::after {
+            content: attr(data-validate);
+            display: block;
+            position: absolute;
+            color: $red;
+            font-size: 1rem;
+            bottom: calc((100% - 25px) / 2);
+            transform: translateY(50%);
+            right: 8px;
+        }
+
+        .alert-validate:hover:before {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @media (max-width: 992px) {
+            .alert-validate::before {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .true-validate::after {
+            content: "\2713";
+            font-size: 22px;
+            color: darken($green, 30%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: calc((100% - 25px) / 2);
+            transform: translateY(50%);
+            right: 8px;
+        }
+
+        .form-action-group {
+            padding: 5px;
+            width: 100%;
+
+            & button,
+            span {
+                float: right;
+            }
+        }
+    }
+
+}

@@ -18,3 +18,7 @@ define('URL', 'http://localhost/profile-css-html-js/mvc');
 define('SITENAME', 'Sophie\'s new profile');
 //Verson
 define('APPVERSION', '1.0.0');
+
+//Google Recaptcha
+define('SITE_KEY','6LfgI64ZAAAAAGQAHbRF8-FkXXAT6baiHzAiSOQj');
+define('SECRET_SITE_KEY','6LfgI64ZAAAAAGpRCN2TkT_T70ox81iMk7PGEeIL');

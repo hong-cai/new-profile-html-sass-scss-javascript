@@ -4,9 +4,10 @@
   "description": "Sophie's profile made with html/scss/javascript/php",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && webpack -w",
-    "start:dev": "webpack-dev-server --entry: ./src/js/index.js --output-filename ./dist/js/bundle.js",
-    "test": "make test"
+    "prod": "rm -rf dist && webpack --config webpack.config.prod.js -w",
+    "build": "rm -rf dist && webpack --config webpack.config.dev.js -w",
+    "start:dev": "webpack --config webpack.config.dev.js",
+    "test": "webpack-dev-server --config webpack.config.dev.js --open"
   },
   "repository": {
     "type": "git"

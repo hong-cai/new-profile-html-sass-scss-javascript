@@ -1,27 +1,34 @@
 /** ==============
 **    Variables
 ** =============== */
-$title-font: "Dosis", sans-serif;
-$text-font: "Abel", sans-serif;
+$title-font: "Holtwood One SC",
+serif;
+$text-font: "Dosis",
+sans-serif;
+$text-color:#474544;
+$link-color:lighten(#737373, 5%);
 $text-size: 1.2rem;
 $main-dark: #737373;
 $main-black: #474544;
+$main-transition: all 0.2s linear;
+$input-height:1.2rem;
 
 $main-white: #f2f3eb;
 $green: #caf1de;
 $orange: #f7d8ba;
 $lightorange: #ffe7c7;
 $yellow: #fef8dd;
+$lightyellow: #f9fab0;
 $lightgreen: #e1f8dc;
 $red: #ff5d2c;
 
 // $main-white: #f2f3eb;
 // $blue: #53dee8;
 // $darkgreen: #5e8613;
-// $green: #9ed71e;
+// $green: #B3DD24;
 // $orange: #f4b05a;
 // $lightorange: #fad68f;
-// $yellow: #fdce1f;
+// $yellow: #F9FAB0;
 // $lightyellow: #f7ff94;
 // $lightgreen: #e1f8dc;
 // $red: #f55102;

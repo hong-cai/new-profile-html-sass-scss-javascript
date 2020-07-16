@@ -1,0 +1,166 @@
+/** ============================
+** ----  Media Queries  ----
+** ============================ */
+
+@include break(480px) {
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 26px;
+        }
+
+        .underline {
+            width: 68px;
+        }
+
+        #form_button {
+            padding: 15px 25px;
+        }
+    }
+}
+
+@include break(768px) {
+    @media (max-width: 768px) {
+        .card-about {
+
+            & .card-id {
+                width: 0% !important;
+                display: none !important;
+            }
+
+            & .content-wrapper {
+                width: 100% !important;
+                border-radius: 2rem;
+            }
+        }
+
+        .card-contact {
+            // background-image: linear-gradient(-110deg, transparent 0%, transparent 50%, transparent 100%) !important;
+
+            & .content-wrapper {
+                flex-direction: column !important;
+                background-image: linear-gradient(-110deg, #ffe7c7 0%, #ffe7c7 50%, #ffe7c7 50%, #ffe7c7 100%) !important;
+                overflow: auto;
+
+                & .content-range {
+                    overflow-y: visible;
+
+                    &.contact-info {
+                        height: 80%;
+
+                    }
+
+                    & .title-text {
+                        font-size: smaller;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include break(896px) {
+    @media (max-width: 896px) {
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 88vw;
+        }
+
+        .page-logo {
+            display: inline !important;
+
+            & h3 {
+                @include logo-title($orange);
+            }
+
+            & img {
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                border: 3px solid darken($color: $orange, $amount: 30%);
+                -webkit-filter: drop-shadow(1px 2px 2px $orange);
+                filter: drop-shadow(1px 2px 2px $orange);
+            }
+        }
+
+        .cards-nav {
+            // overflow: hidden;
+            z-index: 2;
+            width: 98%;
+            height: 55px;
+            background: $lightorange;
+            border-radius: 1.2rem;
+            background-image: linear-gradient(to bottom, $yellow 0%, darken($yellow, 10%) 100%);
+            border: 1px solid darken($yellow, 25%);
+            box-shadow: 0 0 0 5px lighten($color: $main-white, $amount: 20%);
+            margin-bottom: 10px;
+            position: relative;
+
+            & .nav-btn {
+                display: inline !important;
+                position: absolute;
+                right: 2%;
+                margin: 3px;
+
+                &:active {
+                    @include nav-active($lightgreen);
+                }
+            }
+
+            & .nav-menu {
+                position: absolute;
+                top: 55px;
+                left: 0;
+                flex-direction: column !important;
+                transition: $main-transition;
+                opacity: 0;
+                width: 100%;
+                visibility: hidden;
+
+                & .nav-wrapper {
+                    width: 80vw !important;
+                    margin: 3px auto !important;
+                }
+            }
+        }
+
+        .toggle-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .wrapper {
+            margin-top: 2% !important;
+        }
+
+        // .progress-bars {
+        //     grid-template-columns: repeat(2, 1fr) !important;
+        // }
+    }
+}
+
+@include break(625px) {
+    @media (max-width: 625px) {
+        .progress-bars {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@include break(576px) {
+    @media (max-width: 576px) {
+
+        .left-arrow,
+        .right-arrow {
+            display: none !important;
+        }
+
+        .card-details {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+}

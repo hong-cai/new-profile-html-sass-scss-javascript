@@ -7,7 +7,8 @@
  */
 class Core
 {
-    protected $currentController = 'Users';
+    // protected $currentController = 'Users';
+    protected $currentController = 'Profile';
     protected $currentMethod = 'index';
     protected $params = [];
 
@@ -24,7 +25,7 @@ class Core
         }
         //Require the controller
         require_once '../app/controllers/' . $this->currentController . '.php';
-
+        // die($this->currentController);
         //Instantiate controller class
         $this->currentController = new $this->currentController;
 

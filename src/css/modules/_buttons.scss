@@ -1,0 +1,181 @@
+%btn {
+    outline: none;
+    // margin: 10px;
+    // width: 130px;
+    // height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    cursor: pointer;
+    position: relative;
+    transform: translateY(0px);
+
+
+    & a:after,
+    p:after,
+    span:after,
+    h4:after {
+        content: "";
+        display: block;
+        height: 0.9rem;
+        width: 80%;
+        position: absolute;
+        bottom: -0.15rem;
+        right: 10%;
+        // transform: rotate(45deg);
+        background: rgba($main-white, 0.5);
+        border-radius: 100%;
+        -webkit-filter: blur(1px);
+        filter: blur(1px);
+        opacity: 0.7;
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        height: 0.8rem;
+        width: 0.5rem;
+        position: absolute;
+        top: 1%;
+        left: 0.4rem;
+        transform: rotate(45deg);
+        background: lighten($color: $main-white, $amount: 20%);
+        border-radius: 50%;
+        opacity: 0.7;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        height: 0.6rem;
+        width: 0.45rem;
+        position: absolute;
+        bottom: 1px;
+        right: 7px;
+        transform: rotate(45deg);
+        background: $main-white;
+        border-radius: 50%;
+        -webkit-filter: blur(1px);
+        filter: blur(1px);
+        opacity: 0.5;
+    }
+}
+
+
+.level-btn {
+    @extend %btn;
+    @include bubble-btn($lightgreen);
+    width: 60px;
+    height: 50px;
+}
+
+.nav-btn {
+    @extend %btn;
+    @include bubble-btn($lightgreen);
+    width: 45px;
+    height: 43px;
+    float: right;
+    display: none !important;
+    margin: 0px;
+}
+
+
+/** ============================
+** - Slides Left/Right Arrows  -
+** ============================ */
+.disable-arrow {
+    pointer-events: none;
+}
+
+.left-arrow,
+.right-arrow {
+    @extend %btn;
+    z-index: 50;
+    position: absolute;
+    cursor: pointer;
+    width: 55px;
+    height: 65px;
+    font-size: 2.5rem;
+    @include bubble-btn($lightorange);
+}
+
+.left-arrow {
+    left: 5px;
+
+    & i {
+        @include arrowAnimation(-1);
+    }
+}
+
+.right-arrow {
+    right: 5px;
+
+    & i {
+        @include arrowAnimation(1);
+    }
+}
+
+
+/** =====================
+** - Social Media Links  -
+** ======================*/
+.social-media {
+
+    & span {
+        @extend %btn;
+        @include bubble-btn(lighten($red, 10%));
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 1.5rem;
+
+        & i {
+            color: lighten($red, 35%) !important;
+        }
+
+    }
+}
+
+
+
+/** =========================
+** - About Page:Main Buttons  -
+** ==========================*/
+.main-btns {
+    & li {
+        list-style: none;
+
+        & .tag-btn {
+            @extend %btn;
+            width: 150px;
+            margin: 15px;
+            height: 44px;
+            @include bubble-btn($lightgreen);
+            font-size: 1rem;
+            font-family: 'Dosis',
+                sans-serif;
+            color: lighten($main-dark, 10%);
+
+            &:focus-within,
+            &.btn-highlight {
+                @include bubble-btn($lightorange);
+                @include nav-active($lightorange);
+            }
+        }
+
+    }
+}
+
+/** ===============
+** - Submit Button  -
+** ================*/
+
+.submit-button {
+    @extend %btn;
+    @include bubble-btn($lightorange);
+    width: 130px;
+    height: 40px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.2rem;
+}

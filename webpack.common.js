@@ -1,23 +1,12 @@
 /*****   Setup Cofigurations,No Manually Typed Commands   *****/
 const path = require('path'); //Path Module from Node.js,Create Relative Route
-//Set Up an Entry Point
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isDevelopment = process.env.NODE_ENV === 'development';
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 //All Configurations Go In Module Object
 module.exports = {
-    mode: 'development',
     entry: "./src/js/index.js",
-    output: {
-        filename: "./js/bundle.js",
-        path: path.resolve(__dirname, "dist"), //Distribution Folder
-        hotUpdateChunkFilename: 'hot/hot-update.js',
-        hotUpdateMainFilename: 'hot/hot-update.json'
-    },
     watch: true,
     // watchOptions:{
     //     aggregationTimeout:500,
@@ -33,23 +22,17 @@ module.exports = {
         inline: true //Inject Javascript Inline
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-        }),
-        new HtmlWebpackPlugin(
-            {
-                title: "Profile project",
-                template: path.resolve("./src/index.html")
-            }
-        ),
-        new webpack.HotModuleReplacementPlugin(),
-        // new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(
             {
                 filename: "./css/[name].css"
             }
         ),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
+        new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
         rules: [
@@ -59,8 +42,9 @@ module.exports = {
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
+                        //HMR:Hot Module Reloding
                         options: {
-                            hmr: process.env.NODE_ENV === 'development',
+                            hmr: isDevelopment,
                         },
                     },
                     'css-loader',
@@ -85,10 +69,11 @@ module.exports = {
                         limit: 8000, // Convert images < 8kb to base64 strings
                         name: '[name].[ext]',
                         outputPath: 'css/img',
-                        publicPath: 'img/',
+                        publicPath: 'css/img',
                     }
                 }]
             }
+
         ]
     }
 

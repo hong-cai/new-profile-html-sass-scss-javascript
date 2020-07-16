@@ -1,0 +1,104 @@
+/** ============================
+**----    Skill Card    ----
+** ============================ */
+.skills {
+
+    & .content-range {
+        display: flex;
+        justify-content: center;
+
+        & .progress-bars {
+            // border: 1px solid orange;
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            grid-gap: 2%;
+            place-items: center center;
+
+            .progress-bar {
+                width: 90%;
+                background: transparent;
+                border-radius: 2rem;
+                @include multiple-borders($lightorange);
+                height: 120px;
+                position: relative;
+                margin: 1.5rem 1rem;
+
+                &:before {
+                    content: "Javascript   60%";
+                    white-space: nowrap;
+                    font-family: "Holtwood One SC", serif;
+                    color: $red;
+                    position: absolute;
+                    font-size: 1.2rem;
+                    top: -20%;
+                    width: 100%;
+                    text-align: center;
+                    display: inline-block;
+                    background: transparent;
+                    line-height: 2rem;
+                }
+            }
+
+            .stars-track {
+                // background: lightblue;
+                width: 300px;
+                height: 50px;
+                text-align: center;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+            }
+
+            .star {
+                width: 50px;
+                position: absolute;
+                top: 0;
+                font-size: 2.2rem;
+                // color: yellow;
+                color: darken($lightyellow, 10%);
+                text-shadow: 3px 3px 0 darken($color: $lightyellow, $amount: 40%),
+                    -1px -1px 0 darken($color: $lightyellow, $amount: 40%),
+                    1px -1px 0 darken($color: $lightyellow, $amount: 40%),
+                    -1px 1px 0 darken($color: $lightyellow, $amount: 40%),
+                    1px 1px 0 darken($color: $lightyellow, $amount: 40%);
+                padding: 0 5px;
+            }
+
+            .progress {
+                height: 100%;
+                width: 0px;
+                overflow: hidden;
+                position: relative;
+                z-index: 2;
+                float: left;
+            }
+        }
+    }
+
+    .details {
+        position: absolute;
+        bottom: -35%;
+        height: 72px;
+        width: 100%;
+        // border: 1px solid brown;
+        display: flex;
+        justify-content: center;
+
+        & span {
+            height: 70px;
+            width: 70px;
+            // border: 1px solid pink;
+            padding: 10px;
+            margin: 0 10px;
+        }
+    }
+
+    .to-front:not(:last-of-type) {
+        z-index: 10;
+        box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19), -3px 15px 6px rgba(0, 0, 0, 0.23);
+    }
+}

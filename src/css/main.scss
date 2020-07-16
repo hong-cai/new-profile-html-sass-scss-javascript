@@ -3,23 +3,38 @@
 @import "variables";
 @import "reset";
 @import "mixins";
-@import "modules/button";
+@import "media_queries";
+@import "modules/buttons";
 @import "modules/scrollbar";
 @import "modules/preloader";
-@import "modules/arrows";
+@import "modules/form";
 @import "modules/footer";
+@import "modules/navs";
+@import "modules/skills";
+@import "modules/experience";
+
+// H1 title font:
+// font-family: 'Anton', sans-serif;
+// font-family: 'Holtwood One SC', serif;
+// font-family: 'Rammetto One', cursive;
+// font-family: 'Skranji', cursive;
+// font-family: 'Abel',sans-serif;
+// font-family: 'Dosis', sans-serif;
 
 /** ============================
 **   ----    main div    ----
 ** ============================ */
 
 .main {
-  // display: none;
   width: 90vw;
   height: 90vh;
   position: relative;
   // border: 1px solid orange;
   overflow: hidden;
+}
+
+.page-logo {
+  display: none;
 }
 
 /** ============================
@@ -66,39 +81,68 @@
 
 .wrapper {
   width: 98%;
-  height: 96%;
-  margin: 0 1%;
-  padding: 3%;
-  background-blend-mode: multiply;
+  height: 94%;
+  margin: 1% 1%;
+  // padding: 3%;  // background-blend-mode: multiply;
+  // background-image: url('../../img/bg-main.jpg') repeat;
   border-radius: 2rem;
-
-  &:nth-last-of-type(1) {
-    position: relative;
-    border: 5px solid $main-white;
-
-    &:before {
-      content: " ";
-      position: absolute;
-      /* z-index: -1; */
-      top: 5px;
-      left: 5px;
-      right: 5px;
-      bottom: 5px;
-      border: 5px solid darken($orange, 10%);/\
-      border-radius: 2rem;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.current-card>.wrapper {
+.current-card > .wrapper {
   box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.14),
     -2px 5px 5px 1px rgba(0, 0, 0, 0.14);
 }
 
-.nav-shadow {
-  box-shadow: 5px -2px 2px 0px rgba(0, 0, 0, 0.1),
-    -2px -3px 2px 0px rgba(0, 0, 0, 0.07);
-  z-index: 5;
+.card-intro {
+  background: $main-white !important;
+
+  .card-skills & {
+    @include intro-style($lightgreen);
+  }
+
+  .card-experience & {
+    @include intro-style($lightorange);
+  }
+
+  .card-notes & {
+    @include intro-style($green);
+  }
+}
+
+.card-details {
+  width: 100%;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  @include card-title($green);
+  text-align: center;
+
+  .card-skills & {
+    @include card-title($lightgreen);
+  }
+
+  .card-experience & {
+    @include card-title($lightorange);
+  }
+
+  .card-contact & {
+    @include card-title(
+      transparent,
+      darken($orange, 15%),
+      darken($orange, 15%)
+    );
+    text-align: left !important;
+  }
+
+  .title-text {
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-blend-mode: screen;
+    color: transparent;
+    display: inline-block;
+  }
 }
 
 .content-wrapper {
@@ -106,427 +150,439 @@
   font-size: $text-size;
   width: 100%;
   height: 100%;
-
-  & .card-details {
-    border: 1px solid white;
-    width: 100%;
-    height: 100px;
-  }
+  padding: 1rem;
+  overflow: hidden;
 
   & .content-range {
-    padding: 2%;
+    padding: 10px;
     max-width: 100%;
-    border: 1px solid black;
+    // border-radius: 2rem;
     height: 100%;
-    overflow-y: scroll;
     overflow-x: hidden;
-    max-height: calc(94% - 100px);
-    margin-top: 20px;
+    // max-height: calc(94% - 100px);
+    position: relative;
+    overflow-y: auto;
   }
 }
 
 /** ============================
-** ----    Cards Navs    ----
+** ----    Notes  Card    ----
 ** ============================ */
-.cards-nav {
-  padding-left: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+.content-notes {
+  width: 100%;
+  height: 100%;
+  // @include multiple-borders($lightorange);
+  border-radius: 2rem;
 
-  .nav-wrapper {
-    background-blend-mode: multiply;
-    margin: 10px;
-    width: 150px;
-    height: 50px;
+  & .login-form {
+    padding: 20px 0;
+    width: 350px;
+    margin: 0% auto 15% auto;
+    background: $main-white;
+    border-radius: 2rem;
+    box-shadow: 5px 5px 5px 0px rgba(darken($green, 35%), 0.65);
+
+    & .card-details {
+      @include card-title(
+        transparent,
+        darken($green, 15%),
+        darken($green, 15%)
+      );
+    }
+
+    & .form-control {
+      border: 1px solid darken($green, 25%) !important;
+      background: $green !important;
+    }
+
+    .form-action-group {
+      & .container {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  .note-sample,
+  .note {
+    list-style: none;
+  }
+
+  .note-sample {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    border-radius: 1rem;
-    cursor: pointer;
-    // & > * {
-    //   pointer-events: none;
-    // }
-    position: relative;
-    // box-shadow: //   0 .5rem .25rem 0 rgba(darken(#f5f5f5, 35%), 0.50),
-    //   0 0 .5rem rgba(darken(#f5f5f5, 20%), 1) inset,
-    //   0 0 0.5rem rgba(255, 255, 255, 0.4) inset,
-    //   0 0 0.5rem 0 darken(#f5f5f5, 30%) inset;
-    // &:before {
-    //   content: "";
-    //   display: block;
-    //   height: 0.25rem;
-    //   position: absolute;
-    //   top: 0.5rem;
-    //   left: 50%;
-    //   transform: translateX(-50%);
-    //   width: calc(100% - 3.5rem);
-    //   background: #fff;
-    //   border-radius: 100%;
-    //   opacity: 0.7;
+    & .note {
+      border-radius: 3px;
+      padding: 1rem;
+      width: 350px;
+      height: 350px;
+      background: $yellow !important;
+      @include md-div-shadow(darken($main-white, 40%));
+      margin-bottom: 1rem;
+      overflow: hidden;
 
-    //   &:after {
-    //     content: "";
-    //     display: block;
-    //     height: 0.55rem;
-    //     position: absolute;
-    //     bottom: 0.75rem;
-    //     left: 50%;
-    //     transform: translateX(-50%);
-    //     width: calc(100% - 3.5rem);
-    //     background: #fff;
-    //     border-radius: 100%;
-    //     -webkit-filter: blur(2px);
-    //     filter: blur(2px);
-    //     opacity: 0.1;
-    //   }
-    // }
+      &:after {
+        position: absolute;
+        border-radius: 2rem;
+        z-index: -1;
+        content: "";
+        bottom: 9px;
+        right: 2px;
+        width: 50%;
+        height: 97%;
+        background: #737373;
+        box-shadow: 2px 15px 10px #737373;
+        transform: skewY(1deg);
+      }
+
+      & .note-title {
+        height: 80px;
+
+        & h4 {
+          margin-bottom: 5px;
+        }
+
+        & .note-category {
+          display: flex;
+          align-items: center;
+
+          & .note-tag {
+            margin: 5px;
+            padding: 5px;
+            border-radius: 3px;
+
+            &:nth-child(1) {
+              @include sm-div-shadow($lightorange);
+            }
+
+            &:nth-child(2) {
+              @include sm-div-shadow($lightgreen);
+            }
+          }
+        }
+      }
+
+      & .note-body {
+        height: 180px;
+        overflow: hidden;
+
+        & p:first-of-type {
+          margin: 0.3rem 0.2rem 0.3rem 0.2rem;
+          text-overflow: ellipsis;
+        }
+      }
+
+      & .note-footer {
+        height: 60px;
+        display: flex;
+        align-items: center;
+
+        & button {
+          width: 70px !important;
+          height: 40px;
+          // padding: 5px 10px;
+          margin: 0 5px;
+          @include btn-border($lightgreen);
+
+          &:nth-child(2) {
+            @include btn-border($lightorange);
+          }
+
+          &:nth-child(3) {
+            @include btn-border($red);
+          }
+
+          & .disable-btn {
+            pointer-events: none;
+            @include bubble-btn($main-white);
+          }
+        }
+      }
+    }
+  }
+
+  /* The Modal */
+  .modal-login {
+    border-radius: 2rem;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(darken($main-white, 40%), 0.4);
+    padding-top: 60px;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    margin: 0 auto 5% auto;
+    width: 100%;
+  }
+
+  /* Add Zoom Animation On .form-body */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+  }
+
+  @-webkit-keyframes animatezoom {
+    from {
+      -webkit-transform: scale(0);
+    }
+
+    to {
+      -webkit-transform: scale(1);
+    }
+  }
+
+  @keyframes animatezoom {
+    from {
+      transform: scale(0);
+    }
+
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+
+    .cancelbtn {
+      width: 100%;
+    }
   }
 }
 
 /** ============================
 ** ----    About  Card    ----
 ** ============================ */
-.about .content-range {
-  height: 100%;
+.card-about {
+  display: flex;
+  flex-direction: row;
 
-  & .about-text {
-    padding: 2% 4%;
+  .card-id {
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    width: 30%;
+    background: darken($color: $yellow, $amount: 10%);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-  }
+    padding: 15px;
+    height: 100%;
 
-  & .about-img {
-    width: 20vw;
-    height: 20vw;
-    border: 1px solid orange;
-    overflow: hidden;
-    border-radius: 50%;
-
-    & img {
-      width: 100%;
+    & .avatar,
+    .personal-info,
+    .main-btns {
+      grid-column: 2 / span 6;
+      grid-row: 5 / span 6;
     }
-  }
-}
 
-/** ============================
-** ----  Experience Card  ----
-** ============================ */
-.experience {
-  & .content-range {
-    & .frame-wrapper {
-      width: 100%;
-      // border: 1px solid orange;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      height: auto;
+    & .avatar {
+      width: 100px;
+      height: 100px;
+      margin: 5%;
+      border: 5px solid lighten($color: $main-white, $amount: 30%);
+      // @include multiple-borders($lightorange);
+      border-radius: 2rem;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 2px 1px 4px 4px rgba(0, 0, 0, 0.2);
 
-      & .website-frame {
-        background: $main-white;
-        @include card-shadow(right);
-        width: 100%;
-        max-width: 1000px;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 4rem 0;
-
-        &:nth-of-type(even) {
-          @include card-shadow(left);
-
-          & .website-screenshot {
-            flex-direction: row-reverse;
-
-            & img {
-              right: 0;
-              @include card-shadow(left);
-            }
-          }
-        }
-
-        & .website-screenshot {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-
-          & .website-img {
-            width: 40%;
-            height: 200px;
-            margin: 0;
-            position: relative;
-
-            @include break(576px) {
-              width: 100%;
-              // height: 200px;
-            }
-
-            & img {
-              @include card-shadow(right);
-              position: absolute;
-              width: 120%;
-              max-width: 450px;
-              height: 140%;
-              top: -20%;
-
-              @include break(900px) {
-                width: 120%;
-                height: 120%;
-                top: -10%;
-              }
-
-              @include break(768px) {
-                width: 120%;
-                height: 100%;
-                top: 0;
-              }
-
-              @include break(576px) {
-                width: 100%;
-                height: 100%;
-              }
-            }
-          }
-
-          & .website-text {
-            border: 1px solid tomato;
-            height: 100%;
-            width: 48%;
-            margin: 2%;
-
-            @include break(576px) {
-              width: 90%;
-              margin: 5%;
-            }
-          }
-
-          @include break(576px) {
-            flex-direction: column !important;
-          }
-        }
-
-        @include break(768px) {
-          margin: 3rem 0;
-        }
-
-        @include break(576px) {
-          width: 80%;
-          height: 100%;
-          @include card-shadow(all);
-          margin: 2rem 0;
-        }
+      & img {
+        width: 90%;
+        height: 100%;
       }
     }
-  }
-}
 
-/** ============================
-**----    Skill Card    ----
-** ============================ */
-.skills {
-  & .content-range {
-    & .progress-bars {
-      border: 1px solid orange;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 0.8rem;
-      // justify-content: space-around;
+    & .personal-info {
+      p {
+        font-family: "Dosis", sans-serif;
 
-      & .progress-bar {
-        margin: 2%;
-        width: 100%;
-        height: 100px;
-        border: 1px solid $main-white;
-        padding: 2%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        &:first-of-type {
+          font-size: 18px;
+          font-weight: bold;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
 
-        & .bar {
-          height: 25px;
-          width: 60%;
-          border: 1px solid $main-dark;
-          background-color: lighten($main-dark, 60%);
-          background-image: linear-gradient(to bottom,
-              rgba(255, 255, 255, 0.33) 0,
-              rgba(255, 255, 255, 0.08) 35%,
-              rgba(0, 0, 0, 0.25) 65%,
-              rgba(0, 0, 0, 0.07) 100%);
-          border-radius: 3px;
-          position: relative;
-          // box-shadow: inset 0 1px 1px 0px rgba(255, 215, 215, 0.5),
-          //   inset 0 -1px 1px 0px rgba(255, 255, 255, 0.25),
-          //   1px 1px 3px 0 rgba(0, 0, 0, 0.33);
-          -webkit-filter: drop-shadow(0 0 0.45rem rgba(240, 240, 240, 0.33));
-          filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.616));
-
-          &:before {}
-
-          &:after {
-            content: "";
-            position: absolute;
-            width: 4px;
-            height: 7px;
-            background: $main-dark;
-            right: -4px;
-            top: 9px;
-            border-radius: 3px;
-          }
-
-          & .progress {
-            // background-color: $green;
-            height: 100%;
-            width: 50%;
-            background-size: 100% 100%, 20px 20px;
-            background-color: $main-dark;
-            background-image: linear-gradient(to bottom,
-                rgba(255, 255, 255, 0.33) 0,
-                rgba(255, 255, 255, 0.08) 35%,
-                rgba(0, 0, 0, 0.25) 65%,
-                rgba(0, 0, 0, 0.1) 100%),
-              linear-gradient(to right,
-                $yellow 10%,
-                $green 10%,
-                $green 50%,
-                $yellow 50%,
-                $yellow 60%,
-                $green 60%,
-                $green);
-
-            &:before {
-              content: "50%";
-              position: absolute;
-              left: 5px;
-              // top: 9px;
-            }
-          }
+        &:nth-of-type(2) {
+          font-size: 14px;
+          margin-bottom: 15px;
         }
       }
     }
   }
 
-  .to-front:not(:last-of-type) {
-    z-index: 10;
-    box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19),
-      -3px 15px 6px rgba(0, 0, 0, 0.23);
+  & .content-wrapper {
+    width: 70%;
+    background: darken($color: $yellow, $amount: 15%);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12),
+      0 0px 10px -5px rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+
+    & .content-range {
+      max-height: 100%;
+    }
+
+    & .tag-slide {
+      margin: 3%;
+      transition: all 0.3s ease-in;
+      position: absolute;
+      top: 0;
+      left: -10px;
+      opacity: 0;
+
+      &:first-of-type {
+        left: 0;
+        opacity: 1;
+      }
+    }
+
+    .tag-slide-fade {
+      opacity: 0 !important;
+      left: -10px !important;
+    }
+
+    .tag-slide-in {
+      left: 0;
+      opacity: 1;
+    }
   }
 }
 
 /** ============================
 **  ----   Contact Card   ----
 ** ============================ */
-.contact-card {
-  // position: absolute;
-  // right: 0;
+.contact {
+  & .card-contact {
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 2px solid green;
+    background: transparent;
+    background-image: linear-gradient(
+      -110deg,
+      $orange 0%,
+      $orange 50%,
+      transparent 50%,
+      transparent 100%
+    ) !important;
+    box-shadow: 0 0 0 0 !important;
+    position: relative;
 
-  & .nav-wrapper {
-    position: absolute;
-    right: 0;
-    min-width: 150px;
-    cursor: pointer;
-  }
+    &:after {
+      position: absolute;
+      border-radius: 2rem;
+      z-index: -1;
+      content: "";
+      bottom: 9px;
+      right: 2px;
+      width: 35%;
+      height: 97%;
+      background: $main-dark;
+      box-shadow: 2px 15px 10px $main-dark;
+      transform: skewY(1deg);
+    }
 
-  & .content-wrapper {
-    position: absolute;
-    border-top-left-radius: 1rem;
-    display: grid;
-    grid-template-columns: 1fr 90%;
-    flex-direction: row;
-
-    // &:hover {
-    //   box-shadow: -5px 18px 20px rgba(0, 0, 0, 0.19), -3px 15px 6px rgba(0, 0, 0, 0.23);
-    // }
-
-    & .social-media {
-      margin: 20px;
-      width: 50px;
-      height: 200px;
+    & .content-wrapper {
       display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-content: center;
+      flex-direction: row;
+      border-radius: 2rem;
+      width: 99%;
+      height: 90%;
+      border: 5px solid $orange;
+      background-image: linear-gradient(
+        -110deg,
+        $orange 0%,
+        $orange 50%,
+        $lightorange 50%,
+        $lightorange 100%
+      );
+      position: relative;
+      overflow: visible;
 
-      & span {
-        margin: 0px auto;
-        padding: 0px auto;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        border-radius: 50%;
-        background: url("../../img/scribble-pattern.png") no-repeat;
-        background-size: cover;
+      &:before {
+        position: absolute;
+        border-radius: 2rem;
+        z-index: -1;
+        content: "";
+        bottom: 9px;
+        left: -2px;
+        width: 55%;
+        height: 98%;
+        background: $main-dark;
+        box-shadow: -2px 15px 10px $main-dark;
+        transform: skewY(-1deg);
+      }
 
-        font-size: 1.2rem;
+      & .content-range {
+        width: 100%;
+        border: 2px solid green;
+        max-height: 100%;
+        position: relative;
+
+        & #map {
+          height: 300px;
+          width: 100%;
+        }
+
+        .social-media {
+          position: -webkit-sticky;
+          position: sticky;
+          width: 50%;
+          min-width: 250px;
+          margin: 10px 0;
+          bottom: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
       }
     }
   }
-}
 
-.social-media {
-  width: 40%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.contact-grids {
-  // height: 80%;
-  border: 1px solid brown;
-}
-
-.contact-grid {
-  border: 1px solid grey;
-}
-
-/** ============================
+  /** ============================
 ** - Contact Card- Contact-Form -
 ** ============================ */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-/** ============================
-** ----  Media Queries  ----
-** ============================ */
+    .form-body {
+      width: 90%;
+      min-width: 300px;
 
-@media screen and (max-width: 480px) {
-  h1 {
-    font-size: 26px;
-  }
+      .form-control {
+        border: 1px solid $lightorange;
+      }
 
-  .underline {
-    width: 68px;
-  }
+      textarea {
+        height: 180px;
+      }
 
-  #form_button {
-    padding: 15px 25px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  // .main {
-  //   width: 85vw;
-  // }
-
-  .nav-wrapper {
-    max-width: 120px;
-  }
-}
-
-@media screen and (max-width: 896px) {
-  .main {
-    width: 88vw;
-  }
-
-  .nav-wrapper {
-    max-width: 120px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .arrow-wrapper {
-    display: none;
+      textarea.input100 {
+        min-height: 140px;
+        padding: 13px;
+      }
+    }
   }
 }
