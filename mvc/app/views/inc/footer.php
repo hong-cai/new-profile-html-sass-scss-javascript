@@ -8,8 +8,8 @@
 
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2020 <a href="http://34.87.254.5">Sophie's Profile</a>.</strong>
-        Made with <span> <i class="fa fa-heart"></i> </span>
+        <strong>Copyright &copy; 2020 <a href="http://34.87.254.5">Sophie's Profile.</a></strong>
+        Created with<p class="footer-text">FUN</p>&<h5> <i class="fa fa-heart" aria-hidden="true"></i> </h5>
     </footer>
 
 
@@ -29,7 +29,7 @@
     <!--Text Editor -->
     <script src="<?php echo URL ?>/js/summernote-bs4.min.js"></script>
     <!-- bundle.js -->
-    <script src="<?php echo URL ?>/js/bundle.js"></script>
+    <script src="<?php echo URL ?>/js/panel-bundle.js"></script>
     </body>
 
     </html>

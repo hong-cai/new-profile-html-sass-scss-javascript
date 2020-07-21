@@ -17,8 +17,7 @@
 
 html {
   background-repeat: repeat, repeat;
-  background-image: url("../../img/bg-light.png"),
-    url("../../img/bg-main.jpg");
+  background-image: url("../img/bg-light.png"), url("../img/bg-main.jpg");
   background-blend-mode: multiply;
 }
 
@@ -35,7 +34,6 @@ body {
   color: $text-color;
 }
 
-
 h1,
 h3 {
   color: $main-dark;
@@ -47,10 +45,10 @@ h3 {
   filter: drop-shadow(3px 5px 3px lighten($main-white, 30%));
 }
 
-
 p {
   color: $text-color;
-  font-size: 0.875rem;
+  font-size: 1rem;
+  font-family: "Dosis", sans-serif;
 }
 
 a {
@@ -63,7 +61,7 @@ a {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 h3 {
@@ -75,9 +73,9 @@ h4 {
 }
 
 h5 {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 h6 {
-  font-size: .6rem;
+  font-size: 0.7rem;
 }

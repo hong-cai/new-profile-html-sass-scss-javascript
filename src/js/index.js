@@ -3,7 +3,6 @@ import 'jquery';
 
 
 
-
 /** =================
  ** - Embed Google Map -
 ** ===================
@@ -32,21 +31,34 @@ function initMap() {
     });
 };
 window.initMap = initMap;
-
-
-
 /*End of Google Map */
 
 
 
-/** ===================================
-** - Function:Assign Random Main Colors -
-** ====================================
+
+
+/** =====================================
+** - Assign Main Random Colors To Icons-
+** ======================================
 **
 */
-
 // let colors = ['#CAF1DE', '#E1F8DC', '#FEF8DD', '#FFE7C7', '#F7D8BA'];
 // document.addEventListener('DOMContentLoaded', getColorScheme());
+// const contactsIcons = document.querySelectorAll('.personal-contacts i');
+// console.log(contactsIcons);
+// window.addEventListener('load', () => {
+//     contactsIcons.forEach(icon => {
+//         for (let i = 0; i < [...contactsIcons].length; i++) {
+//             let randomIndex = Math.floor(Math.random() * (colors.length));
+//             icon.style.color = `darken(${colors[randomIndex]},10%)`;
+//             colors = colors.filter((color, index) => index !== randomIndex);
+//         }
+//     });
+// });
+
+
+
+
 
 // function getColorScheme() {
 //     const divs = document.querySelectorAll('.wrapper');
@@ -78,17 +90,6 @@ window.addEventListener('load', () => {
 });
 
 
-/** ===============
-** - Load About Page -
-** ================
-**
-*/
-// const currentCard = document.querySelector('.current-card');
-// const cardsRail = document.querySelector('.cards-track');
-// window.addEventListener('load', () => {
-//     cardsRail.style.transform = 'translateX(-' + currentCard.style.left + ')';
-// })
-
 
 
 /** =========================================== 
@@ -101,7 +102,7 @@ const navMenu = document.querySelector('.nav-menu');
 const cardsNav = document.getElementById('cards-nav');
 
 menuSpan.addEventListener('click', showHideMenu);
-window.addEventListener('click', function (e) {
+window.addEventListener('touchstart', function (e) {
     if (!cardsNav.contains(e.target)) {
         hideMenu();
     }
@@ -120,18 +121,27 @@ function hideMenu() {
 /*End of Bars clicked to turn into close icon */
 
 
+
+
 /** =============================
 **  -  Main Slides Scrolling -
-** ==============================
-**
-*/
+** ==============================*/
 const cards = Array.from(cardsRail.children);
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
 const navWraps = document.querySelectorAll('.nav-wrapper');
 // const cardWidth = cards[0].getBoundingClientRect().width;
-cards.forEach((card, index) => card.style.left = index * 90 + 'vw');
-cardsRail.style.width = 90 * cards.length + 'vw';
+const mainWidth = document.querySelector('.main').getBoundingClientRect().width;
+
+// console.log(mainWidth);
+// console.log(Math.floor(mainWidth));
+// console.log(Math.round(mainWidth));
+// console.log(document.documentElement.clientWidth);
+// debugger;
+const responsiveWidth = mainWidth / document.documentElement.clientWidth * 100;
+cards.forEach((card, index) => { card.style.left = Math.floor(index * responsiveWidth) + 'vw'; });
+
+cardsRail.style.width = responsiveWidth * cards.length + 'vw';
 
 navWraps.forEach(nav => {
     nav.addEventListener('click', (e) => {
@@ -159,17 +169,17 @@ navWraps.forEach(nav => {
 rightArrow.addEventListener('click', ToRightSlide);
 leftArrow.addEventListener('click', ToLeftSlide);
 
-/* ----keyboard controls left/right----- */
+//keyboard controls left/right
 document.onkeydown = function (e) {
     switch (e.keyCode) {
         case 37:
             //left
-            // e.preventDefault();
+            e.preventDefault();
             ToLeftSlide();
             break;
         case 39:
             //right
-            // e.preventDefault();
+            e.preventDefault();
             ToRightSlide();
             break;
     }
@@ -231,6 +241,8 @@ function hideShowArrow(arrow) {
 }
 
 
+
+
 /** =============================
 **  -Main Slides-Touch Screen-
 ** ==============================
@@ -248,9 +260,9 @@ function handleTouchStart(e) {
 function handleTouchEnd(e) {
     endX = e.changedTouches[0].clientX;
     const dist = startX - endX;
-    if (dist > 0) {
+    if (dist > 80) {
         ToRightSlide();
-    } else if (dist < 0) {
+    } else if (dist < -80) {
         ToLeftSlide();
     } else {
         return false;
@@ -258,40 +270,201 @@ function handleTouchEnd(e) {
 }
 /* ----End of Main Slides-Touch Screen----- */
 
+
+
+/** ================================
+** --Animate When Slide Moves In--
+** =================================
+**
+*/
+// currentCard.addEventListener('')
+
+
+
+/* ----End of Animation When Slide Moves In----- */
+
+
+
+/** ================================
+** --  About Page:Level Rating  --
+** =================================
+**
+*/
+const starsRating = document.querySelector('.stars-rating');
+window.addEventListener('load', () => {
+    handleStarsLength(starsRating, 0.4);
+});
+
+/* ----End of About Page:Level Rating----- */
+
+
+
+/** =========================
+ ** --- Display Works ---
+ ** ========================
+ **
+ */
+const works = [
+    { id: 1, name: 'BYO Homes', level: '0.4', time: '02/2020', description: 'A maximum 20-hour work created on Wordpress early 2020,A maximum 20-hour work created on Wordpress early 202,A maximum 20-hour work created on Wordpress early 20A maximum 20-hour work created on Wordpress early 2020,A maximum 20-hour work created on Wordpress early 202,A maximum 20-hour work created on Wordpress early 2022', img: './css/img/byohomes500x348.jpg' },
+    { id: 2, name: 'Woodend Golf Club', level: '0.5', time: '01/2020', description: 'A maximum 20-hour work created on Wordpress early 2020,A maximum 20-hour work created on Wordpress early 202,A maximum 20-hour work created on Wordpress early 202', img: './css/img/woodendgolfclub 500x348.jpg' }
+];
+
+const worksFrame = document.querySelector('.frame-wrapper');
+window.addEventListener('load', () => {
+    works.forEach(work => {
+        const workDiv = document.createElement('div');
+        workDiv.classList.add('website-frame');
+        const worksList = `<div class="website-screenshot">
+        <div class="website-img" onclick="document.querySelector('.modal-img').style.display = 'block';">
+        <a href="${work.img}" onclick="event.preventDefault();">
+            <img src=" ${work.img} " alt=" ${work.name} " id="img-"+${work.id}/></a>
+        </div>
+        <div class="website-text">
+            <div>
+                <a href="">
+                    <h4> ${work.name} </h4>
+                </a>
+                <div class='project-level'>
+                <span> <strong>Difficulty:</strong></span>
+                <div class="stars-track">
+                    <div class="progress">
+                        <div class="star"><i class="fa fa-star"></i></div>
+                        <div class="star"><i class="fa fa-star"></i></div>
+                        <div class="star"><i class="fa fa-star"></i></div>
+                        <div class="star"><i class="fa fa-star"></i></div>
+                        <div class="star"><i class="fa fa-star"></i></div>
+                    </div>
+                    <div class="star"><i class="fa fa-star-o"></i></div>
+                    <div class="star"><i class="fa fa-star-o"></i></div>
+                    <div class="star"><i class="fa fa-star-o"></i></div>
+                    <div class="star"><i class="fa fa-star-o"></i></div>
+                    <div class="star"><i class="fa fa-star-o"></i></div>
+                </div>
+            </div>
+            <span> <strong>Time:</strong>${work.time}</span>
+                <p>${work.description}
+            </div>
+            </p>
+        </div>`;
+        workDiv.innerHTML = worksList;
+        worksFrame.appendChild(workDiv);
+        handleStarsLength(workDiv, work.level);
+
+    });
+});
+
+/*End of Displaying Works */
+
+
+
+/** ================================
+ ** --   Show Modal Images    --
+ ** =================================
+**
+*/
+// const imgDivs = document.querySelectorAll('.content-experience');
+// console.log(imgDivs);
+// debugger;
+// const experienceContent = document.querySelector('.content-experience');
+// imgDivs.forEach(imgDiv => {
+//     imgDiv.addEventListener('click', (e) => {
+//         e.preventDefault;
+//         console.log(e.target.getAttribute('href'));
+//         const imgModal = document.createElement('div');
+//         imgModal.classList.add('.modal-img');
+//         experienceContent.insertBefore(imgModal);
+//         imgModal.innerHTML = `hello`;
+
+//     })
+// })
+
+/*End of Displaying Modal Images */
+
 /** ================================
 ** --   Skills Progress Bars    --
 ** =================================
 **
 */
-const starsTrack = document.querySelector('.stars-track');
-const progress = document.querySelector('.progress');
-const horrowStars = document.querySelectorAll('.stars-track > .star');
-const hardStars = document.querySelectorAll('.progress > .star');
-const starWidth = horrowStars[0].offsetWidth;
 
+// Display the level starprogress bar divs
+const skillsSample = [
+    { id: 1, skill: 'Javascript', level: 0.6 },
+    { id: 2, skill: 'HTML', level: 0.9 },
+    { id: 3, skill: 'CSS', level: 0.8 }
+];
+const progressDiv = document.querySelector('.progress-bars');
+// console.log(progressDiv);
 
-//Setting each horrow star width,left and position
-starLeft([...horrowStars]);
-//Setting each hard stars width,left and position
-starLeft([...hardStars]);
-//Setting starTrack's whole width
-starsTrack.style.width = starWidth * (horrowStars.length) + 'px';
+window.addEventListener('load', () => {
+    skillsSample.forEach(
+        sample => {
+            const skillDiv = document.createElement('div');
+            skillDiv.classList.add('progress-bar');
+            // skillDiv.setAttribute('id', 'skill-' + `${sample.skill}`);
+            skillDiv.innerHTML = `
+            <div class="skill">
+            <span class="skill-title">${sample.skill}</span>
+            <span class="skill-level">${sample.level * 100}%</span>
+        </div>
+        <div class="stars-track">
+            <div class="progress">
+                <div class="star"><i class="fa fa-star"></i></div>
+                <div class="star"><i class="fa fa-star"></i></div>
+                <div class="star"><i class="fa fa-star"></i></div>
+                <div class="star"><i class="fa fa-star"></i></div>
+                <div class="star"><i class="fa fa-star"></i></div>
+            </div>
+            <div class="star"><i class="fa fa-star-o"></i></div>
+            <div class="star"><i class="fa fa-star-o"></i></div>
+            <div class="star"><i class="fa fa-star-o"></i></div>
+            <div class="star"><i class="fa fa-star-o"></i></div>
+            <div class="star"><i class="fa fa-star-o"></i></div>
+        </div>
+        <div class="details">
+            <span>
+                <div class="level-btn">
+                    <a href="/">
+                        <i class="fa fa-link" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </span>
+            <span>
+                <div class="level-btn">
+                    <a href="/">
+                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </span>
+        </div>
+            `;
+            progressDiv.appendChild(skillDiv);
+            handleStarsLength(skillDiv, sample.level);
+        }
+    );
+});
+function handleStarsLength(addedDiv, percent) {
+    // Calculate the length of star progress bar
+    const starsTrack = addedDiv.querySelector('.stars-track');
+    const progress = addedDiv.querySelector('.progress');
+    const horrowStars = addedDiv.querySelectorAll('.stars-track > .star');
+    const hardStars = addedDiv.querySelectorAll('.progress > .star');
+    const starWidth = horrowStars[0].offsetWidth;
+    //Setting each horrow star width,left and position
+    starLeft([...horrowStars]);
+    //Setting each hard stars width,left and position
+    starLeft([...hardStars]);
+    //Setting starTrack's whole width
+    starsTrack.style.width = starWidth * (horrowStars.length) + 'px';
 
-window.onload = (() => { setPercent(); });
-
-//progress bar to display the skill level
-function setPercent(percent = 0.6) {
+    //progress bar to display the skill level,default:60%
     progress.style.width = percent * starWidth * (horrowStars.length) + 'px';
-    //Moving mouse inside progress bar to get new level
+    //setting each star style.left;
+    function starLeft(stars) {
+        stars.map((star, index) => {
+            stars[index].style.left = starWidth * (index) + 'px';
+        });
+    }
 
-}
-
-
-//setting each star style.left;
-function starLeft(stars) {
-    stars.map((star, index) => {
-        stars[index].style.left = starWidth * (index) + 'px';
-    });
 }
 
 /* ----End of Skills Progress Bars----- */
@@ -348,22 +521,50 @@ window.addEventListener('load', () => {
 
 
 /** ===========================
- ** --Show/Hide Login Modal --
+ ** ----- Hide Modal -------
  ** ===========================
  **
  */
 // Get the modal
-const modal = document.querySelector('.modal-login');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
+const modalLogin = document.querySelector('.modal-login');
+const modalNote = document.querySelector('.modal-note');
+const modalDelete = document.querySelector('.modal-delete');
+const deleteCancel = document.querySelector('.confirm-n');
+const imgCancel = document.querySelector('.modal-img');
+[modalLogin, modalNote, modalDelete, imgCancel].forEach(modal => modal.addEventListener('click', (e) => {
+    if (e.target == modal) {
         modal.style.display = "none";
     }
 }
-/*End of Login Modal */
+));
+
+deleteCancel.addEventListener('click', () => { modalDelete.style.display = 'none' })
+/*End of Hiding Modal */
 
 
+
+
+/** =================================
+ ** ----- Hide Contact Content -------
+ ** =================================
+ **
+ */
+const contactTitles = document.querySelectorAll('.card-contact .card-details');
+const contactBlocks = document.querySelectorAll('.card-contact .content-range');
+// const arrowIcons=document.querySelectorAll('.card-contact .content-range')
+// console.log([...contactBlocks][0]);
+for (let i = 0; i < contactTitles.length; i++) {
+    contactTitles[i].addEventListener('click', () => {
+        // contactBlocks[]
+    })
+}
+
+
+
+
+
+
+/*End of Hiding Contact Content */
 
 /** =========================
  ** - Contact Form Validation -

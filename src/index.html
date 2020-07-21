@@ -26,9 +26,11 @@
                 <div></div>
             </div>
         </div>
+
         <div class="left-arrow">
             <!-- <img src="../img/arrowleft-timber.png" alt="left-arrow-timber"> -->
             <span> <i class="fa fa-arrow-left"></i> </span>
+
         </div>
         <div class="main">
             <div class="cards-nav" id='cards-nav'>
@@ -78,7 +80,7 @@
                         <div class="wrapper card-notes">
                             <div class="card-details">
                                 <h1>
-                                    <div class="title-text">STUDY NOTES</div>
+                                    <div class="title-text">Study Notes</div>
                                 </h1>
                             </div>
                             <div class="card-intro">
@@ -96,18 +98,22 @@
 
                                         <li class="note">
                                             <div class="note-title">
-                                                <h5> <strong> How to prevent button click event triggering
+                                                <h4 onclick="document.querySelector('.modal-note').style.display='block'"
+                                                    style="width:auto;"> <strong> How to prevent button click event
+                                                        triggering
                                                         capturing:</strong></strong></h4>
-                                                    <div class="note-category">
-                                                        <span class="note-tag">
-                                                            <h5>PHP</h5>
-                                                        </span>
-                                                        <span class="note-tag">
-                                                            <h5>javascript</h5>
-                                                        </span>
-                                                    </div>
+                                                <div class="note-category">
+                                                    <span class="note-tag">
+                                                        <h5>PHP</h5>
+                                                    </span>
+                                                    <span class="note-tag">
+                                                        <h5>javascript</h5>
+                                                    </span>
+                                                </div>
                                             </div>
-                                            <div class="note-body">
+                                            <div class="note-body"
+                                                onclick="document.querySelector('.modal-login').style.display='block'"
+                                                style="width:auto;">
                                                 <p>
                                                     This is the php note table content
                                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum
@@ -116,17 +122,20 @@
                                                     minima commodi explicabo inventore. Quos illum atque neque impedit
                                                     praesentium, id dolorem minima saepe, temporibus nobis cum cumque
                                                     commodi.
+                                                    minima commodi explicabo inventore. Quos illum atque neque impedit
+                                                    praesentium, id dolorem minima saepe, temporibus nobis cum cumque
+                                                    commodi.
                                                 </p>
                                             </div>
                                             <div class="note-footer">
                                                 <button
                                                     onclick="document.querySelector('.modal-login').style.display='block'"
-                                                    style="width:auto;">Reply</button>
+                                                    style="width:auto;">Read More</button>
                                                 <button
-                                                    onclick="document.querySelector('.modal-login').style.display='block'"
+                                                    onclick="document.querySelector('.modal-note').style.display='block'"
                                                     style="width:auto;">Edit</button>
                                                 <button
-                                                    onclick="document.querySelector('.modal-login').style.display='block'"
+                                                    onclick="document.querySelector('.modal-delete').style.display='block'"
                                                     style="width:auto;">Delete</button>
                                             </div>
 
@@ -162,7 +171,7 @@
                                             <div class="login-form animate">
                                                 <div class="card-details">
                                                     <h3>
-                                                        <div class="title-text">Login To Comment?</div>
+                                                        <div class="title-text">Login To Read More?</div>
                                                     </h3>
                                                 </div>
                                                 <div class="form-body">
@@ -201,6 +210,66 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
+                                        <div class="modal-note">
+                                            <div class="note note-edit animate">
+                                                <!-- <li class="note"> -->
+                                                <div class="note-title">
+                                                    <h4> <strong> How to prevent button click event triggering
+                                                            capturing:</strong></strong></h4>
+                                                    <div class="note-category">
+                                                        <span class="note-tag">
+                                                            <h5>PHP</h5>
+                                                        </span>
+                                                        <span class="note-tag">
+                                                            <h5>javascript</h5>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="note-body">
+                                                    <p>
+                                                        This is the php note table content
+                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                                        Dolorum
+                                                        animi
+                                                        quo,
+                                                        minima commodi explicabo inventore. Quos illum atque neque
+                                                        impedit
+                                                        praesentium, id dolorem minima saepe, temporibus nobis cum
+                                                        cumque
+                                                        commodi.
+                                                        minima commodi explicabo inventore. Quos illum atque neque
+                                                        impedit
+                                                        praesentium, id dolorem minima saepe, temporibus nobis cum
+                                                        cumque
+                                                        commodi.
+                                                    </p>
+                                                </div>
+                                                <div class="note-footer">
+
+                                                    <button //REMIND: SHOULD BE REPLY CONTENT
+                                                        onclick="document.querySelector('.modal-login').style.display='block'"
+                                                        style="width:auto;">Confirm</button>
+                                                </div>
+
+                                                <!-- </li> -->
+                                            </div>
+                                        </div>
+                                        <div class="modal-delete">
+                                            <div class="delete-window animate">
+                                                <div class="delete-warning">
+                                                    <h3>
+                                                        <div class="title-text">This note will be deleted?</div>
+                                                    </h3>
+                                                </div>
+                                                <div class="delete-confirm">
+                                                    <span>
+                                                        <button class="confirm-y"> &#x2714; </button></span>
+                                                    <span> <button class="confirm-n">X </button></span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </ul>
                                 </div>
 
@@ -211,7 +280,7 @@
                         <div class="wrapper card-skills">
                             <div class="card-details">
                                 <h1>
-                                    <div class="title-text">SKILLS LEVEL</div>
+                                    <div class="title-text">Skills Level</div>
                                 </h1>
                             </div>
                             <div class="card-intro">
@@ -225,8 +294,12 @@
                                 <div class="content-range content-skills">
 
                                     <div class="progress-bars">
-
-                                        <div class="progress-bar">
+                                        <!-- Sample Progress Bar -->
+                                        <!-- <div class="progress-bar">
+                                            <div class="skill">
+                                                <span class="skill-title">Javascript</span>
+                                                <span class="skill-level">60%</span>
+                                            </div>
                                             <div class="stars-track">
                                                 <div class="progress">
                                                     <div class="star"><i class="fa fa-star"></i></div>
@@ -244,121 +317,21 @@
                                             <div class="details">
                                                 <span>
                                                     <div class="level-btn">
-                                                        <a href="#modal">
+                                                        <a href="/">
                                                             <i class="fa fa-link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </span>
                                                 <span>
                                                     <div class="level-btn">
-                                                        <a href="#modal">
+                                                        <a href="/">
                                                             <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </span>
                                             </div>
-                                        </div>
-
-
-                                        <div class="progress-bar">
-                                            <div class="bar css">
-
-                                            </div>
-                                            <div class="">
-                                                <p>CSS</p>
-                                            </div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="bar javascript">
-
-                                            </div>
-                                            <div class="">
-                                                <p>JAVASCRIPT</p>
-                                            </div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="bar javascript">
-
-                                            </div>
-                                            <div class="">
-                                                <p>MATERIAL-UI</p>
-                                            </div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="bar javascript">
-
-                                            </div>
-                                            <div class="">
-                                                <p>JAVASCRIPT</p>
-                                            </div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="bar jquery">
-
-                                            </div>
-                                            <div class="">
-                                                <p>JQUERY</p>
-                                            </div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="bar react">
-
-                                            </div>
-                                            <div class="">
-                                                <p>REACT</p>
-                                            </div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="bar php">
-
-                                            </div>
-                                            <div class="">
-                                                <p>PHP</p>
-                                            </div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="bar github">
-
-                                            </div>
-                                            <div class="">
-                                                <p>GITHUB</p>
-                                            </div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="bar webpack">
-
-                                            </div>
-                                            <div class="">
-                                                <p>WEBPACK</p>
-                                            </div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="bar sass">
-
-                                            </div>
-                                            <div class="">
-                                                <p>sass/scss</p>
-                                            </div>
-                                        </div>
-                                        <div class="progress-bar">
-                                            <div class="bar">
-
-                                            </div>
-                                            <div class="">
-                                                <p>PHOTOSHOP</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress-bar">
-                                            <div class="bar html">
-                                                <div class="progress"></div>
-                                            </div>
-                                            <div class="">
-
-                                            </div>
-                                        </div>
+                                        </div> -->
                                     </div>
-
                                 </div>
 
 
@@ -369,7 +342,7 @@
                         <div class="wrapper card-experience">
                             <div class="card-details">
                                 <h1>
-                                    <div class="title-text">RECENT WORKS</div>
+                                    <div class="title-text">Recent Works</div>
                                 </h1>
                             </div>
                             <div class="card-intro">
@@ -380,10 +353,23 @@
                                 </h4>
                             </div>
                             <div class="content-wrapper">
-
+                                <div class="modal-img">
+                                    <div class="delete-window animate">
+                                        <div class="delete-warning">
+                                            <h3>
+                                                <div class="title-text">This note will be deleted?</div>
+                                            </h3>
+                                        </div>
+                                        <div class="delete-confirm">
+                                            <span>
+                                                <button class="confirm-y"> &#x2714; </button></span>
+                                            <span> <button class="confirm-n">X </button></span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="content-range content-experience">
                                     <div class="frame-wrapper">
-                                        <div class="website-frame">
+                                        <!-- <div class="website-frame">
                                             <div class="website-screenshot">
                                                 <div class="website-img">
                                                     <img src="./css/img/byohomes500x348.jpg" alt="byohomes" />
@@ -393,37 +379,34 @@
                                                         <a href="">
                                                             <h4>BYO Homes</h4>
                                                         </a>
-                                                        <p>Difficulty:</p>
-                                                        <p>Time:02/2020</p>
+                                                        <div class='project-level'>
+                                                            <span> <strong>Difficulty:</strong></span>
+                                                            <div class="stars-track">
+                                                                <div class="progress">
+                                                                    <div class="star"><i class="fa fa-star"></i></div>
+                                                                    <div class="star"><i class="fa fa-star"></i></div>
+                                                                    <div class="star"><i class="fa fa-star"></i></div>
+                                                                    <div class="star"><i class="fa fa-star"></i></div>
+                                                                    <div class="star"><i class="fa fa-star"></i></div>
+                                                                </div>
+                                                                <div class="star"><i class="fa fa-star-o"></i></div>
+                                                                <div class="star"><i class="fa fa-star-o"></i></div>
+                                                                <div class="star"><i class="fa fa-star-o"></i></div>
+                                                                <div class="star"><i class="fa fa-star-o"></i></div>
+                                                                <div class="star"><i class="fa fa-star-o"></i></div>
+                                                            </div>
+                                                        </div>
+                                                        <span> <strong>Time:</strong>02/2020</span>
+                                                        <p>A maximum 20-hour work created on Wordpress early
+                                                            2020,including
+                                                            design,photo-editing and completion.
+                                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                                        </p>
                                                     </div>
-                                                    <p>A maximum 20-hour work created on Wordpress early 2020,including
-                                                        design,photo-editing and completion.
-                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                    </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
-                                        <div class="website-frame">
-                                            <div class="website-screenshot">
-                                                <div class="website-img">
-                                                    <img src="./css/img/byohomes500x348.jpg" alt="byohomes" />
-                                                </div>
-                                                <div class="website-text">
-                                                    <div>
-                                                        <a href="">
-                                                            <h5>BYO Homes</h5>
-                                                        </a>
-                                                        <p>Difficulty:</p>
-                                                        <p>Time:02/2020</p>
-                                                    </div>
-                                                    <p>A maximum 20-hour work created on Wordpress early 2020,including
-                                                        design,photo-editing and completion.
-                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -441,17 +424,38 @@
                                 </div>
 
                                 <div class="personal-info">
-                                    <p>Hong Cai &nbsp(Sophie)</p>
-                                    <p>Website Maker. Doer.</p>
-                                    <p> <i class="fa fa-map-marker">&nbsp</i> Wellington,New Zealand</p>
-                                    <p> <i class="fa fa-phone">&nbsp</i> (022)4155875</p>
-                                    <p> <i class="fa fa-home">&nbsp</i>
-                                        <a href="https://34.87.254.5">https://34.87.254.5</a>
-                                    </p>
-                                    <p> <i class="fa fa-at">&nbsp</i> <a
-                                            href="mailto:hongcai.nelson@gmail.com">hongcai.nelson@gmail.com</a></p>
-                                    <p> <i class="fa fa-github">&nbsp</i>
-                                        <a href="https://github.com/hong-cai">https://github.com/hong-cai</a></p>
+                                    <div class="personal-brief">
+                                        <p>Hong Cai &nbsp(Sophie)</p>
+                                        <p>Website Maker. Doer.</p>
+                                        <p>To be a good developer.</p>
+                                        <div class="stars-rating">
+                                            <div class="stars-track">
+                                                <div class="progress">
+                                                    <div class="star"><i class="fa fa-star"></i></div>
+                                                    <div class="star"><i class="fa fa-star"></i></div>
+                                                    <div class="star"><i class="fa fa-star"></i></div>
+                                                    <div class="star"><i class="fa fa-star"></i></div>
+                                                    <div class="star"><i class="fa fa-star"></i></div>
+                                                </div>
+                                                <div class="star"><i class="fa fa-star-o"></i></div>
+                                                <div class="star"><i class="fa fa-star-o"></i></div>
+                                                <div class="star"><i class="fa fa-star-o"></i></div>
+                                                <div class="star"><i class="fa fa-star-o"></i></div>
+                                                <div class="star"><i class="fa fa-star-o"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="personal-contacts">
+                                        <p> <i class="fa fa-map-marker">&nbsp</i> Wellington,New Zealand</p>
+                                        <p> <i class="fa fa-phone">&nbsp</i> (022)4155875</p>
+                                        <p> <i class="fa fa-home">&nbsp</i>
+                                            <a href="https://34.87.254.5">https://34.87.254.5</a>
+                                        </p>
+                                        <p> <i class="fa fa-at">&nbsp</i> <a
+                                                href="mailto:hongcai.nelson@gmail.com">hongcai.nelson@gmail.com</a></p>
+                                        <p> <i class="fa fa-github">&nbsp</i>
+                                            <a href="https://github.com/hong-cai">https://github.com/hong-cai</a></p>
+                                    </div>
                                 </div>
                                 <ul class="main-btns">
                                     <li class="about-self">
@@ -461,7 +465,7 @@
                                     </li>
                                     <li class="about-site">
                                         <button class="tag-btn">
-                                            <h4> About this page</h4>
+                                            <h4> About the site</h4>
                                         </button>
                                     </li>
                                     <li class="code-links">
@@ -470,7 +474,9 @@
                                         </button>
                                     </li>
                                 </ul>
+
                             </div>
+
                             <div class="content-wrapper">
                                 <div class="content-range content-about">
                                     <div class="tag-slide"><span>
@@ -533,15 +539,14 @@
                     <div class="card contact">
                         <div class="wrapper  card-contact">
                             <div class="content-wrapper">
-
-                                <div class="content-range content-contact">
+                                <div class="content-range">
                                     <div class="contact-info">
                                         <div class="card-details">
                                             <h3>
-                                                <div class="title-text"> Hire Me.</div>
+                                                <div class="title-text"> Hire Me. </div>
                                             </h3>
                                         </div>
-                                        <div class="contact-details">
+                                        <div class="personal-contacts">
                                             <p> <i class="fa fa-map-marker">&nbsp</i> Wellington,New Zealand</p>
                                             <p> <i class="fa fa-phone">&nbsp</i> (022)4155875</p>
                                             <p> <i class="fa fa-home">&nbsp</i>
@@ -550,10 +555,6 @@
                                             <p> <i class="fa fa-at">&nbsp</i> <a
                                                     href="mailto:hongcai.nelson@gmail.com">hongcai.nelson@gmail.com</a>
                                             </p>
-                                            <p> <i class="fa fa-codepen">&nbsp</i>
-                                                <a
-                                                    href="https://codepen.io/sophietsai/">https://codepen.io/sophietsai/</a>
-                                            </p>
                                             <p> <i class="fa fa-github">&nbsp</i>
                                                 <a href="https://github.com/hong-cai">https://github.com/hong-cai</a>
                                             </p>
@@ -561,13 +562,15 @@
                                         <div id="map"></div>
                                     </div>
                                     <div class="social-media">
-                                        <span> <i class="fa fa-facebook fa-inverse"></i> </span>
-                                        <span> <i class="fa fa-share-alt fa-inverse"></i> </span>
+                                        <span> <a href="https://github.com/hong-cai"> <i
+                                                    class="fa fa-facebook fa-inverse"></i></a> </span>
+                                        <span> <a href="https://github.com/hong-cai"> <i
+                                                    class="fa fa-share-alt fa-inverse"></i></a> </span>
                                         <span> <i class="fa fa-linkedin fa-inverse"></i> </span>
                                         <span> <i class="fa fa-twitter fa-inverse"></i> </span>
                                     </div>
                                 </div>
-                                <div class="content-range content-contact">
+                                <div class="content-range">
                                     <div class="contact-form">
                                         <div class="card-details">
                                             <h3>
@@ -617,26 +620,26 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
         <div class="right-arrow">
             <span> <i class="fa fa-arrow-right"></i> </span>
             <!-- <img src="../img/arrowright-timber.png" alt="right-arrow-timber"> -->
+
         </div>
         <footer class="main-footer">
             <strong>Copyright &copy; 2020 <a href="http://34.87.254.5">Sophie's Profile.</a></strong>
-            Created with<p class="footer-text">FUN</p>&<h5> &#10084;</h5>
+            Created with<p class="footer-text">FUN</p>&<h5> <i class="fa fa-heart" aria-hidden="true"></i> </h5>
         </footer>
-        <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LfgI64ZAAAAAGQAHbRF8-FkXXAT6baiHzAiSOQj"></script> -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <!-- <script src="https://www.google.com/recaptcha/api.js?render=AIzaSyC9LCTfjidtHDjsulgGZLo65OyfMIqIG7w"></script> -->
         <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvcsp37Rm7zZRHZ0reQIx2BbKtStxJS84&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9LCTfjidtHDjsulgGZLo65OyfMIqIG7w&callback=initMap">
             </script>
+        <!-- <script src="./js/ejs.min.js"></script> -->
     </body>
 
 </html>

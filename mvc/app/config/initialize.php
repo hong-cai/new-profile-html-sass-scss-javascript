@@ -15,10 +15,10 @@ define("PRIVATE_PATH", dirname(dirname(__FILE__)));
 define('URL', 'http://localhost/profile-css-html-js/mvc');
 // define('URL', '_YOUR_URL_');
 //Site Name
-define('SITENAME', 'Sophie\'s new profile');
+define('SITENAME', 'New Profile Project With Webpack and PHP MVC');
 //Verson
 define('APPVERSION', '1.0.0');
 
 //Google Recaptcha
-define('SITE_KEY','6LfgI64ZAAAAAGQAHbRF8-FkXXAT6baiHzAiSOQj');
-define('SECRET_SITE_KEY','6LfgI64ZAAAAAGpRCN2TkT_T70ox81iMk7PGEeIL');
+define('SITE_KEY', '6LfgI64ZAAAAAGQAHbRF8-FkXXAT6baiHzAiSOQj');
+define('SECRET_SITE_KEY', '6LfgI64ZAAAAAGpRCN2TkT_T70ox81iMk7PGEeIL');

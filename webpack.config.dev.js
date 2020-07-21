@@ -3,7 +3,7 @@ const common = require('./webpack.common');
 const path = require('path'); //Path Module from Node.js,Create Relative Route
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const CopyPlugin = require('copy-webpack-plugin');
 
 
 
@@ -24,8 +24,11 @@ module.exports = merge(common, {
                 filename: "index.html",
             }
         ),
-        // new CleanWebpackPlugin(['dist']),
-
+        new CopyPlugin({
+            patterns: [
+                { from: path.resolve("./src/img"), to: path.resolve(__dirname, 'dist/css/img') },
+            ],
+        }),
     ],
     module: {
         rules: [

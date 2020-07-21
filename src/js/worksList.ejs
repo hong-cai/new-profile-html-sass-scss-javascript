@@ -1,0 +1,24 @@
+<!-- let people = ['geddy', 'neil', 'alex'];
+let html = new EJS.render('<%= people.join(", "); %>', { people: people });
+$('.frame-wrapper').html(html); -->
+
+
+
+
+<% works.forEach(work => { %>
+<div class="website-screenshot">
+    <div class="website-img">
+        <img src=" <%= work.img %> " alt=" <%= work.name %> " />
+    </div>
+    <div class="website-text">
+        <div>
+            <a href="">
+                <h4> <%= work.name %> </h4>
+            </a>
+            <p>Difficulty: <%= work.level %> </p>
+            <p>Time: <%= work.time %> </p>
+        </div>
+        <p><%= work.description %>
+        </p>
+    </div>
+    <% }) %>

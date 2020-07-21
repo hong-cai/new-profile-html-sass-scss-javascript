@@ -4,6 +4,7 @@ const common = require('./webpack.common');
 //Merge common.js and webpack.config.prod.js
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 //Merge whatever in common.js with the following content
 module.exports = merge(common, {
@@ -23,10 +24,14 @@ module.exports = merge(common, {
                 filename: path.resolve(__dirname, "mvc/app/views/profile/index.html"),
             }
         ),
+        new CopyPlugin({
+            patterns: [
+                { from: path.resolve("./src/img"), to: path.resolve(__dirname, 'mvc/public/css/img') },
+            ],
+        }),
     ],
     module: {
         rules: [
-
         ]
     }
 

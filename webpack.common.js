@@ -1,7 +1,7 @@
 /*****   Setup Cofigurations,No Manually Typed Commands   *****/
 const path = require('path'); //Path Module from Node.js,Create Relative Route
 const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isDevelopment = process.env.NODE_ENV === 'development';
 //All Configurations Go In Module Object
@@ -22,7 +22,7 @@ module.exports = {
         inline: true //Inject Javascript Inline
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(
             {
                 filename: "./css/[name].css"
@@ -44,11 +44,19 @@ module.exports = {
                         loader: MiniCssExtractPlugin.loader,
                         //HMR:Hot Module Reloding
                         options: {
-                            hmr: isDevelopment,
+                            hmr: process.env.NODE_ENV === 'development',
                         },
                     },
                     'css-loader',
-                    'sass-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                            minimize: false,
+                            outputStyle: 'expanded'
+                        }
+                    }
+
                 ],
             },
             {
@@ -67,9 +75,9 @@ module.exports = {
                     loader: 'url-loader',
                     options: {
                         limit: 8000, // Convert images < 8kb to base64 strings
-                        name: '[name].[ext]',
-                        outputPath: 'css/img',
-                        publicPath: 'css/img',
+                        name: "[name].[ext]",
+                        outputPath: "css/img",
+                        publicPath: "./img",
                     }
                 }]
             }
