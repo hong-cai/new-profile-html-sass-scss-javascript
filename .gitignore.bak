@@ -11,3 +11,8 @@ summer-note-removes-script-tag/
 src/sandbox.html
 mvc-bak/
 src/css/modules/_arrows_bak.scss
+mvc/
+mvc-bak/
+.gitignore.bak
+.cache
+.git
