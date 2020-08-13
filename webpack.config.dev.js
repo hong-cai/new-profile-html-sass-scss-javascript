@@ -4,6 +4,7 @@ const path = require('path'); //Path Module from Node.js,Create Relative Route
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
 
@@ -11,7 +12,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = merge(common, {
     mode: 'development',
     output: {
-        filename: "./js/front-bundle.js",
+        filename: "./js/[name]-bundle.js",
         path: path.resolve(__dirname, "dist"), //Distribution Folder
         hotUpdateChunkFilename: 'hot/hot-update.js',
         hotUpdateMainFilename: 'hot/hot-update.json'
@@ -29,7 +30,25 @@ module.exports = merge(common, {
                 { from: path.resolve("./src/img"), to: path.resolve(__dirname, 'dist/css/img') },
             ],
         }),
+
     ],
+    optimization: {
+        minimize: false //this line matters to compress/uncompress js files
+        //
+        // minimizer: [new UglifyJsPlugin(
+        //     {
+        //         cache: true,
+        //         parallel: true,
+        //         uglifyOptions: {
+        //             compress: false,
+        //             ecma: 6,
+        //             mangle: true
+        //         },
+        //         sourceMap: true
+
+        //     }
+        // )],
+    },
     module: {
         rules: [
 

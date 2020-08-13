@@ -16,11 +16,25 @@
   padding-top: 60px;
 }
 
+.modal-note {
+  & .note {
+    width: 50% !important;
+    min-width: 350px !important;
+    min-height: 400px !important;
+
+    & .note-body {
+      height: calc(100% - 150px) !important;
+    }
+  }
+
+}
+
 .modal-img {
   position: absolute;
 }
 
 .note-edit,
+.note-display,
 .delete-window,
 .img-window {
   margin: 0% auto 15% auto !important;

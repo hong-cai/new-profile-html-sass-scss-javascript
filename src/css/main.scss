@@ -15,12 +15,7 @@
 @import "modules/skills";
 @import "modules/experience";
 
-// H1 title font:
-// font-family: 'Anton', sans-serif;
 // font-family: 'Holtwood One SC', serif;
-// font-family: 'Rammetto One', cursive;
-// font-family: 'Skranji', cursive;
-// font-family: 'Abel',sans-serif;
 // font-family: 'Dosis', sans-serif;
 
 /** ============================
@@ -49,7 +44,9 @@
 
 .disable-btn {
   pointer-events: none;
-  @include bubble-btn($main-white);
+  border: 1px solid darken($main-white, 20%) !important;
+  background: darken($main-white, 20%) !important;
+  box-shadow: 0px 2px 2px 2px rgba(darken($main-white, 20%), 0.6) !important;
 }
 
 /** ============================
@@ -61,7 +58,6 @@
   height: calc(100% - 50px);
   width: 100%;
   overflow: visible;
-
 }
 
 .cards-track {
@@ -93,14 +89,11 @@
   // overflow: hidden; //REMIND
 }
 
-.current-card>.wrapper {
-  box-shadow: 5px 5px 5px 2px rgba($main-dark, 0.24),
-    -2px 5px 5px 1px rgba($main-dark, 0.24);
+.current-card > .wrapper {
+  box-shadow: 5px 5px 5px 2px rgba($main-dark, 0.24), -2px 5px 5px 1px rgba($main-dark, 0.24);
 }
 
 .card-intro {
-  background: $main-white !important;
-
   .card-skills & {
     @include intro-style($lightgreen);
   }
@@ -130,9 +123,7 @@
   }
 
   .card-contact & {
-    @include card-title(transparent,
-      darken($orange, 15%),
-      darken($orange, 15%));
+    @include card-title(transparent, darken($orange, 15%), darken($orange, 15%));
     text-align: left !important;
   }
 
@@ -181,9 +172,7 @@
     box-shadow: 5px 5px 5px 0px rgba(darken($green, 35%), 0.65);
 
     & .card-details {
-      @include card-title(transparent,
-        darken($green, 15%),
-        darken($green, 15%));
+      @include card-title(transparent, darken($green, 15%), darken($green, 15%));
     }
 
     & .form-control {
@@ -259,10 +248,10 @@
       & .note-body {
         height: 160px;
         overflow: hidden;
-        display: flex;
         align-items: center;
+        position: relative;
 
-        & p:first-of-type {
+        & div:first-of-type {
           cursor: pointer;
           max-height: 160px;
           padding: 5px 3px;
@@ -271,6 +260,17 @@
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-overflow: ellipsis;
+        }
+
+        &:after {
+          content: "";
+          height: 30px;
+          width: 100%;
+          // background: white;
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, $yellow 100%);
         }
       }
 
@@ -300,7 +300,6 @@
       }
     }
   }
-
 }
 
 /** ============================
@@ -336,7 +335,6 @@
       }
     }
 
-
     & .personal-info {
       & p {
         font-size: $text-sm-size;
@@ -352,7 +350,7 @@
 
         & .stars-rating {
           width: 180px;
-          background: rgba($orange, .5);
+          background: rgba($orange, 0.5);
           height: 10px;
           position: relative;
           margin: 1.5rem 0;
@@ -364,7 +362,6 @@
             }
           }
         }
-
       }
     }
   }
@@ -372,8 +369,7 @@
   & .content-wrapper {
     width: 70%;
     background: darken($color: $yellow, $amount: 15%);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12),
-      0 0px 10px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12), 0 0px 10px -5px rgba(0, 0, 0, 0.2);
 
     & .content-range {
       max-height: 100%;
@@ -416,11 +412,7 @@
     align-items: center;
     // border: 2px solid green;
     background: transparent;
-    background-image: linear-gradient(-110deg,
-        $orange 0%,
-        $orange 50%,
-        transparent 50%,
-        transparent 100%) !important;
+    background-image: linear-gradient(-110deg, $orange 0%, $orange 50%, transparent 50%, transparent 100%) !important;
     box-shadow: 0 0 0 0 !important;
     position: relative;
 
@@ -445,11 +437,7 @@
       width: 99%;
       height: 90%;
       border: 5px solid $orange;
-      background-image: linear-gradient(-110deg,
-          $orange 0%,
-          $orange 50%,
-          $lightorange 50%,
-          $lightorange 100%);
+      background-image: linear-gradient(-110deg, $orange 0%, $orange 50%, $lightorange 50%, $lightorange 100%);
       position: relative;
       overflow: visible;
 
@@ -477,8 +465,7 @@
         }
 
         .social-media {
-          // position: -webkit-absolute;
-          // position: absolute;
+          margin: 10px;
           width: 50%;
           min-width: 200px;
           // bottom: 1%;

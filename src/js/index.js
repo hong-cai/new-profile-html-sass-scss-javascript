@@ -1,7 +1,12 @@
-import '../css/main.scss';
-import 'jquery';
+console.log('in js file');
 
 
+/** ==========================
+ ** - Remove LocalStorage Key -
+** ==========================
+**
+*/
+window.onbeforeunload = function () { localStorage.removeItem('loginPopedUp'); return ''; };
 
 /** =================
  ** - Embed Google Map -
@@ -37,9 +42,9 @@ window.initMap = initMap;
 
 
 
-/** =====================================
-** - Assign Main Random Colors To Icons-
-** ======================================
+/** ===========================================
+** - DEPRECATED:Assign Main Random Colors To Icons-
+** ============================================
 **
 */
 // let colors = ['#CAF1DE', '#E1F8DC', '#FEF8DD', '#FFE7C7', '#F7D8BA'];
@@ -137,10 +142,10 @@ const mainWidth = document.querySelector('.main').getBoundingClientRect().width;
 // console.log(Math.floor(mainWidth));
 // console.log(Math.round(mainWidth));
 // console.log(document.documentElement.clientWidth);
-// debugger;
 const responsiveWidth = mainWidth / document.documentElement.clientWidth * 100;
 cards.forEach((card, index) => { card.style.left = Math.floor(index * responsiveWidth) + 'vw'; });
 
+//Cards track width based on all cards' width
 cardsRail.style.width = responsiveWidth * cards.length + 'vw';
 
 navWraps.forEach(nav => {
@@ -165,7 +170,7 @@ navWraps.forEach(nav => {
         moveToCard(cardsRail, nextCard, currentCard);
     });
 });
-
+//Left/Right arrow clicks and slides move
 rightArrow.addEventListener('click', ToRightSlide);
 leftArrow.addEventListener('click', ToLeftSlide);
 
@@ -285,9 +290,9 @@ function handleTouchEnd(e) {
 
 
 
-/** ================================
-** --  About Page:Level Rating  --
-** =================================
+/** ===================================
+** --  About Slide:Overal Level Rating  --
+** ====================================
 **
 */
 const starsRating = document.querySelector('.stars-rating');
@@ -299,67 +304,121 @@ window.addEventListener('load', () => {
 
 
 
-/** =========================
- ** --- Display Works ---
- ** ========================
+
+/** ======================================================
+ ** ---DEPRECATED: IN PHP INSTEAD: Display Recent Works ---
+ ** ======================================================
  **
  */
-const works = [
-    { id: 1, name: 'BYO Homes', level: '0.4', time: '02/2020', description: 'A maximum 20-hour work created on Wordpress early 2020,A maximum 20-hour work created on Wordpress early 202,A maximum 20-hour work created on Wordpress early 20A maximum 20-hour work created on Wordpress early 2020,A maximum 20-hour work created on Wordpress early 202,A maximum 20-hour work created on Wordpress early 2022', img: './css/img/byohomes500x348.jpg' },
-    { id: 2, name: 'Woodend Golf Club', level: '0.5', time: '01/2020', description: 'A maximum 20-hour work created on Wordpress early 2020,A maximum 20-hour work created on Wordpress early 202,A maximum 20-hour work created on Wordpress early 202', img: './css/img/woodendgolfclub 500x348.jpg' }
-];
+// async function getWorksData() {
+//     const res = await fetch(`http://localhost/profile-css-html-js/mvc/index.php`);
+//     const data = await res.json();
+//     console.log(data);
+// }
 
-const worksFrame = document.querySelector('.frame-wrapper');
-window.addEventListener('load', () => {
-    works.forEach(work => {
-        const workDiv = document.createElement('div');
-        workDiv.classList.add('website-frame');
-        const worksList = `<div class="website-screenshot">
-        <div class="website-img" onclick="document.querySelector('.modal-img').style.display = 'block';">
-        <a href="${work.img}" onclick="event.preventDefault();">
-            <img src=" ${work.img} " alt=" ${work.name} " id="img-"+${work.id}/></a>
-        </div>
-        <div class="website-text">
-            <div>
-                <a href="">
-                    <h4> ${work.name} </h4>
-                </a>
-                <div class='project-level'>
-                <span> <strong>Difficulty:</strong></span>
-                <div class="stars-track">
-                    <div class="progress">
-                        <div class="star"><i class="fa fa-star"></i></div>
-                        <div class="star"><i class="fa fa-star"></i></div>
-                        <div class="star"><i class="fa fa-star"></i></div>
-                        <div class="star"><i class="fa fa-star"></i></div>
-                        <div class="star"><i class="fa fa-star"></i></div>
-                    </div>
-                    <div class="star"><i class="fa fa-star-o"></i></div>
-                    <div class="star"><i class="fa fa-star-o"></i></div>
-                    <div class="star"><i class="fa fa-star-o"></i></div>
-                    <div class="star"><i class="fa fa-star-o"></i></div>
-                    <div class="star"><i class="fa fa-star-o"></i></div>
-                </div>
-            </div>
-            <span> <strong>Time:</strong>${work.time}</span>
-                <p>${work.description}
-            </div>
-            </p>
-        </div>`;
-        workDiv.innerHTML = worksList;
-        worksFrame.appendChild(workDiv);
-        handleStarsLength(workDiv, work.level);
+// const works = [
+//     { id: 1, name: 'BYO Homes', level: '0.4', time: '02/2020', description: 'A maximum 20-hour work created on Wordpress early 2020,A maximum 20-hour work created on Wordpress early 202,A maximum 20-hour work created on Wordpress early 20A maximum 20-hour work created on Wordpress early 2020,A maximum 20-hour work created on Wordpress early 202,A maximum 20-hour work created on Wordpress early 2022', img: './css/img/byohomes500x348.jpg' },
+//     { id: 2, name: 'Woodend Golf Club', level: '0.5', time: '01/2020', description: 'A maximum 20-hour work created on Wordpress early 2020,A maximum 20-hour work created on Wordpress early 202,A maximum 20-hour work created on Wordpress early 202', img: './css/img/woodendgolfclub 500x348.jpg' }
+// ];
 
-    });
-});
+// const worksFrame = document.querySelector('.frame-wrapper');
+// window.addEventListener('load', () => {
+//     works.forEach(work => {
+//         const workDiv = document.createElement('div');
+//         workDiv.classList.add('website-frame');
+//         const worksList = `<div class="website-screenshot">
+//         <div class="website-img" onclick="document.querySelector('.modal-img').style.display = 'block';">
+//         <a href="${work.img}" onclick="event.preventDefault();">
+//             <img src=" ${work.img} " alt=" ${work.name} " id="img-"+${work.id}/></a>
+//         </div>
+//         <div class="website-text">
+//             <div>
+//                 <a href="">
+//                     <h4> ${work.name} </h4>
+//                 </a>
+//                 <div class='project-level'>
+//                 <span> <strong>Difficulty:</strong></span>
+//                 <div class="stars-track">
+//                     <div class="progress">
+//                         <div class="star"><i class="fa fa-star"></i></div>
+//                         <div class="star"><i class="fa fa-star"></i></div>
+//                         <div class="star"><i class="fa fa-star"></i></div>
+//                         <div class="star"><i class="fa fa-star"></i></div>
+//                         <div class="star"><i class="fa fa-star"></i></div>
+//                     </div>
+//                     <div class="star"><i class="fa fa-star-o"></i></div>
+//                     <div class="star"><i class="fa fa-star-o"></i></div>
+//                     <div class="star"><i class="fa fa-star-o"></i></div>
+//                     <div class="star"><i class="fa fa-star-o"></i></div>
+//                     <div class="star"><i class="fa fa-star-o"></i></div>
+//                 </div>
+//             </div>
+//             <span> <strong>Time:</strong>${work.time}</span>
+//                 <p>${work.description}
+//             </div>
+//             </p>
+//         </div>`;
+//         workDiv.innerHTML = worksList;
+//         worksFrame.appendChild(workDiv);
+//         handleStarsLength(workDiv, work.level);
+//     });
+// });
 
 /*End of Displaying Works */
 
 
+/** =====================================
+ ** --- Display Recent Works Stars Level ---
+ ** ====================================
+ **
+ */
+function handleStarsLength(addedDiv, percent) {
+    // Calculate the length of star progress bar
+    const starsTrack = addedDiv.querySelector('.stars-track');
+    const progress = addedDiv.querySelector('.progress');
+    const horrowStars = addedDiv.querySelectorAll('.stars-track > .star');
+    const hardStars = addedDiv.querySelectorAll('.progress > .star');
+    const starWidth = horrowStars[0].offsetWidth;
+    //Setting each horrow star width,left and position
+    starLeft([...horrowStars]);
+    //Setting each hard stars width,left and position
+    starLeft([...hardStars]);
+    //Setting starTrack's whole width
+    starsTrack.style.width = starWidth * (horrowStars.length) + 'px';
+
+    //progress bar to display the skill level,default:60%
+    progress.style.width = percent * starWidth * (horrowStars.length) + 'px';
+    //setting each star style.left;
+    function starLeft(stars) {
+        stars.map((star, index) => {
+            stars[index].style.left = starWidth * (index) + 'px';
+        });
+    }
+}
+
+//Jquery Ajax here to get all the skills' levels for work projects
+// const projects = document.querySelectorAll('.project-level');
+// $('.experience').ready(function () {
+//     $.ajax({
+//         type: 'GET',
+//         url: "http://localhost/profile-css-html-js/mvc/profile/getStarsLevel",
+//         dataType: 'json',
+//         success: function (data) {
+//             for (let i = 0; i < projects.length; i++) {
+//                 handleStarsLength(projects[i], parseFloat(data[i].content_detail));
+//             }
+//         },
+//         error: function (response) {
+//             alert('something wrong');
+//         }
+//     });
+// });
+/*End of Displaying Works Stars Level */
+
 
 /** ================================
  ** --   Show Modal Images    --
- ** =================================
+ ** ================================
 **
 */
 // const imgDivs = document.querySelectorAll('.content-experience');
@@ -374,19 +433,47 @@ window.addEventListener('load', () => {
 //         imgModal.classList.add('.modal-img');
 //         experienceContent.insertBefore(imgModal);
 //         imgModal.innerHTML = `hello`;
-
 //     })
 // })
 
 /*End of Displaying Modal Images */
 
 /** ================================
-** --   Skills Progress Bars    --
+** -- Display:Skills Progress Bars  --
 ** =================================
 **
 */
 
-// Display the level starprogress bar divs
+// Display the skills level progress divs
+// const progressDiv = document.querySelector('.progress-bars');
+// $('.Skills').ready(function () {
+//     $.ajax({
+//         type: 'GET',
+//         url: "http://localhost/profile-css-html-js/mvc/profile/getSkillsInfo",
+//         dataType: 'json',
+//         success: function (data) {
+//             const skillGroup = Math.round(data.length / 3);
+//             data.map(record=>{})
+//             debugger;
+
+//             for (let i = 0; i < data.length; i++) {
+//                 // console.log(data[i].content_title);
+//                 const skillDiv = document.createElement('div');
+//                 skillDiv.classList.add('progress-bar');
+//                 skillDiv.innerHTML = `
+// <div class='skill'>
+// <span class='skill-title'>${data[i].content_title}</span>
+// </div>
+// `;
+//                 progressDiv.appendChild(skillDiv);
+//                 // handleStarsLength(skillDiv, sample.level);
+//             }
+//         },
+//         error: function (response) {
+//             alert('something wrong');
+//         }
+//     });
+// });
 const skillsSample = [
     { id: 1, skill: 'Javascript', level: 0.6 },
     { id: 2, skill: 'HTML', level: 0.9 },
@@ -442,34 +529,158 @@ window.addEventListener('load', () => {
         }
     );
 });
-function handleStarsLength(addedDiv, percent) {
-    // Calculate the length of star progress bar
-    const starsTrack = addedDiv.querySelector('.stars-track');
-    const progress = addedDiv.querySelector('.progress');
-    const horrowStars = addedDiv.querySelectorAll('.stars-track > .star');
-    const hardStars = addedDiv.querySelectorAll('.progress > .star');
-    const starWidth = horrowStars[0].offsetWidth;
-    //Setting each horrow star width,left and position
-    starLeft([...horrowStars]);
-    //Setting each hard stars width,left and position
-    starLeft([...hardStars]);
-    //Setting starTrack's whole width
-    starsTrack.style.width = starWidth * (horrowStars.length) + 'px';
 
-    //progress bar to display the skill level,default:60%
-    progress.style.width = percent * starWidth * (horrowStars.length) + 'px';
-    //setting each star style.left;
-    function starLeft(stars) {
-        stars.map((star, index) => {
-            stars[index].style.left = starWidth * (index) + 'px';
-        });
-    }
-
-}
 
 /* ----End of Skills Progress Bars----- */
 
 
+
+
+
+
+
+
+/** ===========================
+ ** ----- Hide Modal -------
+ ** ===========================
+ **
+ */
+// Get the modal
+const modalLogin = document.querySelector('.modal-login');
+const modalNote = document.querySelector('.modal-note');
+const noteDisplay = modalNote.querySelector('.note-display');
+const modalDelete = document.querySelector('.modal-delete');
+const deleteCancel = document.querySelector('.confirm-n');
+const imgCancel = document.querySelector('.modal-img');
+const modalArray = [modalLogin, modalNote, modalDelete];
+const noteBtns = document.querySelectorAll('button[data-id]');
+[...noteBtns].forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const noteId = e.target.getAttribute('data-id');
+        //Get note data from fetchAPI
+        fetchNoteInfo(noteId);
+        //Check if session exists,flag in localStorage
+        controlModalNoteOpen();
+    })
+});
+
+//Get note data from fetchAPI
+function fetchNoteInfo(noteId) {
+    fetch(`notes/getSingleNote/${noteId}`, {
+        method: 'get',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw (response.status + ': ' + Response.responseText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // const parsedData = JSON.parse(data);
+            noteDetails(data);
+        })
+        .catch(error => console.log(error))
+}
+function modalOpen(modal) {
+    modal.style.display = 'block';
+}
+//Check if session exists,flag in localStorage
+function controlModalNoteOpen() {
+    if (sessionStorage.getItem("user_id") !== null) {
+        modalOpen(modalNote);
+    } else {
+        //Remind to login once only,if 'use_id'not there,flag in localstorage
+        if (localStorage.getItem('loginPopedUp') !== "1") {
+            localStorage.setItem('loginPopedUp', 1);
+            modalOpen(modalLogin);
+            return;
+        }
+        modalOpen(modalNote);
+    }
+}
+//Close modal and clean modalNote innerHTML
+modalArray.forEach(modal => modal.addEventListener('click', (e) => {
+    if (e.target == modal) {
+        modal.style.display = "none";
+        if (modal == modalNote) {
+            modalNote.innerHTML = null;
+        } else if (modal == modalLogin) {
+            modalOpen(modalNote);
+        }
+    }
+}
+));
+//Display the note contents
+function noteDetails(data) {
+    const note = document.createElement('div');
+    note.classList.add('note', 'note-display', 'animate');
+    note.innerHTML = `
+    <div class="note-title">
+        <h4> <strong>${data.title}</strong></h4>
+        <div class="note-category">
+            <span class="note-tag">
+                <h5>${data.category}</h5>
+            </span>
+            <span class="note-tag">
+                <h5>${data.created_at}</h5>
+            </span>
+        </div>
+    </div>
+    <div class="note-body">
+        <p>
+        ${data.body}
+        </p>
+    </div>
+    <div class="note-footer">
+
+        <button //REMIND: SHOULD BE REPLY CONTENT
+            onclick="document.querySelector('.modal-note').style.display='none'"
+            style="width:auto;">ok</button>
+    </div>
+    `;
+    modalNote.appendChild(note);
+}
+
+
+deleteCancel.addEventListener('click', () => { modalDelete.style.display = 'none'; console.log('herehere'); })
+/*End of Hiding Modal */
+
+/** ==============================
+ ** - ReadMore Btn Gets Note Info -
+ ** ==============================
+ **
+ */
+// [...noteBtns].forEach(btn => btn.addEventListener('click', (e) => {
+//     console.log(e.target.getAttribute('data-id'));
+//     const noteId = e.target.getAttribute('data-id');
+// fetch('notes/getSingleNote', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({
+//         'data': noteId
+//     })
+//         .then((response) => {
+//             if (!response.ok) {
+//                 throw (response.status + ': ' + Response.responseText);
+//             }
+//             return response.json();
+//         })
+//         .then((data) => {
+//             // modalLogin.style.display = 'block'?modalLogin.style.display = 'none':null;
+//             const parsedData = JSON.parse(data);
+//             console.log(parsedData);
+//         })
+//         .catch(error => console.log(error))
+// })
+// }));
+
+
+
+/* ----End of ReadMore Btn Gets Note Info----- */
 
 
 
@@ -496,7 +707,7 @@ function removeHighlight() {
 
 /** ================ 
 ** - Tags Switch -
-
+ 
 ** ================ */
 window.addEventListener('load', () => {
     var tagSlides = document.querySelector('.content-about');
@@ -518,28 +729,6 @@ window.addEventListener('load', () => {
 
 /*End of Tag Switch */
 
-
-
-/** ===========================
- ** ----- Hide Modal -------
- ** ===========================
- **
- */
-// Get the modal
-const modalLogin = document.querySelector('.modal-login');
-const modalNote = document.querySelector('.modal-note');
-const modalDelete = document.querySelector('.modal-delete');
-const deleteCancel = document.querySelector('.confirm-n');
-const imgCancel = document.querySelector('.modal-img');
-[modalLogin, modalNote, modalDelete, imgCancel].forEach(modal => modal.addEventListener('click', (e) => {
-    if (e.target == modal) {
-        modal.style.display = "none";
-    }
-}
-));
-
-deleteCancel.addEventListener('click', () => { modalDelete.style.display = 'none' })
-/*End of Hiding Modal */
 
 
 
@@ -617,6 +806,26 @@ function hideValidate(input) {
 }
 
 /*End of Validating Contact Form */
+
+
+
+
+
+
+
+/** =====================
+ ** - Contact Form Sumit -
+ ** =====================
+ **
+ */
+function checkFormSumit() {
+    const checkform = document.getElementById('check').value;
+    console.log(checkform);
+}
+
+
+/*End of Contact Form Sumit */
+
 
 /** ===============================
  ** - Submit Button Recaptcha -

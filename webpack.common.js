@@ -3,10 +3,13 @@ const path = require('path'); //Path Module from Node.js,Create Relative Route
 const webpack = require('webpack');
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const isDevelopment = process.env.NODE_ENV === 'development';
+const isDevelopment = process.env.NODE_ENV === process.env.NODE_ENV || 'development';
 //All Configurations Go In Module Object
 module.exports = {
-    entry: "./src/js/index.js",
+    entry: {
+        'profile': ['./src/js/index.js', './src/css/main.scss'],
+        'panel': ['./src/js/panel-index.js', './src/css/panel.scss']
+    },
     watch: true,
     // watchOptions:{
     //     aggregationTimeout:500,
@@ -19,7 +22,8 @@ module.exports = {
         watchContentBase: true,
         hot: true, //Update Without Reload
         open: true, //Open Page When Start Server
-        inline: true //Inject Javascript Inline
+        inline: true, //Inject Javascript Inline
+        liveReload: false
     },
     plugins: [
         // new CleanWebpackPlugin(),
@@ -30,9 +34,12 @@ module.exports = {
         ),
         new webpack.ProvidePlugin({
             $: 'jquery',
-            jQuery: 'jquery'
+            jQuery: 'jquery',
+            moment: 'moment'
         }),
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin(
+            { multiStep: true }
+        ),
     ],
     module: {
         rules: [

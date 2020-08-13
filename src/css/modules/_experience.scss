@@ -2,155 +2,155 @@
 ** ----  Experience Card  ----
 ** ============================ */
 .experience {
-    & .content-range {
+  & .content-range {
+    & .frame-wrapper {
+      width: 100%;
+      // border: 1px solid orange;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
 
-        & .frame-wrapper {
-            width: 100%;
-            border: 1px solid orange;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
+      & .website-frame {
+        width: 100%;
+        @include card-shadow(right);
+        max-width: 950px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 4rem 0;
 
-            & .website-frame {
-                @include card-shadow(right);
-                width: 100%;
-                max-width: 1000px;
-                height: auto;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 4rem 0;
+        &:nth-of-type(even) {
+          @include card-shadow(left);
 
-                &:nth-of-type(even) {
-                    @include card-shadow(left);
+          & .website-screenshot {
+            flex-direction: row-reverse;
 
-                    & .website-screenshot {
-                        flex-direction: row-reverse;
-
-                        & img {
-                            right: 0;
-                            @include card-shadow(left);
-                        }
-                    }
-                }
-
-                & .website-screenshot {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                    background: $main-white;
-
-                    & .website-img {
-                        width: 40%;
-                        height: 180px;
-                        margin: 0;
-                        position: relative;
-
-                        @include break(576px) {
-                            width: 100%;
-                            height: 250px;
-                        }
-
-                        & img {
-                            @include card-shadow(right);
-                            position: absolute;
-                            width: 120%;
-                            max-width: 450px;
-                            height: 140%;
-                            top: -20%;
-                        }
-                    }
-
-                    & .website-text {
-                        border: 1px solid tomato;
-                        height: 100%;
-                        width: 48%;
-                        margin: 1rem;
-
-                        .project-level {
-                            width: 180px;
-                            position: relative;
-
-                            & .stars-track {
-                                height: 25px;
-                                top: 47%;
-                                left: 78%;
-
-                                & .star {
-                                    color: yellow;
-                                    width: 25px;
-                                    font-size: $text-sm-size;
-                                }
-                            }
-                        }
-                    }
-
-
-                }
-
-                @include break(768px) {
-                    width: 70%;
-                    margin: 20% 0;
-
-                    .website-screenshot {
-                        flex-direction: column !important;
-
-                        & .website-img {
-                            width: 80%;
-
-                            & img {
-                                width: 100%;
-                                transform: translateY(-23%);
-                            }
-                        }
-
-                        & .website-text {
-                            width: 90%;
-                            height: auto;
-                        }
-                    }
-                }
-
-                @include break(576px) {
-                    width: 80% !important;
-                    @include card-shadow(all);
-                    margin: 10% 0;
-
-                    .website-screenshot {
-
-                        & .website-img {
-                            width: 100%;
-
-
-                            & img {
-                                width: 100%;
-                                height: 100%;
-                                transform: translateY(15%);
-                            }
-                        }
-                    }
-                }
-
-                @include break(480px) {
-                    width: 100% !important;
-                    // height: 100%;
-
-                    .website-screenshot {
-                        // & .website-img {
-                        //     width: 100%;
-                        //     & img {
-                        //         width: 100%;
-                        //         max-width: 450px;
-                        //         transform: translateY(-20%);
-                        //     }
-                        // }
-                        // & .website-text {
-                        //     width: 90%;
-                        // }
-                    }
-                }
+            & img {
+              right: 0;
+              @include card-shadow(left);
             }
+          }
         }
+
+        & .website-screenshot {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          background: $main-white;
+
+          & .website-img {
+            width: 40%;
+            height: 180px;
+            margin: 0;
+            position: relative;
+
+            @include break(576px) {
+              width: 100%;
+              height: 250px;
+            }
+
+            & img {
+              @include card-shadow(right);
+              position: absolute;
+              width: 120%;
+              max-width: 420px;
+              height: 140%;
+              top: -20%;
+              @include imgsFrame(0.8);
+              transition: $main-transition;
+
+              &:hover {
+                transform: scale(1.01);
+                @include imgsFrame(1.4);
+                box-shadow: 5px 5px 6px 2px rgba(0, 0, 0, 0.4);
+              }
+            }
+          }
+
+          & .website-text {
+            // border: 1px solid tomato;
+            height: 100%;
+            width: 48%;
+            margin: 1rem;
+
+            & h3 {
+              @include logo-title(darken($lightorange, 20%));
+              font-size: $text-md-size;
+              // color: darken($lightorange, 20%);
+
+              &:hover {
+                color: $link-color !important;
+              }
+            }
+
+            .project-level {
+              width: 180px;
+              position: relative;
+
+              & .stars-track {
+                height: 25px;
+                top: 47%;
+                left: 78%;
+
+                & .star {
+                  color: yellow;
+                  width: 25px;
+                  font-size: $text-sm-size;
+                }
+              }
+            }
+          }
+        }
+
+        @include break(768px) {
+          width: 70%;
+          margin: 20% 0;
+
+          .website-screenshot {
+            flex-direction: column !important;
+
+            & .website-img {
+              width: 80%;
+
+              & img {
+                width: 100%;
+                transform: translateY(-23%);
+              }
+            }
+
+            & .website-text {
+              width: 90%;
+              height: auto;
+            }
+          }
+        }
+
+        @include break(576px) {
+          width: 80% !important;
+          @include card-shadow(all);
+          margin: 10% 0;
+
+          .website-screenshot {
+            & .website-img {
+              width: 100%;
+
+              & img {
+                width: 100%;
+                height: 100%;
+                transform: translateY(15%);
+              }
+            }
+          }
+        }
+
+        @include break(480px) {
+          width: 100% !important;
+          // height: 100%;
+        }
+      }
     }
+  }
 }

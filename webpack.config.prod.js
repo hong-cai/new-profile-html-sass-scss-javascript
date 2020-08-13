@@ -5,17 +5,23 @@ const common = require('./webpack.common');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 //Merge whatever in common.js with the following content
 module.exports = merge(common, {
-    mode: 'production',
+    mode: 'development',
     output: {
-        filename: "./js/front-bundle.js",
+        filename: "./js/[name]-bundle.js",
         // filename:"/js/font-bundle.[contentHash].js",
         path: path.resolve(__dirname, "mvc/public"), //Distribution Folder
         hotUpdateChunkFilename: 'hot/hot-update.js',
         hotUpdateMainFilename: 'hot/hot-update.json'
     },
+    // resolve: {
+    //     alias: {
+    //         jquery: path.resolve(__dirname, "mvc/public/js/jquery.min.js")
+    //     }
+    // },
     plugins: [
         new HtmlWebpackPlugin(
             {
@@ -29,7 +35,25 @@ module.exports = merge(common, {
                 { from: path.resolve("./src/img"), to: path.resolve(__dirname, 'mvc/public/css/img') },
             ],
         }),
+
     ],
+    optimization: {
+        minimize: false
+
+        // minimizer: [new UglifyJsPlugin(
+        //     {
+        //         cache: true,
+        //         parallel: true,
+        //         uglifyOptions: {
+        //             compress: false,
+        //             ecma: 6,
+        //             mangle: true
+        //         },
+        //         sourceMap: true
+
+        //     }
+        // )],
+    },
     module: {
         rules: [
         ]

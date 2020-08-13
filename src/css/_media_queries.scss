@@ -7,7 +7,6 @@
     & .tag-btn {
       margin: 0 !important;
     }
-
   }
 
   .underline {
@@ -19,12 +18,9 @@
   }
 }
 
-
-
 @media (max-width: 576px) {
   h4 {
     font-size: $text-xs-size;
-
   }
 
   .card-details {
@@ -36,9 +32,7 @@
   footer {
     font-size: $text-mobile;
   }
-
 }
-
 
 @media (max-width: 625px) {
   .cards {
@@ -50,8 +44,6 @@
       font-size: $text-xs-size !important;
     }
   }
-
-
 
   .card-id {
     grid-template-columns: 40% 60% !important;
@@ -69,7 +61,6 @@
       width: 98%;
       justify-content: space-between;
 
-
       & li {
         width: 100%;
 
@@ -85,7 +76,7 @@
   .progress-bars {
     grid-template-columns: 1fr;
 
-    & .skill>span {
+    & .skill > span {
       font-size: $text-sm-size;
     }
 
@@ -98,10 +89,9 @@
     h1 {
       font-size: 2.3rem;
     }
-
   }
 
-  .card-intro>h4 {
+  .card-intro > h4 {
     font-size: $text-xs-size;
   }
 
@@ -119,17 +109,13 @@
       #message {
         height: 100px;
       }
-
     }
   }
-
 }
-
-
 
 @media (max-width: 768px) {
   body {
-    height: 150vh;
+    height: 170vh;
     overflow-y: scroll;
   }
 
@@ -156,7 +142,6 @@
 
       & .avatar {
         grid-area: 1/1/2/2;
-
       }
 
       & .personal-info {
@@ -182,9 +167,11 @@
   .card-contact {
     & .content-wrapper {
       flex-direction: column !important;
-      background-image: linear-gradient(-110deg,
-          #ffe7c7 0%,
-          #ffe7c7 100%) !important;
+      background-image: linear-gradient(
+        -110deg,
+        #ffe7c7 0%,
+        #ffe7c7 100%
+      ) !important;
       overflow: auto;
 
       & .content-range {
@@ -249,9 +236,11 @@
     height: 55px;
     background: $lightorange;
     border-radius: 1.2rem;
-    background-image: linear-gradient(to bottom,
-        $yellow 0%,
-        darken($yellow, 10%) 100%);
+    background-image: linear-gradient(
+      to bottom,
+      $yellow 0%,
+      darken($yellow, 10%) 100%
+    );
     border: 1px solid darken($yellow, 25%);
     box-shadow: 0 0 0 5px lighten($color: $main-white, $amount: 20%);
     margin-bottom: 10px;

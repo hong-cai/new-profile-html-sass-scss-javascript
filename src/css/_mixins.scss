@@ -1,10 +1,10 @@
 /** ============================
-** function circular-progress
+** ----Hover effect over img----
 ** ============================ */
 
 @mixin imgsFrame($filterL) {
-  -webkit-filter: grayscale($filterL);
-  filter: grayscale($filterL);
+  -webkit-filter: saturate($filterL);
+  filter: saturate($filterL);
 }
 
 @mixin imgDir($url, $selectors) {
@@ -32,17 +32,11 @@
 @mixin card-shadow($direction: "") {
   @if $direction==right {
     box-shadow: 5px 5px 6px 2px rgba(0, 0, 0, 0.3);
-  }
-
-  @else if $direction==left {
+  } @else if $direction==left {
     box-shadow: -5px 5px 6px 2px rgba(0, 0, 0, 0.3) !important;
-  }
-
-  @else if $direction==all {
+  } @else if $direction==all {
     box-shadow: 5px 5px 6px 2px rgba(0, 0, 0, 0.3);
-  }
-
-  @else {
+  } @else {
     box-shadow: 0px 0px 0px 0px;
   }
 }
@@ -52,11 +46,8 @@
 ** ============================ */
 @mixin nav-style($color) {
   border: 1px solid darken($color, 25%);
-  background-image: linear-gradient(-180deg,
-      $color 0%,
-      darken($color, 20%) 100%);
-  box-shadow: inset 0px 2px 3px 2px rgba(lighten($color, 25%), 0.7),
-    0px 3px 2px 2px rgba(darken($color, 45%), 0.7),
+  background-image: linear-gradient(-180deg, $color 0%, darken($color, 20%) 100%);
+  box-shadow: inset 0px 2px 3px 2px rgba(lighten($color, 25%), 0.7), 0px 3px 2px 2px rgba(darken($color, 45%), 0.7),
     inset 0px -1px 1px 0px rgba(lighten($color, 15%), 0.7);
 
   & a:hover,
@@ -66,12 +57,9 @@
 }
 
 @mixin nav-active($color) {
-  background-image: linear-gradient(-180deg,
-      lighten($color, 2%) 0%,
-      darken($color, 25%) 100%);
+  background-image: linear-gradient(-180deg, lighten($color, 2%) 0%, darken($color, 25%) 100%);
   border: 1px solid darken($color, 5%);
-  box-shadow: inset 0px 1px 1px 1px rgba(lighten($color, 5%), 0.7),
-    0px 2px 6px 4px darken($color, 15%),
+  box-shadow: inset 0px 1px 1px 1px rgba(lighten($color, 5%), 0.7), 0px 2px 6px 4px darken($color, 15%),
     0px 1px 0px 0px rgba(darken($color, 15%), 0.7);
   transform: translateY(2px);
 
@@ -85,29 +73,17 @@
 ** ================================ */
 @mixin multiple-borders($color) {
   border: 4px solid darken($color, 15%);
-  box-shadow: 0 0 0 4px darken($color, 5%),
-    0 0 0 8px lighten($color: $main-white, $amount: 20%);
-
+  box-shadow: 0 0 0 4px darken($color, 5%), 0 0 0 8px lighten($color: $main-white, $amount: 20%);
 }
 
 /** ================================
 **  --- Card Title Design  ---
 ** ================================ */
-@mixin card-title($color,
-  $text-color: $color,
-  $dark-text: darken($text-color, 15%)) {
-  background-image: linear-gradient(to bottom,
-      darken($color, 15%),
-      darken($color, 15%) 50%,
-      $color 50%,
-      $color 100%);
+@mixin card-title($color, $text-color: $color, $dark-text: darken($text-color, 15%)) {
+  background-image: linear-gradient(to bottom, darken($color, 15%), darken($color, 15%) 50%, $color 50%, $color 100%);
 
   & .title-text {
-    background-image: linear-gradient(to bottom,
-        $text-color,
-        $text-color 50%,
-        $dark-text 50%,
-        $dark-text 100%);
+    background-image: linear-gradient(to bottom, $text-color, $text-color 50%, $dark-text 50%, $dark-text 100%);
   }
 }
 
@@ -136,21 +112,21 @@
 /** ============================
 **  - Nav + Content Background -
 ** ============================ */
-$colors: (notes: $green,
+$colors: (
+  notes: $green,
   skills: $lightgreen,
   experience: $lightorange,
   about: $yellow,
-  contact: $orange);
+  contacts: $orange,
+);
 
-@each $key,
-$value in $colors {
+@each $key, $value in $colors {
   .card-#{$key} {
     background: $value;
   }
 }
 
-@each $key,
-$value in $colors {
+@each $key, $value in $colors {
   .nav-#{$key} {
     background: $value;
     @include nav-style($value);
@@ -259,16 +235,18 @@ $value in $colors {
   display: inline-block;
   background-size: 300%;
   background-position: right;
-  background-image: linear-gradient(135deg,
-      darken($color, 10%) 0%,
-      darken($color, 10%) 35%,
-      $color 35%,
-      $color 50%,
-      darken($color, 10%) 50%,
-      darken($color, 10%) 53%,
-      $color 53%,
-      $color 58%,
-      darken($color, 10%) 58%);
+  background-image: linear-gradient(
+    135deg,
+    darken($color, 10%) 0%,
+    darken($color, 10%) 35%,
+    $color 35%,
+    $color 50%,
+    darken($color, 10%) 50%,
+    darken($color, 10%) 53%,
+    $color 53%,
+    $color 58%,
+    darken($color, 10%) 58%
+  );
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
   -webkit-animation-timing-function: linear;
@@ -308,8 +286,7 @@ $value in $colors {
     ** ===================== */
 @mixin sm-div-shadow($color) {
   background: rgba(darken($color, 20%), 0.6);
-  box-shadow: 0 2px 2px 0 rgba(darken($main-white, 50%), 0.14),
-    0 3px 1px -2px rgba(darken($main-white, 5%), 0.2),
+  box-shadow: 0 2px 2px 0 rgba(darken($main-white, 50%), 0.14), 0 3px 1px -2px rgba(darken($main-white, 5%), 0.2),
     0 1px 5px 0 rgba(darken($main-white, 50%), 0.12);
 }
 
@@ -332,7 +309,7 @@ $value in $colors {
   & span {
     height: 70px;
     width: 70px;
-    // border: 1px solid pink;    
+    // border: 1px solid pink;
     padding: 5px;
     margin: 0 25px;
   }
