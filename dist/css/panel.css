@@ -1,14 +1,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Lato&display=swap);
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
-/**** variable ***/
-/** ============================
-** Basic Settings
-** ============================ */
 body {
   font-family: "Dosis", sans-serif !important;
   margin: 0;
   overflow-y: hidden;
-  /* background-blend-mode: multiply; */
   background: linear-gradient(#caf1de, #e1f8dc, #fef8dd, #ffe7c7, #f7d8ba);
   display: flex;
   flex-direction: column;
@@ -51,19 +46,10 @@ form {
   background: rgba(255, 255, 255, 0.9);
 }
 
-/** ============================
-  ** Table columns
-  ** ============================ */
 .editInput {
   width: 100px;
 }
 
-/** ============================
-  ** function circular-progress
-  ** ============================ */
-/** ============================
-  ** Scrollbar setting
-  ** ============================ */
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
@@ -86,9 +72,6 @@ form {
   background: grey;
 }
 
-/** ============================
-    ** Registration form
-    ** ============================ */
 .card-primary {
   min-width: 350px;
   width: 50% !important;
@@ -98,9 +81,6 @@ form {
   justify-content: space-between;
 }
 
-/** ============================
-  ** cards
-  ** ============================ */
 .admin-card {
   z-index: 0;
   transition: 0.2s;
@@ -141,7 +121,6 @@ form {
 .admin-nav-tag {
   width: 180px;
   margin: 0 20px;
-  /* padding: 5px 0; */
   background: #fff;
 }
 
@@ -171,9 +150,6 @@ form {
   overflow-x: hidden;
 }
 
-/** ============================
-  ** Info Box
-  ** ============================ */
 .box .box-header {
   display: flex;
   flex-direction: column;
@@ -199,9 +175,6 @@ form {
   text-align: right;
 }
 
-/** ============================
-  ** Note  Card
-  ** ============================ */
 .note {
   height: 400px;
   background: #fef8dd !important;
@@ -221,7 +194,6 @@ form {
   position: absolute;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, #fff 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33ffffff', endColorstr='#ffffffff', GradientType=0);
   z-index: 1;
   padding-top: 20px;
   height: 50px;
@@ -236,19 +208,6 @@ form {
   line-height: 1rem;
 }
 
-/** ============================
-  ** Contact Card- Contact-Form
-  ** ============================ */
-/** ============================
-  ** Login Button at the corner
-  ** ============================ */
-/* .nav-item:last-child {
-    position: fixed;
-    bottom: 0;
-} */
-/** ============================
-  ** Main Footer
-  ** ============================ */
 .main-footer {
   position: absolute;
   bottom: 0;
@@ -271,9 +230,6 @@ footer.main-footer h5 {
   font-size: 1rem;
 }
 
-/** ============================
-  ** Modal styling
-  ** ============================ */
 /* .modal {
     position: relative;
     top: auto;
@@ -286,16 +242,6 @@ footer.main-footer h5 {
 /* .modal {
     background: transparent !important;
 } */
-/** ============================
-  ** Summernote modal stays front
-  ** ============================ */
-.modal-backdrop {
-  display: none;
-}
-
-/** ============================
-  ** Media Queries
-  ** ============================ */
 @media screen and (max-width: 768px) {
   #contact-form {
     margin: 20px auto;

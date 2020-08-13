@@ -1,3 +1,4 @@
+//   --   Buttons:Main Styles  --
 %btn {
   outline: none;
   // margin: 10px;
@@ -78,9 +79,7 @@
   margin: 0px;
 }
 
-/** ============================
-** - Slides Left/Right Arrows  -
-** ============================ */
+//   --   Slides: Left/Right Arrow Buttons  --
 .disable-arrow {
   pointer-events: none;
 }
@@ -112,10 +111,7 @@
     @include arrowAnimation(1);
   }
 }
-
-/** =====================
-** - Social Media Links  -
-** ======================*/
+//   --   Social Media Buttons  --
 .social-media {
   & span {
     @extend %btn;
@@ -131,9 +127,7 @@
   }
 }
 
-/** =========================
-** - About Page:Main Buttons  -
-** ==========================*/
+//   --   About Card: Main Buttons  --
 .main-btns {
   & li {
     list-style: none;
@@ -157,12 +151,9 @@
   }
 }
 
-/** ===============
-** - Delete Modal Button  -
-** ================*/
+//   --   Modal: Delete Buttons  --
 
 .confirm {
-
   &-y,
   &-n {
     width: 60px;
@@ -179,9 +170,7 @@
   }
 }
 
-/** ===============
-** - Submit Button  -
-** ================*/
+//   --   Form:Submit Button  --
 
 .submit-button {
   @extend %btn;

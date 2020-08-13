@@ -1,9 +1,7 @@
-// require('jquery');
-console.log('here at top');
 
 /**
  * ------------------------------------------------------------------------
- * - DISABLE REGISTER BUTTON IF'I agree to the terms of service.'NOT TICKED-
+ * - DISABLE REGISTER BUTTON IF 'I agree to the terms of service.' NOT TICKED-
  * ------------------------------------------------------------------------
  */
 regCheck = document.getElementById('reg-check');

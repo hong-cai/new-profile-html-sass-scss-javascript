@@ -124,10 +124,8 @@
 .preloading-container div:nth-child(1) {
   background-color: darken($color: $orange, $amount: 15%);
   transform: translate(148px, 80px) scale(1);
-  -webkit-animation: loading-r 1s infinite cubic-bezier(0, 0.5, 0.5, 1),
-    loading-c 4s infinite step-start;
-  animation: loading-r 1s infinite cubic-bezier(0, 0.5, 0.5, 1),
-    loading-c 4s infinite step-start;
+  -webkit-animation: loading-r 1s infinite cubic-bezier(0, 0.5, 0.5, 1), loading-c 4s infinite step-start;
+  animation: loading-r 1s infinite cubic-bezier(0, 0.5, 0.5, 1), loading-c 4s infinite step-start;
 }
 
 .preloading-container div:nth-child(2) {

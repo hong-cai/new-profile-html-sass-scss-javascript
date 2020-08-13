@@ -1,4 +1,6 @@
-/* The Modals */
+/** ============================
+  ** ----  The Modals ----
+  ** ============================ */
 .modal-login,
 .modal-note,
 .modal-delete,
@@ -26,7 +28,6 @@
       height: calc(100% - 150px) !important;
     }
   }
-
 }
 
 .modal-img {
@@ -71,7 +72,6 @@
     transform: scale(1);
   }
 }
-
 
 .delete-window {
   width: 300px;

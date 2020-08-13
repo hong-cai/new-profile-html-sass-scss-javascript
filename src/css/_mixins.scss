@@ -1,6 +1,4 @@
-/** ============================
-** ----Hover effect over img----
-** ============================ */
+//** ----Hover effect over img----
 
 @mixin imgsFrame($filterL) {
   -webkit-filter: saturate($filterL);
@@ -15,9 +13,7 @@
   }
 }
 
-/** ============================
-**  ---   Responsive-Nav   ---
-** ============================ */
+//** ----Responsive Navs----
 
 @mixin break($width) {
   @media (max-width: $width) {
@@ -25,9 +21,7 @@
   }
 }
 
-/** ============================
-**  ---  Card Shadow   ---
-** ============================ */
+//** ----Card Shadow----
 
 @mixin card-shadow($direction: "") {
   @if $direction==right {
@@ -41,9 +35,7 @@
   }
 }
 
-/** ============================
-**  - Nav Button Shadow Style -
-** ============================ */
+//** ----Nav Buttons Shadow Style----
 @mixin nav-style($color) {
   border: 1px solid darken($color, 25%);
   background-image: linear-gradient(-180deg, $color 0%, darken($color, 20%) 100%);
@@ -68,17 +60,13 @@
   }
 }
 
-/** ================================
-**  --- Content Multiple Borders  ---
-** ================================ */
+//** ----Content: Multiple Borders----
 @mixin multiple-borders($color) {
   border: 4px solid darken($color, 15%);
   box-shadow: 0 0 0 4px darken($color, 5%), 0 0 0 8px lighten($color: $main-white, $amount: 20%);
 }
 
-/** ================================
-**  --- Card Title Design  ---
-** ================================ */
+//** ----Card:Title Designs----
 @mixin card-title($color, $text-color: $color, $dark-text: darken($text-color, 15%)) {
   background-image: linear-gradient(to bottom, darken($color, 15%), darken($color, 15%) 50%, $color 50%, $color 100%);
 
@@ -87,9 +75,7 @@
   }
 }
 
-/** ==================
-**  --- Intro Style ---
-** =================== */
+//** ----Card: Intro----
 @mixin intro-style($color) {
   margin: 2%;
   border: 1px solid darken($color, 20%);
@@ -109,9 +95,7 @@
   }
 }
 
-/** ============================
-**  - Nav + Content Background -
-** ============================ */
+//** ----Navs and Content Background----
 $colors: (
   notes: $green,
   skills: $lightgreen,
@@ -137,10 +121,7 @@ $colors: (
     }
   }
 }
-
-/** ================================
-**  --- Bubble Style Buttons  ---
-** ================================ */
+//** ----Bubble Styled Buttons----
 @mixin bubble-btn($color) {
   background-color: darken($color, 20%);
   color: lighten($color: $color, $amount: 10%);
@@ -160,9 +141,7 @@ $colors: (
   }
 }
 
-/** ================================
-**  --- Bordered Style Buttons  ---
-** ================================ */
+//** ----Bordered Styled Buttons----
 @mixin btn-color($color) {
   outline: none;
   border: 1px solid darken($color, 20%);
@@ -184,9 +163,7 @@ $colors: (
   }
 }
 
-/** ================================
-**  --- Arrow Move Left/Right  ---
-** ================================ */
+//** ----Arrow Moves: Left/Right----
 @mixin arrowAnimation($index) {
   transform: translateX($index * 3px);
   -webkit-animation-name: arrowMove;
@@ -221,9 +198,7 @@ $colors: (
   }
 }
 
-/** ====================
-**  --- Logo & Title ---
-** ===================== */
+//** ----Logo & Titles----
 @mixin logo-title($color) {
   text-align: center;
   line-height: 50px;
@@ -281,9 +256,7 @@ $colors: (
   }
 }
 
-/** ========================
-    **  --- Div Shadow ---
-    ** ===================== */
+//** ----Divs Shadows----
 @mixin sm-div-shadow($color) {
   background: rgba(darken($color, 20%), 0.6);
   box-shadow: 0 2px 2px 0 rgba(darken($main-white, 50%), 0.14), 0 3px 1px -2px rgba(darken($main-white, 5%), 0.2),
@@ -295,9 +268,7 @@ $colors: (
   box-shadow: 8px 10px 6px -6px rgba(darken($main-white, 40%), 0.3);
 }
 
-/** ======================
-**  --- Suspended Btns ---
-** ===================== */
+//** ----Floating Button----
 @mixin middle-btns($bottom) {
   position: absolute;
   bottom: $bottom;

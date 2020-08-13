@@ -3,20 +3,17 @@
 @import "variables";
 @import "reset";
 @import "mixins";
-@import "media_queries";
 @import "modules/buttons";
 @import "modules/scrollbar";
 @import "modules/preloader";
-@import "modules/modal";
 @import "modules/progressbar";
-@import "modules/form";
-@import "modules/footer";
 @import "modules/navs";
 @import "modules/skills";
 @import "modules/experience";
-
-// font-family: 'Holtwood One SC', serif;
-// font-family: 'Dosis', sans-serif;
+@import "modules/modal";
+@import "modules/form";
+@import "modules/footer";
+@import "media_queries";
 
 /** ============================
 **   ----    main div    ----
