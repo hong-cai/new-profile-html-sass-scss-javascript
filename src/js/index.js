@@ -1,12 +1,9 @@
-console.log('in js file');
-
-
 /** ==========================
  ** - Remove LocalStorage Key -
 ** ==========================
 **
 */
-window.onbeforeunload = function () { localStorage.removeItem('loginPopedUp'); return ''; };
+// window.onbeforeunload = function () { localStorage.removeItem('loginPopedUp'); return ''; };
 
 /** =================
  ** - Embed Google Map -
@@ -90,8 +87,8 @@ const currentCard = document.querySelector('.current-card');
 const cardsRail = document.querySelector('.cards-track');
 window.addEventListener('load', () => {
     // setTimeout(() => {  }, 500);
-    preloader.classList.add('complete');
     cardsRail.style.transform = 'translateX(-' + currentCard.style.left + ')';
+    preloader.classList.add('complete');
 });
 
 

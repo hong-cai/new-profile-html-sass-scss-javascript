@@ -37,11 +37,11 @@
 @media (max-width: 625px) {
   .cards {
     h3 {
-      font-size: $text-sm-size;
+      font-size: $text-xl-size;
     }
 
     p {
-      font-size: $text-xs-size !important;
+      font-size: $text-md-size !important;
     }
   }
 
@@ -76,7 +76,7 @@
   .progress-bars {
     grid-template-columns: 1fr;
 
-    & .skill > span {
+    & .skill>span {
       font-size: $text-sm-size;
     }
 
@@ -91,7 +91,7 @@
     }
   }
 
-  .card-intro > h4 {
+  .card-intro>h4 {
     font-size: $text-xs-size;
   }
 
@@ -104,6 +104,10 @@
         #map {
           display: none;
         }
+      }
+
+      & .contact-info {
+        font-size: larger;
       }
 
       #message {
@@ -165,14 +169,18 @@
   }
 
   .card-contact {
+
+    &:after {
+      display: none !important;
+    }
+
     & .content-wrapper {
       flex-direction: column !important;
-      background-image: linear-gradient(
-        -110deg,
-        #ffe7c7 0%,
-        #ffe7c7 100%
-      ) !important;
+      background-image: linear-gradient(-110deg,
+          #ffe7c7 0%,
+          #ffe7c7 100%) !important;
       overflow: auto;
+
 
       & .content-range {
         transition: $main-transition;
@@ -184,16 +192,6 @@
           align-items: center;
           cursor: pointer;
         }
-
-        // &:nth-child(2) {
-        //   height: 4rem;
-        //   background: $orange;
-        //   border-radius: 2rem;
-
-        //   & .form-body {
-        //     display: none;
-        //   }
-        // }
 
         & h1 {
           font-size: smaller;
@@ -208,6 +206,7 @@
     & .show-contact {
       height: calc(100% - 3.8rem) !important;
     }
+
   }
 }
 
@@ -236,11 +235,9 @@
     height: 55px;
     background: $lightorange;
     border-radius: 1.2rem;
-    background-image: linear-gradient(
-      to bottom,
-      $yellow 0%,
-      darken($yellow, 10%) 100%
-    );
+    background-image: linear-gradient(to bottom,
+        $yellow 0%,
+        darken($yellow, 10%) 100%);
     border: 1px solid darken($yellow, 25%);
     box-shadow: 0 0 0 5px lighten($color: $main-white, $amount: 20%);
     margin-bottom: 10px;

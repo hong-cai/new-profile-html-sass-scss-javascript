@@ -20,30 +20,30 @@ if (regCheck && regBtn) {
  * -----------
  * 
  */
-const editor = document.querySelector('#editor');
+// const editor = document.querySelector('#editor');
 // if (editor) {
-CKEDITOR.replace('editor');
+// CKEDITOR.replace('editor');
 // }
-CKEDITOR.editorConfig = function (config) {
-    config.language = 'de';
-    config.toolbarGroups = [
-        { name: 'document', groups: ['mode', 'document', 'doctools'] },
-        { name: 'clipboard', groups: ['clipboard', 'undo'] },
-        { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
-        { name: 'forms', groups: ['forms'] },
-        '/',
-        { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
-        { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
-        { name: 'links', groups: ['links'] },
-        { name: 'insert', groups: ['insert'] },
-        '/',
-        { name: 'styles', groups: ['styles'] },
-        { name: 'colors', groups: ['colors'] },
-        { name: 'tools', groups: ['tools'] },
-        { name: 'others', groups: ['others'] },
-        { name: 'about', groups: ['about'] }
-    ];
-};
+// CKEDITOR.editorConfig = function (config) {
+//     config.language = 'de';
+//     config.toolbarGroups = [
+//         { name: 'document', groups: ['mode', 'document', 'doctools'] },
+//         { name: 'clipboard', groups: ['clipboard', 'undo'] },
+//         { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+//         { name: 'forms', groups: ['forms'] },
+//         '/',
+//         { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+//         { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+//         { name: 'links', groups: ['links'] },
+//         { name: 'insert', groups: ['insert'] },
+//         '/',
+//         { name: 'styles', groups: ['styles'] },
+//         { name: 'colors', groups: ['colors'] },
+//         { name: 'tools', groups: ['tools'] },
+//         { name: 'others', groups: ['others'] },
+//         { name: 'about', groups: ['about'] }
+//     ];
+// };
 /* ------End of Text Editor------ */
 
 /**

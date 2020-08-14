@@ -1,0 +1,153 @@
+/** ============================
+** ----    Notes  Card    ----
+** ============================ */
+.content-notes {
+  width: 100%;
+  height: 100%;
+
+  & .login-form {
+    padding: 20px 0;
+    width: 320px;
+    margin: 0% auto 15% auto;
+    background: $main-white;
+    border-radius: 2rem;
+    box-shadow: 5px 5px 5px 0px rgba(darken($green, 35%), 0.65);
+
+    & .card-details {
+      @include card-title(
+        transparent,
+        darken($green, 15%),
+        darken($green, 15%)
+      );
+    }
+
+    & .form-control {
+      border: 1px solid darken($green, 25%) !important;
+      background: $green !important;
+    }
+
+    .form-action-group {
+      & .container {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  .note-sample,
+  .note {
+    list-style: none;
+  }
+
+  .note-sample {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    & .note {
+      border-radius: 3px;
+      padding: 1rem;
+      width: 400px;
+      height: 420px;
+      background: $yellow !important;
+      @include md-div-shadow(darken($main-white, 40%));
+      margin-bottom: 1rem;
+      overflow: hidden;
+
+      & .note-title {
+        height: 90px;
+
+        & h4 {
+          margin-bottom: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color: darken($orange, 20%);
+          }
+        }
+
+        & .note-category {
+          display: flex;
+          align-items: center;
+
+          & .note-tag {
+            margin: 5px;
+            padding: 5px;
+            border-radius: 3px;
+
+            &:nth-child(1) {
+              @include sm-div-shadow($lightorange);
+            }
+
+            &:nth-child(2) {
+              @include sm-div-shadow($lightgreen);
+            }
+          }
+        }
+      }
+
+      & .note-body {
+        height: 240px;
+        overflow: hidden;
+        align-items: center;
+        position: relative;
+
+        & div:first-of-type {
+          cursor: pointer;
+          max-height: 160px;
+          padding: 5px 3px;
+          display: -webkit-box;
+          -webkit-line-clamp: 7;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &:after {
+          content: "";
+          height: 30px;
+          width: 100%;
+          // background: white;
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          background-image: linear-gradient(
+            -180deg,
+            rgba(255, 255, 255, 0) 0%,
+            $yellow 100%
+          );
+        }
+      }
+
+      & .note-footer {
+        height: 60px;
+        display: flex;
+        align-items: center;
+
+        & button {
+          min-width: 70px;
+          height: 40px;
+          // padding: 5px 10px;
+          margin: 0 5px;
+
+          &:nth-child(1) {
+            @include btn-color($green);
+          }
+
+          &:nth-child(2) {
+            @include btn-color($lightorange);
+          }
+
+          &:nth-child(3) {
+            @include btn-color(lighten($red, 30%));
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,27 +3,33 @@
 @import "variables";
 @import "reset";
 @import "mixins";
+
+//Main Pages
+@import "modules/skills";
+@import "modules/contacts";
+@import "modules/about";
+@import "modules/notes";
+@import "modules/experience";
+
+//Main Components
 @import "modules/buttons";
 @import "modules/scrollbar";
 @import "modules/preloader";
 @import "modules/progressbar";
 @import "modules/navs";
-@import "modules/skills";
-@import "modules/experience";
 @import "modules/modal";
 @import "modules/form";
 @import "modules/footer";
 @import "media_queries";
 
 /** ============================
-**   ----    main div    ----
+**   ----    Main Divs    ----
 ** ============================ */
 
 .main {
   width: 90vw;
   height: 100%;
   position: relative;
-  // border: 1px solid orange;
   overflow: hidden;
 }
 
@@ -47,7 +53,7 @@
 }
 
 /** ============================
-**     ----    cards     ----
+** ----   cards General   ----
 ** ============================ */
 
 .cards {
@@ -60,7 +66,6 @@
 .cards-track {
   top: 0;
   left: 0;
-  // overflow: hidden;
   overflow: visible;
   transition: all 0.4s ease-in-out;
   position: relative;
@@ -83,10 +88,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // overflow: hidden; //REMIND
 }
 
-.current-card > .wrapper {
+.current-card>.wrapper {
   box-shadow: 5px 5px 5px 2px rgba($main-dark, 0.24), -2px 5px 5px 1px rgba($main-dark, 0.24);
 }
 
@@ -127,7 +131,6 @@
   .title-text {
     background-size: cover;
     -webkit-background-clip: text;
-    // background-blend-mode: screen;
     color: transparent;
     display: inline-block;
   }
@@ -144,365 +147,10 @@
   & .content-range {
     padding: 0 10px;
     max-width: 100%;
-    // border-radius: 2rem;
     height: 100%;
     overflow-x: hidden;
     // max-height: calc(94% - 100px);
     position: relative;
     overflow-y: auto;
-  }
-}
-
-/** ============================
-** ----    Notes  Card    ----
-** ============================ */
-.content-notes {
-  width: 100%;
-  height: 100%;
-
-  & .login-form {
-    padding: 20px 0;
-    width: 320px;
-    margin: 0% auto 15% auto;
-    background: $main-white;
-    border-radius: 2rem;
-    box-shadow: 5px 5px 5px 0px rgba(darken($green, 35%), 0.65);
-
-    & .card-details {
-      @include card-title(transparent, darken($green, 15%), darken($green, 15%));
-    }
-
-    & .form-control {
-      border: 1px solid darken($green, 25%) !important;
-      background: $green !important;
-    }
-
-    .form-action-group {
-      & .container {
-        margin: 10px 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-  }
-
-  .note-sample,
-  .note {
-    list-style: none;
-  }
-
-  .note-sample {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-
-    & .note {
-      border-radius: 3px;
-      padding: 1rem;
-      width: 350px;
-      height: 350px;
-      background: $yellow !important;
-      @include md-div-shadow(darken($main-white, 40%));
-      margin-bottom: 1rem;
-      overflow: hidden;
-
-      & .note-title {
-        height: 90px;
-
-        & h4 {
-          margin-bottom: 5px;
-          cursor: pointer;
-
-          &:hover {
-            color: darken($orange, 20%);
-          }
-        }
-
-        & .note-category {
-          display: flex;
-          align-items: center;
-
-          & .note-tag {
-            margin: 5px;
-            padding: 5px;
-            border-radius: 3px;
-
-            &:nth-child(1) {
-              @include sm-div-shadow($lightorange);
-            }
-
-            &:nth-child(2) {
-              @include sm-div-shadow($lightgreen);
-            }
-          }
-        }
-      }
-
-      & .note-body {
-        height: 160px;
-        overflow: hidden;
-        align-items: center;
-        position: relative;
-
-        & div:first-of-type {
-          cursor: pointer;
-          max-height: 160px;
-          padding: 5px 3px;
-          display: -webkit-box;
-          -webkit-line-clamp: 7;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-
-        &:after {
-          content: "";
-          height: 30px;
-          width: 100%;
-          // background: white;
-          position: absolute;
-          bottom: 0px;
-          left: 0;
-          background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, $yellow 100%);
-        }
-      }
-
-      & .note-footer {
-        height: 60px;
-        display: flex;
-        align-items: center;
-
-        & button {
-          min-width: 70px;
-          height: 40px;
-          // padding: 5px 10px;
-          margin: 0 5px;
-
-          &:nth-child(1) {
-            @include btn-color($green);
-          }
-
-          &:nth-child(2) {
-            @include btn-color($lightorange);
-          }
-
-          &:nth-child(3) {
-            @include btn-color(lighten($red, 30%));
-          }
-        }
-      }
-    }
-  }
-}
-
-/** ============================
-** ----    About  Card    ----
-** ============================ */
-.card-about {
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-
-  .card-id {
-    width: 40%;
-    background: darken($color: $yellow, $amount: 10%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5%;
-    height: 100%;
-
-    & .avatar {
-      width: 100px;
-      height: 100px;
-      margin: 5%;
-      border-radius: 2rem;
-      border: 5px solid lighten($color: $main-white, $amount: 30%);
-      overflow: hidden;
-      text-align: center;
-      box-shadow: 2px 1px 4px 4px rgba($main-dark, 0.2);
-
-      & img {
-        width: 90%;
-        height: 100%;
-      }
-    }
-
-    & .personal-info {
-      & p {
-        font-size: $text-sm-size;
-      }
-
-      & .personal-brief {
-        & p:nth-child(1) {
-          font-weight: bold;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          font-size: $text-md-size;
-        }
-
-        & .stars-rating {
-          width: 180px;
-          background: rgba($orange, 0.5);
-          height: 10px;
-          position: relative;
-          margin: 1.5rem 0;
-
-          & .stars-track {
-            & .star {
-              width: 35px;
-              font-size: $text-lg-size;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  & .content-wrapper {
-    width: 70%;
-    background: darken($color: $yellow, $amount: 15%);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12), 0 0px 10px -5px rgba(0, 0, 0, 0.2);
-
-    & .content-range {
-      max-height: 100%;
-    }
-
-    & .tag-slide {
-      margin: 3%;
-      transition: all 0.3s ease-in;
-      position: absolute;
-      top: 0;
-      left: -10px;
-      opacity: 0;
-
-      &:first-of-type {
-        left: 0;
-        opacity: 1;
-      }
-    }
-
-    .tag-slide-fade {
-      opacity: 0 !important;
-      left: -10px !important;
-    }
-
-    .tag-slide-in {
-      left: 0;
-      opacity: 1;
-    }
-  }
-}
-
-/** ============================
-**  ----   Contact Card   ----
-** ============================ */
-.contact {
-  & .card-contact {
-    width: 98%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // border: 2px solid green;
-    background: transparent;
-    background-image: linear-gradient(-110deg, $orange 0%, $orange 50%, transparent 50%, transparent 100%) !important;
-    box-shadow: 0 0 0 0 !important;
-    position: relative;
-
-    &:after {
-      position: absolute;
-      border-radius: 2rem;
-      z-index: -1;
-      content: "";
-      bottom: 9px;
-      right: 2px;
-      width: 25%;
-      height: 97%;
-      background: $main-dark;
-      box-shadow: 2px 15px 10px $main-dark;
-      transform: skewY(1deg);
-    }
-
-    & .content-wrapper {
-      display: flex;
-      flex-direction: row;
-      border-radius: 2rem;
-      width: 99%;
-      height: 90%;
-      border: 5px solid $orange;
-      background-image: linear-gradient(-110deg, $orange 0%, $orange 50%, $lightorange 50%, $lightorange 100%);
-      position: relative;
-      overflow: visible;
-
-      &:before {
-        position: absolute;
-        border-radius: 2rem;
-        z-index: -1;
-        content: "";
-        bottom: 9px;
-        left: -2px;
-        width: 55%;
-        height: 98%;
-        background: $main-dark;
-        box-shadow: -2px 15px 10px $main-dark;
-        transform: skewY(-1deg);
-      }
-
-      & .content-range {
-        width: 100%;
-        // border: 2px solid green;
-
-        & #map {
-          height: 300px;
-          width: 100%;
-        }
-
-        .social-media {
-          margin: 10px;
-          width: 50%;
-          min-width: 200px;
-          // bottom: 1%;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-
-          & i {
-            cursor: pointer;
-          }
-        }
-      }
-    }
-  }
-
-  /** ============================
-** - Contact Card- Contact-Form -
-** ============================ */
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .form-body {
-      width: 90%;
-      min-width: 300px;
-
-      .form-control {
-        border: 1px solid $lightorange;
-      }
-
-      textarea {
-        height: 180px;
-      }
-
-      textarea.input100 {
-        // min-height: 140px;
-        padding: 13px;
-      }
-    }
   }
 }
