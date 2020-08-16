@@ -10,7 +10,7 @@
       
 
 ## Screenshot
-<img src="/newFrontEndPresent.gif" width="500">
+<img src="/newFrontEndPresent.gif" width="600">
 
       
 ### [Whole Project Demo Here](http://sophie-nz.monster/)
