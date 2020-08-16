@@ -11,6 +11,7 @@
 
 ## Screenshot
 ![](/newFrontEndPresent.gif)
+<img src="/newFrontEndPresent.gif" width="48">
 
       
 ### [Whole Project Demo Here](http://sophie-nz.monster/)
