@@ -10,7 +10,7 @@
       
 
 ## Screenshot
-![](/img/newFrontEndPresent.gif)
+![](/newFrontEndPresent.gif)
 
       
 ### [Whole Project Demo Here](http://sophie-nz.monster/)
