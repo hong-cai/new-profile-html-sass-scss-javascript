@@ -1,46 +1,50 @@
-# My New Profile Template
-### [Demo Here](http://34.87.254.5/test1/)
+# Sophie's New Profile Site
+### Created With:
+
+     - Webpack and plugins
+     - Javascript
+     - NPM and plugins
+     - Sass/scss and mixins
+     - HTML/CSS
+     - Backend PHP MVC framework
+      
+
+## Screenshot
+![](/img/newFrontEndPresent.gif)
+
+      
+### [Whole Project Demo Here](http://sophie-nz.monster/)
 ## Introduction
-- The repo contains the code to my new profile page,link as above
-- This profile pages use HTML Sass/Scss Javascript, compiled by Webpack. 
-##  Main Code Feature 
-- SCSS:
-- Javascript:
-- Html:
+- This repository mainly serves as a coding sample of my front-end skill. Most of the graphic contents/components were actually my exercise compilation before for learning HTML/CSS/Sass from zero. I just glued them together component by component.
+- This graphic design project is only the front end part to a whole project for displaying my profile, using Webpack to compile the .scss files to css format and bundle .js files,and for back-end using PHP MVC framework to display dynamic contents from MySQL database. [Backend PHP MVC framework](https://github.com/hong-cai/php-MVC-panel-adminLTE-bootstrap-javascript)
 
-## Sitemap
-├── Home  
-│  
-├── Experience 
-│ 
-├── About
-│ 
-├── Notes  
-│
-│
-├── Contact
-│ ├── Contact Form 
-│ ├── Contact Info  
-│  
-├── Social Media Links  
-│ ├── Twitter  
-│ ├── Instagram  
-│ └── Facebook  
+- The design of this colorful profile page used 5 colors,which is more than designing a typical website. The purpose of that was to create a 'Game Style Theme' that displays bright eye-catching effect to the readers.
+- This page design is fully responsive that adapts easily across most devices.
+
+## Sitemap/Structure
+ 
+    ├── About
+    │   ├── About Myself
+    │   ├── About the site
+    │   └── Relevant Code links
+    │
+    ├── Contact
+    │   ├── Contact Form 
+    │   └── Contact Info
+    │
+    ├── Notes
+    │   ├── Account/Login/Logout
+    │   └── * Admin/User Panel
+    │       ├──  * Notes Display/Add/Edit/Delete
+    │       └──  * Account/Users Edit
+    │       
+    │   
+    └── Social Media
+        ├── Twitter
+        ├── Codepen
+        └── Facebook
 
 
-## Setup
-Go to the project folder and install required dependencies:
 
-```
-npm install
-```
-And run Webpack to watch for code changes and bundle js and scss files:
-
-    npm start
-Project will be automatically open at [http://localhost.com:8015](http://localhost.com:8015/)
-For production build:
-
-    npm run build
-```
 
 
