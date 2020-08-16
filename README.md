@@ -10,8 +10,7 @@
       
 
 ## Screenshot
-![](/newFrontEndPresent.gif)
-<img src="/newFrontEndPresent.gif" width="48">
+<img src="/newFrontEndPresent.gif" width="500">
 
       
 ### [Whole Project Demo Here](http://sophie-nz.monster/)
